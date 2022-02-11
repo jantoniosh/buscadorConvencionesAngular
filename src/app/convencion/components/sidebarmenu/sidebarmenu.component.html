@@ -1,0 +1,8 @@
+<div id="menu-container">
+    <app-buscar (onBuscar)="buscar($event)"></app-buscar>
+    <div class="container-search-results" *ngIf="activo" (click)="ocultar()">
+        <div class="close-tab">
+                <fa-icon [icon]="faWindowClose"></fa-icon>
+        </div>
+    </div>
+</div>

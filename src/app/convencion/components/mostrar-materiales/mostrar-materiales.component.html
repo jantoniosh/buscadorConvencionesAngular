@@ -1,0 +1,27 @@
+<div [ngClass]="getClassOf()">
+    <h2 class="subtitle">{{seccion.titulo}}</h2>
+    <div class="block-covers">
+        <div *ngFor="let entrada of seccion.entradas | slice:0:seccion.noElementos" data-aos="fade-up"
+            data-aos-duration="1000" class="cover">
+            <div class="image-cover">
+                <a [routerLink]=entrada.url routerLinkActive="active"><img [src]=entrada.thumbnail></a>
+                <div class="links">
+                    <ul>
+                        <li><a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc></a></li>
+                        <li><a href=""><img [src]=compartirSrc></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-cover">
+                <h2><a [routerLink]=entrada.url routerLinkActive="active">{{entrada.titulo}}</a></h2>
+                <h3 *ngIf="seccion.detalle">Convención: <a [routerLink]="getRutaConvencion(entrada.convencion)"
+                        routerLinkActive="active">{{entrada.convencion}}</a></h3>
+                <h3 *ngIf="seccion.detalle">Tipo: <a [routerLink]="getRutaCategoria(entrada.tipo)"
+                        routerLinkActive="active">{{entrada.tipo}}</a></h3>
+            </div>
+        </div>
+        <div class="verMasBtn">
+            <a class="ver-mas" *ngIf="seccion.boton" (click)="aumentar()">Ver más</a>
+        </div>
+    </div>
+</div>

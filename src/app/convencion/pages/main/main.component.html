@@ -1,0 +1,48 @@
+<div class="block-top-content home">
+    <div class="text-content-top">
+        <h1 class="title">Convenciones comentadas para juzgar con perspectiva de género</h1>
+        <h2 class="subtitle">Belém do Pará</h2>
+        <h2 class="subtitle">CEDAW</h2>
+    </div>
+    <div class="block-covers">
+        <div class="cover" data-aos="fade-up" data-aos-duration="1000">
+            <div data-aos="fade-up" data-aos-duration="1000" class="image-cover">
+                <a routerLink="belem-do-para" routerLinkActive="active"><img [src]=portadaBelemSrc
+                        [alt]=portadaBelemAlt></a>
+                <div class="links">
+                    <ul>
+                        <li><a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
+                                    [alt]=descargarAlt></a></li>
+                        <li><a href=""><img [src]=compartirSrc [alt]=compartirAlt></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cover" data-aos="fade-up" data-aos-duration="1000">
+            <div class="image-cover">
+                <a routerLink="cedaw" routerLinkActive="active"><img [src]=portadaCedawSrc [alt]=portadaCedawAlt></a>
+                <div class="links">
+                    <ul>
+                        <li><a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
+                                    [alt]=descargarAlt></a></li>
+                        <li><a href=""><img [src]=compartirSrc [alt]=compartirAlt></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="block-info-page">
+    <p>Las convenciones cedaw (1979) y Belém do Pará (1994) en su origen procuraron estrategias para
+        visibilizar y erradicar la violencia contra las mujeres en diversos países del mundo; ambas
+        convenciones establecieron estatutos y acuerdos legales a los que se suscribieron numerosas
+        naciones, México entre estas, para luchar por la igualdad en materia de derechos humanos. </p>
+</div>
+<div class="block-info-page etiquetas">
+    <div class="etiquetas">
+        <a *ngFor="let etiqueta of etiquetas" [href]='getLigaEtiqueta(etiqueta.etiqueta)'>
+            #{{etiqueta.etiqueta}}
+        </a>
+    </div>
+</div>
+<app-mostrar-materiales [seccion]=seccion></app-mostrar-materiales>

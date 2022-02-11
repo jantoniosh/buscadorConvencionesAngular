@@ -1,0 +1,10 @@
+<div id="wrapper" class="hfeed">
+    <app-header></app-header>
+    <app-buscador></app-buscador>
+    <div id="container">
+        <main id="content" role="main">
+            <router-outlet (activate)="onActivate()"></router-outlet>
+        </main>
+    </div>
+    <app-footer></app-footer>
+</div>

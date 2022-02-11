@@ -1,0 +1,24 @@
+<div id="menu-elements-container">
+    <div class="wrapper-ham" (click)="mostrarMenu()">
+        <div class="btn">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+    <!-- <div id="search-container">
+        <form (ngSubmit)="buscar()">
+            <input id="name" type="text" [formControl]=titulo (keydown)="reset()">
+            <button>Buscar</button>
+        </form>
+    </div> -->
+</div>
+<div id="menu-list-header">
+    <ul class="first-menu">
+        <li *ngFor="let link of links">
+            <a a [routerLink]=link.liga routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                {{link.texto}}
+            </a>
+        </li>
+    </ul>
+</div>

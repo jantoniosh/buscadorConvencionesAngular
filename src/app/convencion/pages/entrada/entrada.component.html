@@ -1,0 +1,11 @@
+<app-descripcion-convencion [clase]=clase [titulo]=entrada.titulo [subtitulo]=subtitulo [imagenUrl]=entrada.thumbnail
+    [imagenAlt]=entrada.thumbnail [descripcion]=entrada.cita [detalle]=true [convencion]=entrada.convencion
+    [categoria]=entrada.tipo>
+</app-descripcion-convencion>
+<div class="block-info-page etiquetas">
+    <div class="etiquetas">
+        <a *ngFor="let etiqueta of etiquetas" [href]='getLigaEtiqueta(etiqueta)'>
+            #{{etiqueta}}
+        </a>
+    </div>
+</div>

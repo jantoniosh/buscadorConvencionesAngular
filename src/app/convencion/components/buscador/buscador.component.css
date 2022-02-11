@@ -1,0 +1,114 @@
+.buscador {
+    padding: 10px 0px 0px 0px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    flex-direction: column;
+}
+
+.buscador h3 {
+    margin-top: -10px;
+    font-size: 1.4em;
+}
+
+.buscadorFormulario h3 {
+    width: 20%;
+    padding-left: 16px;
+}
+
+.buscadorFormulario form {
+    width: 80%;
+}
+
+.buscador form {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.mat-form-field {
+    padding-right: 8px;
+}
+
+button.enviar {
+    height: 42px;
+    /* border-radius: 16px; */
+    display: inline-block;
+    margin: 0;
+    border: 0;
+    background-color: #ff5f3f;
+    color: #fff;
+    /* width: 200px; */
+    padding-top: 6px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+.buscadorFormulario {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contenedorEtiquetas {
+    padding-bottom: 12px;
+}
+
+.inputTema {
+    width: 40%;
+}
+
+.inputEtiquetas {
+    width: 20%;
+}
+
+.inputFuentes {
+    width: 20%;
+}
+
+.enviar {
+    width: 20%;
+}
+
+@media only screen and (max-width: 980px) {
+    .buscadorFormulario h3 {
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .buscadorFormulario {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .buscadorFormulario form {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .inputTema {
+        width: 100%;
+    }
+
+    .inputEtiquetas {
+        width: 100%;
+    }
+
+    .inputFuentes {
+        width: 100%;
+    }
+
+    .enviar {
+        width: 100%;
+    }
+}

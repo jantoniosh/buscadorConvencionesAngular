@@ -1,0 +1,60 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { BelemComponent } from './convencion/pages/belem/belem.component';
+import { CategoriaComponent } from './convencion/pages/categoria/categoria.component';
+import { CedawComponent } from './convencion/pages/cedaw/cedaw.component';
+import { EntradaComponent } from './convencion/pages/entrada/entrada.component';
+import { MainComponent } from './convencion/pages/main/main.component';
+import { CreditosComponent } from './convencion/pages/creditos/creditos.component';
+import { EtiquetaComponent } from './convencion/pages/etiqueta/etiqueta.component';
+import { BusquedaComponent } from './convencion/pages/busqueda/busqueda.component';
+
+const routes: Routes = [
+    {
+        path: '',
+        component: MainComponent,
+        pathMatch: 'full'
+    },
+    {
+        path: 'belem-do-para',
+        component: BelemComponent
+    },
+    {
+        path: 'cedaw',
+        component: CedawComponent
+    },
+    {
+        path: 'categoria/:slug',
+        component: CategoriaComponent
+    },
+    {
+        path: 'podcast/:slug',
+        component: EntradaComponent
+    },
+    {
+        path: 'ficha/:slug',
+        component: EntradaComponent
+    },
+    {
+        path: 'infografia/:slug',
+        component: EntradaComponent
+    },
+    {
+        path: 'creditos',
+        component: CreditosComponent
+    },
+    {
+        path: 'busqueda',
+        component: BusquedaComponent
+    },
+    {
+        path: 'etiqueta/:slug',
+        component: EtiquetaComponent
+    }
+];
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }
