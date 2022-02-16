@@ -797,7 +797,6 @@ div#menu-container {
     max-width: 350px;
     top: 0px;
     left: 0;
-    background-color: #24135f;
     padding: 20px 14px;
     box-sizing: border-box;
     -webkit-transition: all 0.2s ease-in-out;
@@ -956,7 +955,6 @@ h2 {
 }
 
 .buscador {
-    padding: 10px 0px 0px 0px;
     display: flex;
     width: 100%;
     align-items: center;
@@ -986,7 +984,7 @@ h2 {
 .buscador form {
     display: flex;
     flex-wrap: wrap;
-    padding-left: 20px;
+    padding: 0px 20px 0px;
     box-sizing: border-box;
 }
 
@@ -1002,7 +1000,7 @@ button.enviar {
     border: 0;
     background-color: #ff5f3f;
     color: #fff;
-    /* width: 200px; */
+    width: 180px;
     padding-top: 6px;
     text-transform: uppercase;
     font-weight: bold;
@@ -1074,6 +1072,15 @@ button.enviar {
     .enviar {
         width: 100%;
     }
+
+    div#site-title {
+        width: 120px;
+    }
+    .buscadorFormulario h3 {
+        width: 100%;
+        margin-top: 10px;
+        padding-left: 0px;
+    }
 }
 
 @media only screen and (max-width: 980px) {
@@ -1088,6 +1095,8 @@ button.enviar {
     .text-content-top h2,
     .column-footer {
         width: 100% !important;
+        max-width: initial;
+        font-size: 1.8em;
     }
 
     .column-footer {
