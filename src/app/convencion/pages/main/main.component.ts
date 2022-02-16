@@ -6,8 +6,7 @@ import { Etiquetas } from '../../interfaces/etiquetas.interface';
 
 @Component({
     selector: 'app-main',
-    templateUrl: './main.component.html',
-    styleUrls: ['./main.component.css']
+    templateUrl: './main.component.html'
 })
 export class MainComponent implements OnInit {
 
@@ -19,8 +18,35 @@ export class MainComponent implements OnInit {
     descargarAlt: string = "descargar";
     compartirSrc: string = "assets/images/compartir.png";
     compartirAlt: string = "compartir";
+    verSrc: string = "assets/images/ver.png";
+    verAlt: string = "compartir";
 
-    etiquetas: Etiquetas[] = [];
+    // etiquetas: Etiquetas[] = [];
+
+    etiquetas: string[] = [
+        'Aborto',
+        'Accesibilidad',
+        'AccionesAfirmativas',
+        'AcosoSexual',
+        'AdultasMayores',
+        'Discriminación',
+        'DiscriminacionContraLaMujer',
+        'GarantizarIgualdadDeLasMujeres',
+        'Igualdad',
+        'Justicia',
+        'MujeresConDiscapacidad',
+        'MujeresRurales',
+        'NoDiscriminacion',
+        'Prevencion',
+        'Progresividad',
+        'Proteccion',
+        'Reparacion',
+        'RolesDeGenero',
+        'SaludSexualYReproductiva',
+        'SexoYGenero',
+        'TrabajosDeCuidados',
+        'Violencia'
+    ];
 
     seccion: Seccion = {
         titulo: 'Sugerencias semanales',
@@ -44,15 +70,16 @@ export class MainComponent implements OnInit {
         }
         this.entradaService.getEntradas().subscribe(observerEntrada);
 
-        const observerEtiquetas = {
-            next: (etiquetas: Etiquetas[]) => {
-                this.etiquetas = etiquetas;
-            },
-            error: (err: Error) => {
-                this.etiquetas = [];
-            }
-        }
-        this.entradaService.getEtiquetas().subscribe(observerEtiquetas);
+        // const observerEtiquetas = {
+        //     next: (etiquetas: Etiquetas[]) => {
+        //         console.log(etiquetas);
+        //         this.etiquetas = etiquetas;
+        //     },
+        //     error: (err: Error) => {
+        //         this.etiquetas = [];
+        //     }
+        // }
+        // this.entradaService.getEtiquetas().subscribe(observerEtiquetas);
     }
 
     getLigaEtiqueta(etiqueta: string) {

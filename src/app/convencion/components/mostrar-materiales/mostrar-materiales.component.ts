@@ -3,8 +3,7 @@ import { Seccion } from '../../interfaces/seccion.interface';
 
 @Component({
     selector: 'app-mostrar-materiales',
-    templateUrl: './mostrar-materiales.component.html',
-    styleUrls: ['./mostrar-materiales.component.css']
+    templateUrl: './mostrar-materiales.component.html'
 })
 export class MostrarMaterialesComponent implements OnInit {
 
@@ -13,6 +12,9 @@ export class MostrarMaterialesComponent implements OnInit {
     descargarAlt: string = "descargar";
     compartirSrc: string = "assets/images/compartir.png";
     compartirAlt: string = "compartir";
+    verSrc: string = "assets/images/ver.png";
+    verAlt: string = "compartir";
+
     hayError: boolean = false;
     termino: string = "";
 

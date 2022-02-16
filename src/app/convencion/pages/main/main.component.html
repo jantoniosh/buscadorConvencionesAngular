@@ -9,39 +9,58 @@
             <div data-aos="fade-up" data-aos-duration="1000" class="image-cover">
                 <a routerLink="belem-do-para" routerLinkActive="active"><img [src]=portadaBelemSrc
                         [alt]=portadaBelemAlt></a>
-                <div class="links">
-                    <ul>
-                        <li><a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
-                                    [alt]=descargarAlt></a></li>
-                        <li><a href=""><img [src]=compartirSrc [alt]=compartirAlt></a></li>
-                    </ul>
-                </div>
+            </div>
+            <div class="links">
+                <ul>
+                    <li>
+                        <a href=""><img [src]=verSrc [alt]=verAlt></a>
+                    </li>
+                    <li>
+                        <a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
+                                [alt]=descargarAlt></a>
+                    </li>
+                    <li>
+                        <a href=""><img [src]=compartirSrc [alt]=compartirAlt></a>
+                    </li>
+                </ul>
             </div>
         </div>
+
         <div class="cover" data-aos="fade-up" data-aos-duration="1000">
             <div class="image-cover">
                 <a routerLink="cedaw" routerLinkActive="active"><img [src]=portadaCedawSrc [alt]=portadaCedawAlt></a>
-                <div class="links">
-                    <ul>
-                        <li><a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
-                                    [alt]=descargarAlt></a></li>
-                        <li><a href=""><img [src]=compartirSrc [alt]=compartirAlt></a></li>
-                    </ul>
-                </div>
+            </div>
+            <div class="links">
+                <ul>
+                    <li>
+                        <a href=""><img [src]=verSrc [alt]=verAlt></a>
+                    </li>
+                    <li>
+                        <a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
+                                [alt]=descargarAlt></a>
+                    </li>
+                    <li>
+                        <a href=""><img [src]=compartirSrc [alt]=compartirAlt></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-<div class="block-info-page">
+<div class="block-info-page home">
     <p>Las convenciones cedaw (1979) y Belém do Pará (1994) en su origen procuraron estrategias para
         visibilizar y erradicar la violencia contra las mujeres en diversos países del mundo; ambas
         convenciones establecieron estatutos y acuerdos legales a los que se suscribieron numerosas
         naciones, México entre estas, para luchar por la igualdad en materia de derechos humanos. </p>
 </div>
 <div class="block-info-page etiquetas">
+    <p>Las convenciones cedaw (1979) y Belém do Pará (1994) en su origen procuraron estrategias para
+        visibilizar y erradicar la violencia contra las mujeres en diversos países del mundo; ambas
+        convenciones establecieron estatutos y acuerdos legales a los que se suscribieron numerosas
+        naciones, México entre estas, para luchar por la igualdad en materia de derechos humanos. </p>
     <div class="etiquetas">
-        <a *ngFor="let etiqueta of etiquetas" [href]='getLigaEtiqueta(etiqueta.etiqueta)'>
-            #{{etiqueta.etiqueta}}
+        <a *ngFor="let etiqueta of etiquetas" [href]='getLigaEtiqueta(etiqueta)'>
+            <span>#</span>{{etiqueta}}
         </a>
     </div>
 </div>

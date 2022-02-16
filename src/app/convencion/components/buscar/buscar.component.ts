@@ -16,6 +16,10 @@ export class BuscarComponent implements OnInit {
 
     links: LinksMenu[] = [
         {
+            texto: "Inicio",
+            liga: "/"
+        },
+        {
             texto: "Belém do Pará",
             liga: "/belem-do-para"
         },

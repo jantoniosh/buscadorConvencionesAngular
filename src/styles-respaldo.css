@@ -289,16 +289,6 @@ section {
     white-space: nowrap;
 }
 
-@font-face {
-    font-family: "Akzidenz-Grotesk BQ";
-    src: local("Akzidenz-Grotesk BQ Bold"), local("Akzidenz-Grotesk-BQ-Bold"),
-        url("assets/fonts/AkzidenzGroteskBQ-Bold.woff2") format("woff2"),
-        url("assets/fonts/AkzidenzGroteskBQ-Bold.woff") format("woff"),
-        url("assets/fonts/AkzidenzGroteskBQ-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-}
-
 html {
     width: 100%;
     min-height: 100vh;
@@ -343,7 +333,6 @@ a:hover {
 }
 
 h1 {
-    font-family: "Akzidenz-Grotesk BQ";
     font-size: 2.5em;
     font-weight: 600;
 }
@@ -443,7 +432,7 @@ ul.first-menu li a {
 
 .block-top-content.convencion .content-convencion {
     display: flex;
-    max-width: 1020px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -481,7 +470,7 @@ ul.first-menu li a {
 .block-info-page p,
 .block-content h2.subtitle {
     width: 100%;
-    max-width: 1020px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -496,7 +485,7 @@ ul.first-menu li a {
 
 .block-covers {
     width: 100%;
-    max-width: 1020px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -515,7 +504,6 @@ ul.first-menu li a {
 
 .block-top-content.home .cover {
     width: 28%;
-    max-width: 280px;
 }
 
 .cover:nth-child(4n) {
@@ -523,36 +511,29 @@ ul.first-menu li a {
 }
 
 .image-cover {
+    padding: 4px;
+    background-color: #d0d0d0;
     position: relative;
-    box-shadow: -6px 6px 19px -4px rgba(0, 0, 0, 0.53);
-    -webkit-box-shadow: -6px 6px 19px -4px rgba(0, 0, 0, 0.53);
-    -moz-box-shadow: -6px 6px 19px -4px rgba(0, 0, 0, 0.53);
 }
 
 .image-cover img {
     width: 100%;
-    display: block;
 }
 
 .info-cover {
     margin: 10px 0;
 }
 
-.links {
-    bottom: 0;
-    padding: 20px 0px 20px;
-    width: 100%;
-}
-
 .links ul {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .links ul li a {
     margin: 0 10px;
     opacity: 1;
+    background-color: #000;
     height: 34px;
     width: 34px;
     display: flex !important;
@@ -561,18 +542,14 @@ ul.first-menu li a {
     border-radius: 10px;
 }
 
-.links ul li a:hover img {
-    filter: invert(1);
+.links ul li a:hover {
+    opacity: 0.6;
 }
 
 .links ul li a img {
-    width: 28px !important;
+    width: 18px !important;
     position: initial !important;
-    height: 28px !important;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    height: 18px !important;
 }
 
 .block-info-page {
@@ -582,19 +559,8 @@ ul.first-menu li a {
     padding-top: 14%;
 }
 
-.block-info-page.home {
-    background-color: #007119;
-    background-image: url(assets/images/imageblockdos.png);
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    -webkit-background-size: 14%;
-    -moz-background-size: 14%;
-    -o-background-size: 14%;
-    background-size: 14%;
-}
-
 .block-content {
-    padding: 100px 4%;
+    padding: 50px 4%;
     background-color: #182e3d;
     color: #fff;
 }
@@ -659,6 +625,13 @@ ul.first-menu li a {
 
 .info-cover h3 a {
     color: #fff;
+}
+
+.links {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
 }
 
 footer#footer {
@@ -906,25 +879,6 @@ h2 {
     background-color: #ffc6b3;
     padding-top: 120px;
     width: 100%;
-    background: url(assets/images/fondotags.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.block-info-page.etiquetas p {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.block-info-page.etiquetas a {
-    font-family: "Akzidenz-Grotesk BQ";
-    font-size: 1.1em;
-}
-
-.block-info-page.etiquetas a span {
-    color: #fc5640;
 }
 
 .etiquetas {
@@ -943,7 +897,6 @@ h2 {
 .block-top-content.convencion .content-convencion .cover {
     width: 56%;
     margin-left: 8%;
-    max-width: 280px;
 }
 
 .block-top-content.convencion h1.title-convencion {
@@ -976,7 +929,6 @@ h2 {
 .buscadorFormulario h3 {
     width: 20%;
     padding-left: 16px;
-    text-align: center;
 }
 
 .buscadorFormulario form {
@@ -1075,6 +1027,7 @@ button.enviar {
         width: 100%;
     }
 }
+
 
 @media only screen and (max-width: 980px) {
     .block-top-content.convencion .content-convencion,
