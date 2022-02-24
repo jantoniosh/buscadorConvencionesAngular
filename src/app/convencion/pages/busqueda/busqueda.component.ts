@@ -6,8 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-busqueda',
-    templateUrl: './busqueda.component.html',
-    styleUrls: ['./busqueda.component.css']
+    templateUrl: './busqueda.component.html'
 })
 export class BusquedaComponent implements OnInit {
 
@@ -20,8 +19,6 @@ export class BusquedaComponent implements OnInit {
         entradas: []
     };
     titulo: string = "";
-    // etiquetas: string[] = [];
-    // fuentes: string[] = [];
 
     constructor(private entradaService: EntradaService, private route: ActivatedRoute) { }
 
@@ -30,8 +27,6 @@ export class BusquedaComponent implements OnInit {
             .subscribe(params => {
                 this.seccion.entradas = [];
                 this.titulo = params["tema"];
-                // params["etiquetas"] == undefined ? this.etiquetas = [] : this.etiquetas = params["etiquetas"];
-                // params["fuentes"] == undefined ? this.fuentes = [] : this.fuentes = params["fuentes"];
                 let etiquetas: string[] = params["etiquetas"];
                 let fuentes: string[] = params["fuentes"];
                 const observerEntrada = {

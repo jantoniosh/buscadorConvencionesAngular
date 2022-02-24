@@ -19,6 +19,7 @@ export class CategoriaComponent implements OnInit {
         boton: true,
         entradas: []
     };
+    tipo: string = "";
 
     constructor(private entradaService: EntradaService, private route: ActivatedRoute) { }
 
@@ -28,7 +29,14 @@ export class CategoriaComponent implements OnInit {
             this.slug = routeParams["slug"];
             const observerEntrada = {
                 next: (entradas: Entrada[]) => {
-                    this.seccion.entradas = entradas;
+                    this.seccion.entradas = [];
+                    entradas.map(entrada => {
+                        console.log(entrada.tipo, this.tipo, this.tipo.indexOf(entrada.tipo));
+                        if (this.tipo.indexOf(entrada.tipo) === 0) {
+                            this.seccion.entradas.push(entrada);
+                        }
+                    });
+                    console.log(this.seccion.entradas);
                     this.hideBarra();
                 },
                 error: (err: Error) => {
@@ -39,17 +47,18 @@ export class CategoriaComponent implements OnInit {
             if (this.slug !== null) {
                 this.onActivate();
                 if (this.slug === "podcast") {
-                    this.seccion.entradas = [];
                     this.seccion.titulo = "Podcasts";
+                    this.tipo = "Podcast";
                 }
                 else if (this.slug === "ficha") {
-                    this.entradaService.getEntradas().subscribe(observerEntrada);
                     this.seccion.titulo = "Fichas";
+                    this.tipo = "FICHA";
                 }
                 else if (this.slug === "infografia") {
-                    this.seccion.entradas = [];
-                    this.seccion.titulo = "Infografías";
+                    this.seccion.titulo = "Infografícos";
+                    this.tipo = "Infográficos ";
                 }
+                this.entradaService.getEntradas().subscribe(observerEntrada);
             }
         });
     }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { LinksMenu } from '../../interfaces/links-menu';
 
@@ -6,12 +6,8 @@ import { LinksMenu } from '../../interfaces/links-menu';
     selector: 'app-buscar',
     templateUrl: './buscar.component.html'
 })
-export class BuscarComponent implements OnInit {
-
-    @Output() onBuscar: EventEmitter<string> = new EventEmitter();
-
-    titulo = new FormControl('');
-    busqueda: boolean = false;
+export class BuscarComponent {
+    
     menu: boolean = false;
 
     links: LinksMenu[] = [
@@ -42,17 +38,6 @@ export class BuscarComponent implements OnInit {
     ]
 
     constructor() { }
-
-    ngOnInit(): void {
-    }
-
-    buscar() {
-        this.onBuscar.emit(this.titulo.value);
-    }
-
-    reset() {
-        this.busqueda = false;
-    }
 
     mostrarMenu() {
         this.menu = !this.menu;

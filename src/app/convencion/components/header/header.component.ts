@@ -1,13 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html'
 })
-export class HeaderComponent implements OnInit {
-    logoSrc: string = "assets/images/logo.png";
-    logoAlt: string = 'logo';
-    constructor() { }
+export class HeaderComponent {
+    private logoSrc: string;
 
-    ngOnInit(): void { }
+    constructor() {
+        this.logoSrc = "assets/images/logo.png";
+    }
+
+    getLogo (): string {
+        return this.logoSrc
+    }
 }

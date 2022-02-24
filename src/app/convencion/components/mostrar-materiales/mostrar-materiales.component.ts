@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Seccion } from '../../interfaces/seccion.interface';
 
 @Component({
     selector: 'app-mostrar-materiales',
     templateUrl: './mostrar-materiales.component.html'
 })
-export class MostrarMaterialesComponent implements OnInit {
+export class MostrarMaterialesComponent {
 
     coverImg: string = "assets/images/materialuno.jpg";
     descargarSrc: string = "assets/images/descargar.png";
@@ -18,7 +18,7 @@ export class MostrarMaterialesComponent implements OnInit {
     hayError: boolean = false;
     termino: string = "";
 
-    @Input('seccion') seccion: Seccion = {
+    @Input() seccion: Seccion = {
         titulo: '',
         detalle: false,
         color: '',
@@ -28,9 +28,6 @@ export class MostrarMaterialesComponent implements OnInit {
     }
 
     constructor() { }
-
-    ngOnInit(): void {
-    }
 
     getClassOf() {
         if (this.seccion.color === "Verde") {

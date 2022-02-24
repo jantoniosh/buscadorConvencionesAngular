@@ -4,28 +4,26 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'app-descripcion-convencion',
   templateUrl: './descripcion-convencion.component.html'
 })
-export class DescripcionConvencionComponent implements OnInit {
+export class DescripcionConvencionComponent {
 
   descargarSrc: string = "assets/images/descargar.png";
   descargarAlt: string = "descargar";
   compartirSrc: string = "assets/images/compartir.png";
   compartirAlt: string = "compartir";
+  verSrc: string = "assets/images/ver.png";
+  verAlt: string = "compartir";
 
-  @Input('clase') clase: string = "";
-  @Input('titulo') titulo: string = "";
-  @Input('subtitulo') subtitulo: string = "";
-  @Input('imagenUrl') imagenUrl: string = "";
-  @Input('imagenAlt') imagenAlt: string = "";
-  @Input('descripcion') descripcion: string = "";
-  @Input('categoria') categoria: string = "";
-  @Input('convencion') convencion: string = "";
-  @Input('detalle') detalle: boolean = false;
+  @Input() clase:string = '';
+  @Input() titulo: string = "";
+  @Input() subtitulo: string = "";
+  @Input() imagenUrl: string = "";
+  @Input() imagenAlt: string = "";
+  @Input() descripciones: string[] = [];
+  @Input() categoria: string = "";
+  @Input() convencion: string = "";
+  @Input() detalle: boolean = false;
 
   constructor() { }
-
-  ngOnInit(): void {
-
-  }
 
   getRutaConvencion(convencion: string) {
     if (convencion == "Belém do Pará") {

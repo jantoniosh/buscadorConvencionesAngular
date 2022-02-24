@@ -6,19 +6,12 @@
             <div class="bar3"></div>
         </div>
     </div>
-    <!-- <div id="search-container">
-        <form (ngSubmit)="buscar()">
-            <input id="name" type="text" [formControl]=titulo (keydown)="reset()">
-            <button>Buscar</button>
-        </form>
-    </div> -->
 </div>
 <div id="menu-list-header">
     <ul class="first-menu">
-        <li *ngFor="let link of links">
-            <a a [routerLink]=link.liga routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                {{link.texto}}
-            </a>
+        <li *ngFor="let link of links" [routerLink]=link.liga routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+            {{link.texto}}
         </li>
     </ul>
 </div>

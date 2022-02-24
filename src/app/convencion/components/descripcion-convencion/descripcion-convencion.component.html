@@ -10,21 +10,30 @@
             </div>
         </div>
         <div class="block-covers">
-            <div data-aos="fade-up" data-aos-duration="1000" class="cover">
-                <div class="image-cover">
+            <div class="cover" data-aos="fade-up" data-aos-duration="1000">
+                <div data-aos="fade-up" data-aos-duration="1000" class="image-cover">
                     <img [src]=imagenUrl [alt]=imagenUrl>
-                    <div class="links">
-                        <ul>
-                            <li><a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
-                                        [alt]=descargarAlt></a></li>
-                            <li><a href=""><img [src]=compartirSrc [alt]=compartirAlt></a></li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="links">
+                    <ul>
+                        <li>
+                            <a href=""><img [src]=verSrc [alt]=verAlt></a>
+                        </li>
+                        <li>
+                            <a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
+                                    [alt]=descargarAlt></a>
+                        </li>
+                        <li>
+                            <a href=""><img [src]=compartirSrc [alt]=compartirAlt></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="block-info-page">
-    <p>{{descripcion}}</p>
+    <p *ngFor="let descripcion of descripciones">
+        {{descripcion}}
+    </p>
 </div>

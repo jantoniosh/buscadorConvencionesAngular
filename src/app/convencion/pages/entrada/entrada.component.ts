@@ -5,16 +5,14 @@ import { EntradaService } from '../../services/convencion.service';
 
 @Component({
     selector: 'app-entrada',
-    templateUrl: './entrada.component.html',
-    styleUrls: ['./entrada.component.css']
+    templateUrl: './entrada.component.html'
 })
 export class EntradaComponent implements OnInit {
 
     clase: string = "block-top-content cedaw convencion";
     subtitulo: string = "";
     imagenAlt: string = "portada uno";
-    descripcion: string = "La Convención de Belém do Pará, establece por primera vez el derecho de las mujeres a vivir una vida libre de violencia. Este tratado interamericano de derechos humanos ha dado pauta para la adopción de leyes y políticas sobre prevención, erradicación y sanción de la violencia contra las mujeres en los Estados Parte de la Convención."
-
+    descripcion: string[] = [];
     ruta: string | null = "";
 
     entrada: Entrada = {
@@ -43,13 +41,14 @@ export class EntradaComponent implements OnInit {
     ngOnInit(): void {
         this.ruta = this.router.url;
         const observerEntrada = {
-            next: (entrada: Entrada) => {
-                this.entrada = entrada;
+            next: (entrada: Entrada[]) => {
+                this.entrada = entrada[0];
+                this.descripcion = [];
+                this.descripcion.push(this.entrada.cita);
                 console.log(this.entrada.etiquetas);
                 this.etiquetas = this.entrada.etiquetas.split("|").map(etiqueta => {
                     return etiqueta.replace(/\s/g, '').replace('#', '');
                 });
-                console.log(this.etiquetas);
             },
             error: (err: Error) => {
                 this.entrada = {

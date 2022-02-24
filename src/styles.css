@@ -416,10 +416,21 @@ ul.first-menu li {
     margin-top: 10px;
 }
 
-ul.first-menu li a {
+ul.first-menu li  {
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+ul.first-menu li:hover {
+    opacity: 0.6;
+    filter: grayscale(50%);
 }
 
 .block-top-content {
@@ -626,7 +637,7 @@ ul.first-menu li a {
 .materiales .block-covers .image-cover a:before {
     content: "";
     display: block;
-    padding-bottom: 100%;
+    padding-bottom: 150%;
 }
 
 .materiales .block-covers .image-cover img {
@@ -789,6 +800,17 @@ body.menuactive .bar3 {
     top: 9px;
     -webkit-transform: rotate(135deg);
     -webkit-transition: all 0.2s ease-in;
+}
+
+body.buscadoractive .buscadorFormulario {
+    margin-top: -80px;
+}
+
+body.buscadoractive .opensearch {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 div#menu-container {
@@ -971,6 +993,18 @@ h2 {
     font-size: 1.4em;
 }
 
+.buscadorFormulario {
+    margin-top: 0px;
+}
+
+.opensearch {
+    display: none;
+}
+
+.buscadorFormulario.close {
+    margin-top: -80px;
+}
+
 .buscadorFormulario h3 {
     width: 20%;
     padding-left: 16px;
@@ -984,7 +1018,7 @@ h2 {
 .buscador form {
     display: flex;
     flex-wrap: wrap;
-    padding: 0px 20px 0px;
+    padding: 0 0 0 20px;
     box-sizing: border-box;
 }
 
@@ -993,19 +1027,15 @@ h2 {
 }
 
 button.enviar {
-    height: 42px;
-    /* border-radius: 16px; */
+    height: 66px;
     display: inline-block;
-    margin: 0;
     border: 0;
     background-color: #ff5f3f;
     color: #fff;
-    width: 180px;
     padding-top: 6px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
-    margin-top: 4px;
 }
 
 .buscadorFormulario {
@@ -1013,11 +1043,11 @@ button.enviar {
     align-items: center;
     width: 100%;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .contenedorEtiquetas {
-    padding-bottom: 12px;
+    /* padding-bottom: 12px; */
 }
 
 .inputTema {
@@ -1036,9 +1066,28 @@ button.enviar {
     width: 20%;
 }
 
-.ver-mas {
+.verMasBtn {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.verMasBtn a.ver-mas {
+    width: 200px;
+    text-align: center;
     cursor: pointer;
+}
+
+.materiales.home .info-cover h2 a {
+    margin-bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 44px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2;
 }
 
 @media only screen and (max-width: 980px) {

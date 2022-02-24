@@ -6,8 +6,7 @@ import { EntradaService } from '../../services/convencion.service';
 
 @Component({
     selector: 'app-etiqueta',
-    templateUrl: './etiqueta.component.html',
-    styleUrls: ['./etiqueta.component.css']
+    templateUrl: './etiqueta.component.html'
 })
 export class EtiquetaComponent implements OnInit {
 

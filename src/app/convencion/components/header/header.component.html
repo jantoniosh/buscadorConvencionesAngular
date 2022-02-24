@@ -1,7 +1,7 @@
 <header id="header" role="banner">
     <div id="site-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
         <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="home"
-            rel="home"><img class="logo" [src]=logoSrc [alt]=logoAlt></a>
+            rel="home"><img class="logo" [src]=getLogo() /></a>
     </div>
     <app-sidebarmenu></app-sidebarmenu>
 </header>

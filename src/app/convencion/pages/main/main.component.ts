@@ -69,17 +69,6 @@ export class MainComponent implements OnInit {
             }
         }
         this.entradaService.getEntradas().subscribe(observerEntrada);
-
-        // const observerEtiquetas = {
-        //     next: (etiquetas: Etiquetas[]) => {
-        //         console.log(etiquetas);
-        //         this.etiquetas = etiquetas;
-        //     },
-        //     error: (err: Error) => {
-        //         this.etiquetas = [];
-        //     }
-        // }
-        // this.entradaService.getEtiquetas().subscribe(observerEtiquetas);
     }
 
     getLigaEtiqueta(etiqueta: string) {

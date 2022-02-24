@@ -9,13 +9,16 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { Titulos } from '../../interfaces/titulos.interface';
 import { Router } from '@angular/router';
 import { Fuentes } from '../../interfaces/fuentes.interface';
+import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-buscador',
-    templateUrl: './buscador.component.html',
-    styleUrls: ['./buscador.component.css']
+    templateUrl: './buscador.component.html'
 })
 export class BuscadorComponent implements OnInit {
+
+    faTimes = faTimes;
+    faSearch = faSearch;
 
     separatorKeysCodes: number[] = [ENTER, COMMA];
 
@@ -35,9 +38,12 @@ export class BuscadorComponent implements OnInit {
     fuentes: string[] = [];
     allFuentes: string[] = [];
 
+    buscador: boolean = false;
+
     constructor(private entradaService: EntradaService, private router: Router) { }
 
     ngOnInit(): void {
+        this.mostrarBuscador();
         // Petición titulos
         this.peticionTitulos();
         // Petición de Etiquetas
@@ -92,6 +98,7 @@ export class BuscadorComponent implements OnInit {
             if (this.allEtiquetas.indexOf(value) > -1) {
                 this.removeItemFromArr(this.allEtiquetas, value);
                 this.etiquetas.push(value);
+                this.enviar();
             }
         }
         event.chipInput!.clear();
@@ -104,6 +111,7 @@ export class BuscadorComponent implements OnInit {
             this.etiquetas.splice(index, 1);
         }
         this.allEtiquetas.push(etiqueta);
+        this.enviar();
     }
 
     selectedEtiqueta(event: MatAutocompleteSelectedEvent): void {
@@ -112,14 +120,16 @@ export class BuscadorComponent implements OnInit {
             this.etiquetas.push(event.option.viewValue);
             this.etiquetaInput.nativeElement.value = '';
             this.etiquetaControl.setValue(null);
+            this.enviar();
         }
     }
 
     addFuente(event: MatChipInputEvent): void {
         const value = (event.value || '').trim();
         if (value) {
-            if (this.allEtiquetas.indexOf(value) > -1) {
+            if (this.allFuentes.indexOf(value) > -1) {
                 this.fuentes.push(value);
+                this.enviar();
             }
         }
         event.chipInput!.clear();
@@ -134,14 +144,16 @@ export class BuscadorComponent implements OnInit {
             this.fuentes.splice(index, 1);
         }
         this.allFuentes.push(fuente);
+        this.enviar();
     }
 
     selectedFuente(event: MatAutocompleteSelectedEvent): void {
-        if (this.allEtiquetas.indexOf(event.option.viewValue) > -1) {
+        if (this.allFuentes.indexOf(event.option.viewValue) > -1) {
             this.removeItemFromArr(this.allFuentes, event.option.viewValue);
             this.fuentes.push(event.option.viewValue);
             this.fuenteInput.nativeElement.value = '';
             this.fuenteControl.setValue(null);
+            this.enviar();
         }
     }
 
@@ -154,7 +166,6 @@ export class BuscadorComponent implements OnInit {
     }
 
     enviar(): void {
-        // console.log('buscando en titulos, subtitulos y subsubtitulos');
         const tema: string | any = this.tituloControl.value;
         if (tema !== null) {
             this.router.navigate(['/busqueda'], { queryParams: { tema: tema, etiquetas: this.etiquetas, fuentes: this.fuentes } });
@@ -199,6 +210,19 @@ export class BuscadorComponent implements OnInit {
         if (val !== null) {
             const filterValue = val.toLocaleLowerCase();
             return this.allFuentes.filter(fuente => fuente.toLocaleLowerCase().indexOf(filterValue) >= 0);
+        }
+    }
+
+    mostrarBuscador() {
+        this.buscador = !this.buscador;
+        const bodyElement = document.body;
+        if (bodyElement) {
+            if (this.buscador) {
+                bodyElement.classList.add("buscadoractive");
+            }
+            else {
+                bodyElement.classList.remove("buscadoractive");
+            }
         }
     }
 
