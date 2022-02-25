@@ -1,5 +1,17 @@
 <div [ngClass]="getClassOf()">
-    <h2 class="subtitle">{{seccion.titulo}}</h2>
+    <h2 class="subtitle">
+        <div *ngIf="seccion.titulo != 'Podcasts'; else podcast">
+            {{seccion.titulo}}
+        </div>
+        <ng-template #podcast>
+            <fa-icon [icon]="sonido"></fa-icon> Casos
+        </ng-template>
+    </h2>
+    <div *ngIf="seccion.descripcion">
+        <p *ngFor="let texto of seccion.descripcion" class="descripcion">
+            {{texto}}
+        </p>
+    </div>
     <div class="block-covers">
         <div *ngFor="let entrada of seccion.entradas | slice:0:seccion.noElementos" data-aos="fade-up"
             data-aos-duration="1000" class="cover">
@@ -9,10 +21,10 @@
             <div class="links">
                 <ul>
                     <li>
-                        <a href=""><img [src]=verSrc [alt]=verAlt></a>
+                        <a [href]=entrada.archivo target="_blank"><img [src]=verSrc [alt]=verAlt></a>
                     </li>
                     <li>
-                        <a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc></a>
+                        <a [href]=entrada.archivo download><img [src]=descargarSrc></a>
                     </li>
                     <li>
                         <a href=""><img [src]=compartirSrc></a>

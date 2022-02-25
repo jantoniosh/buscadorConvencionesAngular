@@ -36,7 +36,7 @@ const routes: Routes = [
         component: EntradaComponent
     },
     {
-        path: 'infografia/:slug',
+        path: 'infograficos/:slug',
         component: EntradaComponent
     },
     {

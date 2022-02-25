@@ -16,7 +16,8 @@ export class BusquedaComponent implements OnInit {
         color: 'Verde',
         noElementos: 4,
         boton: true,
-        entradas: []
+        entradas: [],
+        descripcion: []
     };
     titulo: string = "";
 

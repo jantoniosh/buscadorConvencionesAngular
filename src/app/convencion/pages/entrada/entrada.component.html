@@ -1,12 +1,13 @@
 <app-descripcion-convencion [clase]=clase [titulo]=entrada.titulo [subtitulo]=subtitulo [imagenUrl]=entrada.thumbnail
     [imagenAlt]=entrada.thumbnail [descripciones]=descripcion [detalle]=true [convencion]=entrada.convencion
-    [categoria]=entrada.tipo>
+    [categoria]=entrada.tipo [archivo]=entrada.archivo>
 </app-descripcion-convencion>
 <div class="block-info-page etiquetas">
-    <p>Las convenciones cedaw (1979) y Belém do Pará (1994) en su origen procuraron estrategias para
-        visibilizar y erradicar la violencia contra las mujeres en diversos países del mundo; ambas
-        convenciones establecieron estatutos y acuerdos legales a los que se suscribieron numerosas
-        naciones, México entre estas, para luchar por la igualdad en materia de derechos humanos. </p>
+    <p>
+        Para la búsqueda y la sistematización de los contenidos de las convenciones, se propusieron etiquetas o hashtags
+        que resaltan el tema tratado por el artículo o apartado, y guían en la búsqueda de estas temáticas o poblaciones
+        afectadas a lo largo del sitio y sus recursos. Por ejemplo #ViolenciaSexual o #MujeresIndígenas.
+    </p>
     <div class="etiquetas">
         <a *ngFor="let etiqueta of etiquetas" [href]='getLigaEtiqueta(etiqueta)'>
             <span>#</span>{{etiqueta}}

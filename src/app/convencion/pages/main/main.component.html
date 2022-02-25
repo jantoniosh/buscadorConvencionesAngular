@@ -1,6 +1,6 @@
 <div class="block-top-content home">
     <div class="text-content-top">
-        <h1 class="title">Convenciones comentadas para juzgar con perspectiva de género</h1>
+        <h1 class="title">Convenciones comentadas<br />Jurisprudencia internacional sensible al género</h1>
         <h2 class="subtitle">Belém do Pará</h2>
         <h2 class="subtitle">CEDAW</h2>
     </div>
@@ -13,10 +13,10 @@
             <div class="links">
                 <ul>
                     <li>
-                        <a href=""><img [src]=verSrc [alt]=verAlt></a>
+                        <a href="assets/files/bdp/belemdopara.pdf" target="_blank"><img [src]=verSrc [alt]=verAlt></a>
                     </li>
                     <li>
-                        <a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
+                        <a href="assets/files/bdp/belemdopara.pdf" download><img [src]=descargarSrc
                                 [alt]=descargarAlt></a>
                     </li>
                     <li>
@@ -33,10 +33,10 @@
             <div class="links">
                 <ul>
                     <li>
-                        <a href=""><img [src]=verSrc [alt]=verAlt></a>
+                        <a href="assets/files/cedaw/cedaw.pdf" target="_blank"><img [src]=verSrc [alt]=verAlt></a>
                     </li>
                     <li>
-                        <a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
+                        <a href="assets/files/cedaw/cedaw.pdf" download><img [src]=descargarSrc
                                 [alt]=descargarAlt></a>
                     </li>
                     <li>
@@ -48,16 +48,19 @@
     </div>
 </div>
 <div class="block-info-page home">
-    <p>Justicia para las mujeres es una herramienta desarrollada por la Dirección de Derechos Humanos Igualdad de Género
-        y Asuntos Internacionales del CJF, cuyo propósito es que el Poder Judicial de la Federación, organizaciones de
+    <p>
+        <em>Justicia para las mujeres</em> es una herramienta desarrollada por la Dirección de Derechos Humanos Igualdad
+        de Género
+        y Asuntos Internacionales del <span class="versalitas">cjf</span>, cuyo propósito es que el Poder Judicial de la Federación, organizaciones de
         la sociedad civil, personas activistas, litigantes y academia, en su conjunto, se apropien de los contenidos, la
         interpretación y los alcances de la Convención sobre la Eliminación de todas las formas de Discriminación contra
-        la Mujer cedaw (1979) y la Convención Interamericana para Prevenir, Sancionar y Erradicar la Violencia contra la
-        Mujer,Belém do Pará (1994), dos instrumentos internacionales sobre la discriminación y la violencia que viven
-        las mujeres.</p>
+        la Mujer, <span class="versalitas">cedaw(1979)</span>, y la Convención Interamericana para Prevenir, Sancionar y Erradicar la Violencia contra la
+        Mujer, Belém do Pará (1994), dos instrumentos internacionales sobre la discriminación y la violencia que viven
+        las mujeres.
+    </p>
     <p>
-        Desde esta perspectiva, se reconociendo el carácter endémico de la discriminación y violencia que viven las
-        mujeres que habitan en México, Justicia para las mujeres es un proyecto formativo, narrativo y de divulgación,
+        Desde esta perspectiva, se reconoce el carácter endémico de la discriminación y violencia que viven las
+        mujeres que habitan en México, <em>Justicia para las mujeres</em> es un proyecto formativo, narrativo y de divulgación,
         que apunta a una transformación cultural desde el interior de las instancias encargadas de garantizar el acceso
         a la justicia a las mujeres en su diversidad.
     </p>
@@ -67,9 +70,19 @@
         que resaltan el tema tratado por el artículo o apartado, y guían en la búsqueda de estas temáticas o poblaciones
         afectadas a lo largo del sitio y sus recursos. Por ejemplo #ViolenciaSexual o #MujeresIndígenas.</p>
     <div class="etiquetas">
-        <a *ngFor="let etiqueta of etiquetas" [href]='getLigaEtiqueta(etiqueta)'>
+        <a *ngFor="let etiqueta of etiquetas" [routerLink]='getLigaEtiqueta(etiqueta)'>
             <span>#</span>{{etiqueta}}
         </a>
     </div>
+    <p style="margin-top: 30px;">
+        También se tomaron como fuentes los órganos del sistema universal y del sistema interamericano de protección de
+        los derechos humanos, particularmente las instancias internacionales que se encargan de la interpretación y
+        revisión de la aplicación de las dos convenciones en cuestión, pero también se consideraron órganos surgidos a
+        partir de otros tratados internacionales de derechos humanos, que guardan relación con los derechos que se
+        consagran en la cedaw y en Belém do Pará. Entre los documentos citados encontramos recomendaciones, sentencias y
+        observaciones de la Comisión Interamericana de Derechos Humanos (CIDH), la Corte Interamericana de Derechos
+        Humanos (CoIDH), y el Comité cedaw.
+    </p>
 </div>
-<app-mostrar-materiales [seccion]=seccion></app-mostrar-materiales>
+<app-mostrar-materiales *ngFor="let seccion of secciones;let i=index" [seccion]=seccion>
+</app-mostrar-materiales>

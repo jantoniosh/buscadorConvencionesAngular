@@ -209,22 +209,15 @@ section {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
-.sticky {
+
+em {
+    font-style: italic;
 }
-.bypostauthor {
+
+.versalitas {
+    font-variant: small-caps;
 }
-.wp-caption {
-}
-.wp-caption-text {
-}
-.gallery-caption {
-}
-.alignright {
-}
-.alignleft {
-}
-.aligncenter {
-}
+
 .screen-reader-text {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
@@ -320,13 +313,11 @@ img {
 p {
     margin: 0;
     line-height: 1.4;
-}
-strong {
-    font-weight: 100;
+    margin-bottom: 16px !important;
 }
 
-em {
-    font-style: italic;
+strong {
+    font-weight: 100;
 }
 
 a {
@@ -416,7 +407,7 @@ ul.first-menu li {
     margin-top: 10px;
 }
 
-ul.first-menu li  {
+ul.first-menu li {
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -456,10 +447,6 @@ ul.first-menu li:hover {
     display: flex;
     max-width: 1020px;
     margin: 0 auto;
-}
-
-.block-top-content.convencion .content-convencion .cover {
-    width: 56%;
 }
 
 .block-top-content.convencion .content-convencion .text-content-top h1.title {
@@ -604,6 +591,13 @@ ul.first-menu li:hover {
     background-size: 14%;
 }
 
+.block-info-page.home p {
+    color: #fff;
+}
+.block-info-page.home.versalitas {
+    font-variant: small-caps;
+}
+
 .block-content {
     padding: 100px 4%;
     background-color: #182e3d;
@@ -688,8 +682,9 @@ footer#footer {
 
 .column-footer {
     width: 33%;
-    padding: 0 10px;
+    padding: 0 2%;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .column-footer h2 {
@@ -809,7 +804,7 @@ body.buscadoractive .buscadorFormulario {
 body.buscadoractive .opensearch {
     display: block;
     position: absolute;
-    top: 0px;
+    top: 70px;
     left: 0px;
 }
 
@@ -909,11 +904,6 @@ body.menuactive #menu-list-header {
     text-align: left;
 }
 
-.block-top-content.convencion .content-convencion .cover {
-    width: 56%;
-    margin-left: 8%;
-}
-
 .block-top-content.convencion h1.title-convencion {
     font-size: 2.5em;
 }
@@ -937,6 +927,12 @@ h2 {
 .block-info-page.etiquetas p {
     text-align: center;
     margin-bottom: 60px;
+}
+
+p.descripcion {
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
 }
 
 .block-info-page.etiquetas a {
@@ -964,7 +960,6 @@ h2 {
 .block-top-content.convencion .content-convencion .cover {
     width: 56%;
     margin-left: 8%;
-    max-width: 280px;
 }
 
 .block-top-content.convencion h1.title-convencion {
@@ -982,8 +977,6 @@ h2 {
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    position: sticky;
-    top: 80px;
     z-index: 100;
     flex-direction: column;
 }
@@ -1044,6 +1037,11 @@ button.enviar {
     width: 100%;
     justify-content: center;
     flex-direction: row;
+    position: relative;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .contenedorEtiquetas {
@@ -1090,6 +1088,24 @@ button.enviar {
     -webkit-line-clamp: 2;
 }
 
+.closesearch {
+    width: 60px;
+    height: 66px;
+    background-color: #ff5f3f;
+}
+
+.opensearch {
+    width: 60px;
+    height: 66px;
+    background-color: #ff5f3f;
+}
+
+.player.ng-star-inserted {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+}
+
 @media only screen and (max-width: 980px) {
     .buscadorFormulario h3 {
         width: 100%;
@@ -1125,27 +1141,71 @@ button.enviar {
     div#site-title {
         width: 120px;
     }
+
     .buscadorFormulario h3 {
         width: 100%;
         margin-top: 10px;
         padding-left: 0px;
+        font-size: 1em;
     }
-}
 
-@media only screen and (max-width: 980px) {
+    body.buscadoractive .buscadorFormulario {
+        margin-top: -100%;
+    }
+
+    button.enviar {
+        height: 56px;
+        display: inline-block;
+        border: 0;
+        background-color: #ff5f3f;
+        color: #fff;
+        padding-top: 6px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .block-top-content.home .cover {
+        max-width: 200px;
+    }
+
+    .cover {
+        width: 48% !important;
+    }
+
+    .info-cover {
+        font-size: 0.6em;
+    }
+
     .block-top-content.convencion .content-convencion,
     .footer-content {
         flex-wrap: wrap;
     }
 
     .block-covers,
-    .cover,
     .text-content-top h1.title,
-    .text-content-top h2,
-    .column-footer {
+    .text-content-top h2 {
         width: 100% !important;
         max-width: initial;
         font-size: 1.8em;
+    }
+
+    .closesearch {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+    }
+
+    body.buscadoractive .opensearch {
+        top: initial;
+        display: block;
+        position: absolute;
+        bottom: -88px;
+        left: 0px;
+        width: 50px;
+        height: 50px;
     }
 
     .column-footer {
@@ -1153,10 +1213,14 @@ button.enviar {
     }
 }
 
+@media only screen and (max-width: 420px) {
+    .column-footer {
+        width: 100% !important;
+        max-width: initial;
+    }
+}
+
 .cdk-overlay-container {
     position: fixed;
     z-index: 1005 !important;
 }
-
-/* html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

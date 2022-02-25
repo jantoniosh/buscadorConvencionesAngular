@@ -17,11 +17,10 @@
                 <div class="links">
                     <ul>
                         <li>
-                            <a href=""><img [src]=verSrc [alt]=verAlt></a>
+                            <a [href]=archivo target="_blank"><img [src]=verSrc [alt]=verAlt></a>
                         </li>
                         <li>
-                            <a href="assets/files/general.pdf" target="_blank"><img [src]=descargarSrc
-                                    [alt]=descargarAlt></a>
+                            <a [href]=archivo download><img [src]=descargarSrc [alt]=descargarAlt></a>
                         </li>
                         <li>
                             <a href=""><img [src]=compartirSrc [alt]=compartirAlt></a>
@@ -36,4 +35,9 @@
     <p *ngFor="let descripcion of descripciones">
         {{descripcion}}
     </p>
+    <div *ngIf="categoria === 'Podcast'" class="player">
+        <audio controls>
+            <source [src]=archivo type="audio/mpeg">
+        </audio>
+    </div>
 </div>

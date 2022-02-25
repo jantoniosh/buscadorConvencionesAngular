@@ -7,4 +7,5 @@ export interface Seccion {
     noElementos: number;
     boton: boolean;
     entradas: Entrada[];
+    descripcion: string[];
 }

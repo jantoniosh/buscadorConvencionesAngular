@@ -16,8 +16,10 @@ export class EtiquetaComponent implements OnInit {
         color: 'Verde',
         noElementos: 4,
         boton: false,
-        entradas: []
+        entradas: [],
+        descripcion: []
     };
+    
     slug: string = "";
 
     constructor(private entradaService: EntradaService, private route: ActivatedRoute) { }

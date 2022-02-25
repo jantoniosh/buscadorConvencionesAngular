@@ -38,7 +38,7 @@ export class BuscadorComponent implements OnInit {
     fuentes: string[] = [];
     allFuentes: string[] = [];
 
-    buscador: boolean = false;
+    buscador: boolean = true;
 
     constructor(private entradaService: EntradaService, private router: Router) { }
 

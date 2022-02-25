@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import { Seccion } from '../../interfaces/seccion.interface';
 
 @Component({
@@ -18,13 +19,16 @@ export class MostrarMaterialesComponent {
     hayError: boolean = false;
     termino: string = "";
 
+    sonido = faVolumeUp;
+
     @Input() seccion: Seccion = {
         titulo: '',
         detalle: false,
         color: '',
         noElementos: 0,
         boton: false,
-        entradas: []
+        entradas: [],
+        descripcion: []
     }
 
     constructor() { }

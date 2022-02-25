@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import { LinksMenu } from '../../interfaces/links-menu';
 
 @Component({
@@ -9,6 +9,7 @@ import { LinksMenu } from '../../interfaces/links-menu';
 export class BuscarComponent {
     
     menu: boolean = false;
+    sonido = faVolumeUp;
 
     links: LinksMenu[] = [
         {

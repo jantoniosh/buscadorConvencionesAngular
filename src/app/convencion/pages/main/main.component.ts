@@ -21,7 +21,7 @@ export class MainComponent implements OnInit {
     verSrc: string = "assets/images/ver.png";
     verAlt: string = "compartir";
 
-    // etiquetas: Etiquetas[] = [];
+    randomN: number[] = []
 
     etiquetas: string[] = [
         'Aborto',
@@ -48,24 +48,53 @@ export class MainComponent implements OnInit {
         'Violencia'
     ];
 
-    seccion: Seccion = {
-        titulo: 'Sugerencias semanales',
-        detalle: true,
-        color: 'Azul',
-        noElementos: 4,
-        boton: false,
-        entradas: []
-    };
+    secciones: Seccion[] = [
+        {
+            titulo: 'Sugerencias semanales',
+            detalle: true,
+            color: 'Azul',
+            noElementos: 4,
+            boton: false,
+            entradas: [],
+            descripcion: ['En este apartado proponemos contenidos para abundar, desde diferentes ángulos, en el conocimiento de las Convenciones cedaw y Belém do Pará: audios, carteles, infografías.',
+                'Si deseas profundizar en los recursos que derivan de la investigación en torno a la jurisprudencia internacional sensible al género, te invitamos a visitar esta sección y contribuir a la Justicia para las mujeres.'
+            ]
+        },
+        {
+            titulo: 'Infográficos',
+            detalle: true,
+            color: 'Verde',
+            noElementos: 4,
+            boton: true,
+            entradas: [],
+            descripcion: []
+        },
+    ];
 
     constructor(private entradaService: EntradaService) { }
 
     ngOnInit(): void {
+
         const observerEntrada = {
             next: (entradas: Entrada[]) => {
-                this.seccion.entradas = entradas;
+                this.secciones.map(seccion => {
+                    seccion.entradas = [];
+                });
+                this.secciones[0].entradas = [];
+                this.randomN = [];
+                for (let i = 0; i < 4; i++) {
+                    this.secciones[0].entradas.push(entradas[Math.floor(Math.random() * entradas.length)]);
+                }
+                entradas.map(entrada => {
+                    if (entrada.tipo.includes("Infográficos")) {
+                        this.secciones[1].entradas.push(entrada);
+                    }
+                });
             },
             error: (err: Error) => {
-                this.seccion.entradas = [];
+                this.secciones.map(seccion => {
+                    seccion.entradas = []
+                });
             }
         }
         this.entradaService.getEntradas().subscribe(observerEntrada);
@@ -73,5 +102,9 @@ export class MainComponent implements OnInit {
 
     getLigaEtiqueta(etiqueta: string) {
         return `/etiqueta/${etiqueta}`
+    }
+
+    randombetween(min: number, max: number): number {
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 }

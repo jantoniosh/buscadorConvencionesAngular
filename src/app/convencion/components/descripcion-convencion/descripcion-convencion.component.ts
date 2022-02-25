@@ -22,11 +22,12 @@ export class DescripcionConvencionComponent {
   @Input() categoria: string = "";
   @Input() convencion: string = "";
   @Input() detalle: boolean = false;
+  @Input() archivo: string = "";
 
   constructor() { }
 
   getRutaConvencion(convencion: string) {
-    if (convencion == "Belém do Pará") {
+    if (convencion == "BDP") {
       return "/belem-do-para";
     }
     else if (convencion == "CEDAW") {

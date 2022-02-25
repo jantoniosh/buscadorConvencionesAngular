@@ -18,6 +18,7 @@ export class CedawComponent implements OnInit {
         `Su ratificación implica el compromiso de cada país para reconocer todas aquellas expresiones que discriminan a las mujeres y adoptar las medidas necesarias y  urgentes para garantizar la igualdad sustantiva, a través de reformas a marcos jurídicos nacionales, institucionales, de política pública, y decisiones judiciales, que incorporen la perspectiva de género, a fin de acelerar y hacer realidad los cambios sociales y culturales para eliminar los prejuicios y estereotipos con los que se discrimina a las mujeres.`,
         `Su aplicación es supervisada por un Comité integrado por 23 personas independientes y  expertas en derechos de las mujeres de todo el mundo. `
     ];
+    archivo: string = 'assets/files/cedaw/cedaw.pdf';
     convencion: string = "CEDAW";
 
     secciones: Seccion[] = [
@@ -27,7 +28,8 @@ export class CedawComponent implements OnInit {
             color: 'Verde',
             noElementos: 4,
             boton: true,
-            entradas: []
+            entradas: [],
+            descripcion: []
         },
         {
             titulo: 'Podcasts',
@@ -35,7 +37,8 @@ export class CedawComponent implements OnInit {
             detalle: false,
             noElementos: 4,
             boton: true,
-            entradas: []
+            entradas: [],
+            descripcion: []
         },
         {
             titulo: 'Infografías',
@@ -43,7 +46,8 @@ export class CedawComponent implements OnInit {
             color: 'Azul',
             noElementos: 4,
             boton: true,
-            entradas: []
+            entradas: [],
+            descripcion: []
         }
     ];
 
@@ -56,7 +60,7 @@ export class CedawComponent implements OnInit {
                     seccion.entradas = []
                 });
                 entradas.map(entrada => {
-                    if (entrada.convencion.includes("BDP")) {
+                    if (entrada.convencion.includes("CEDAW")) {
                         console.log(entrada.tipo, entrada.tipo.includes("Infográficos"));
                         if ("FICHA".indexOf(entrada.tipo) === 0) {
                             this.secciones[0].entradas.push(entrada);
