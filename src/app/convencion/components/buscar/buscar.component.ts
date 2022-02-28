@@ -25,7 +25,7 @@ export class BuscarComponent {
             liga: "/cedaw"
         },
         {
-            texto: "Fichas",
+            texto: "Artículos",
             liga: "/categoria/ficha"
         },
         {
@@ -33,10 +33,12 @@ export class BuscarComponent {
             liga: "/categoria/podcast"
         },
         {
-            texto: "Infografías",
-            liga: "/categoria/infografia"
+            texto: "Infográficos",
+            liga: "/categoria/infograficos"
         }
     ]
+
+    theHtmlString: string = `<em><fa-icon [icon]="sonido"></fa-icon> Casos</em>`;
 
     constructor() { }
 

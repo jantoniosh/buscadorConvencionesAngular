@@ -55,8 +55,8 @@ export class CategoriaComponent implements OnInit {
                     this.seccion.titulo = "Fichas";
                     this.tipo = "FICHA";
                 }
-                else if (this.slug === "infografia") {
-                    this.seccion.titulo = "Infografícos";
+                else if (this.slug === "infograficos") {
+                    this.seccion.titulo = "Infográficos";
                     this.tipo = "Infográficos ";
                 }
                 this.entradaService.getEntradas().subscribe(observerEntrada);

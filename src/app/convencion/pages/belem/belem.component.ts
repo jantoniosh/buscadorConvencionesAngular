@@ -15,7 +15,7 @@ export class BelemComponent implements OnInit {
     imagenUrl: string = "assets/images/portadauno.png";
     imagenAlt: string = "portada uno";
     descripciones: string[] = [
-        `Es la Convención Interamericana para Prevenir, Sancionar y Erradicar la Violencia en Contra de la Mujer, firmada en Belém do Pará, Brasil, el 9 de junio de 1994, en la Asamblea General de la Organización de los Estados Americanos. Entró en vigor el 3 de mayo de 1995 y ha sido ratificada por 32 Estados de la Organización de Estados Americanos (OEA).`,
+        `La Convención Interamericana para Prevenir, Sancionar y Erradicar la Violencia en Contra de la Mujer, firmada en Belém do Pará, Brasil, el 9 de junio de 1994, en la Asamblea General de la Organización de los Estados Americanos y entró en vigor el 3 de mayo de 1995 y ha sido ratificada por 32 Estados de la Organización de Estados Americanos (OEA).`,
         `La Convención de Belém do Pará reconoce que la violencia en contra de las mujeres constituye una violación a los derechos humanos, ya que limita el goce y ejercicio de los derechos y las libertades de las mujeres. Distingue tres tipos de violencia: física, sexual y psicológica que padecen las mujeres, tanto en su vida privada como en la pública, ya sea perpetrada y/o tolerada por el Estado. Condena todas las formas de violencia en contra de las mujeres e insta a cada país a impulsar, sin dilación, los cambios legales y las políticas públicas necesarias para prevenirla, sancionarla y erradicarla.`
     ];
     archivo: string = 'assets/files/bdp/belemdopara.pdf';

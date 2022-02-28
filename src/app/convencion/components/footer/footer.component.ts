@@ -1,18 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html'
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
 
-  logoSrc: string = "";
-  logoAlt: string = "";
   constructor() { }
-
-  ngOnInit(): void {
-    this.logoSrc = "assets/images/logo.png";
-    this.logoAlt = 'logo';
-  }
 
 }

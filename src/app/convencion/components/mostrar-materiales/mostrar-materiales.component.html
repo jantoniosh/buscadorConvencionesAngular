@@ -8,8 +8,8 @@
         </ng-template>
     </h2>
     <div *ngIf="seccion.descripcion">
-        <p *ngFor="let texto of seccion.descripcion" class="descripcion">
-            {{texto}}
+        <p *ngFor="let texto of seccion.descripcion" class="descripcion" [innerHTML]="texto">
+            <!-- {{texto}} -->
         </p>
     </div>
     <div class="block-covers">

@@ -50,14 +50,14 @@ export class MainComponent implements OnInit {
 
     secciones: Seccion[] = [
         {
-            titulo: 'Sugerencias semanales',
+            titulo: 'Conoce más',
             detalle: true,
             color: 'Azul',
             noElementos: 4,
             boton: false,
             entradas: [],
-            descripcion: ['En este apartado proponemos contenidos para abundar, desde diferentes ángulos, en el conocimiento de las Convenciones cedaw y Belém do Pará: audios, carteles, infografías.',
-                'Si deseas profundizar en los recursos que derivan de la investigación en torno a la jurisprudencia internacional sensible al género, te invitamos a visitar esta sección y contribuir a la Justicia para las mujeres.'
+            descripcion: ['En este apartado proponemos contenidos para abundar, desde diferentes ángulos, en el conocimiento de las Convenciones CEDAW y Belém do Pará: audios, carteles, infografías.',
+                'Si deseas profundizar en los recursos que derivan de la investigación en torno a la jurisprudencia internacional sensible al género, te invitamos a visitar esta sección y contribuir a la <em>Justicia para las mujeres</em>.'
             ]
         },
         {
