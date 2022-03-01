@@ -26,7 +26,7 @@ export class BuscarComponent {
         },
         {
             texto: "Artículos",
-            liga: "/categoria/ficha"
+            liga: "/categoria/articulo"
         },
         {
             texto: "Podcasts",
@@ -34,7 +34,7 @@ export class BuscarComponent {
         },
         {
             texto: "Infográficos",
-            liga: "/categoria/infograficos"
+            liga: "/categoria/infografico"
         }
     ]
 

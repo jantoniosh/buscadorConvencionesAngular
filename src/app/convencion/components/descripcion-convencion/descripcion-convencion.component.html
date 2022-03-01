@@ -23,7 +23,9 @@
                             <a [href]=archivo download><img [src]=descargarSrc [alt]=descargarAlt></a>
                         </li>
                         <li>
-                            <a href=""><img [src]=compartirSrc [alt]=compartirAlt></a>
+                            <a [routerLink]="['/redessociales']"
+                            [state]="{ state: { ruta: archivo } }"><img [src]=compartirSrc
+                                [alt]=compartirAlt></a>
                         </li>
                     </ul>
                 </div>

@@ -23,7 +23,7 @@ export class BelemComponent implements OnInit {
 
     secciones: Seccion[] = [
         {
-            titulo: 'Fichas',
+            titulo: 'Artículos',
             detalle: false,
             color: 'Verde',
             noElementos: 4,
@@ -61,14 +61,13 @@ export class BelemComponent implements OnInit {
                 });
                 entradas.map(entrada => {
                     if (entrada.convencion.includes("BDP")) {
-                        console.log(entrada.tipo, entrada.tipo.includes("Infográficos"));
-                        if ("FICHA".indexOf(entrada.tipo) === 0) {
+                        if ("Artículo".indexOf(entrada.tipo) === 0) {
                             this.secciones[0].entradas.push(entrada);
                         }
                         else if ("Podcast".indexOf(entrada.tipo) === 0) {
                             this.secciones[1].entradas.push(entrada);
                         }
-                        else if (entrada.tipo.includes("Infográficos")) {
+                        else if (entrada.tipo.includes("Infográfico")) {
                             this.secciones[2].entradas.push(entrada);
                         }
                     }

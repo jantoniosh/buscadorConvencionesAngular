@@ -1,6 +1,8 @@
 /*
 Theme Name: Convenciones comentadas para juzgar con perspectiva de género
 */
+/* @import '~ngx-sharebuttons/themes/default'; */
+
 html,
 body,
 div,
@@ -218,6 +220,40 @@ em {
     font-variant: small-caps;
 }
 
+span.resaltado {
+    font-weight: bold;
+}
+
+.botonesRedes {
+    width: 60%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.redondo {
+    /* display: block; */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border-width: 0px;
+    padding: 0px;
+    font-size: 32px;
+    color: white;
+}
+
+.sb-twitter {
+    background-color: #00acee;
+}
+
+.sb-facebook {
+    background-color: #3b5998;
+}
+
+.sb-linkedin {
+    background-color: #0072b1;
+}
+
 .screen-reader-text {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
@@ -333,7 +369,7 @@ a:hover {
     filter: grayscale(50%);
 }
 
-a.logo_header:hover{
+a.logo_header:hover {
     opacity: 1;
 }
 
@@ -341,6 +377,11 @@ h1 {
     font-family: "Akzidenz-Grotesk BQ";
     font-size: 2.5em;
     font-weight: 600;
+}
+
+a.headertitle {
+    color: white;
+    padding: 0px 28px;
 }
 
 h2 {

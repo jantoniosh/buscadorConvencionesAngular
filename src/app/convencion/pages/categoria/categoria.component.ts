@@ -50,14 +50,18 @@ export class CategoriaComponent implements OnInit {
                 if (this.slug === "podcast") {
                     this.seccion.titulo = "Podcasts";
                     this.tipo = "Podcast";
+                    this.seccion.descripcion = ['Versus, es una serie de podcasts que hablan sobre <span class="resaltado">casos emblemáticos de justicia para las mujeres</span>, en voz de mujeres expertas y empáticas, que nos ayudan a conocer mejor la jurisprudencia internacional, y que al ampliar la dimensión humana de las convenciones nos permiten profundizar en la perspectiva de género.'];
                 }
-                else if (this.slug === "ficha") {
-                    this.seccion.titulo = "Fichas";
-                    this.tipo = "FICHA";
+                else if (this.slug === "articulo") {
+                    this.seccion.titulo = "Artículos";
+                    this.tipo = "Artículo";
+                    this.seccion.descripcion = ['Cada uno de los artículos de las convenciones <span class="versalitas">cedaw</span> y <span class="versalitas">bdp</span> han sido ampliados y comentados bajo la metodología del desempaque de derechos, lo que nos permite no sólo analizar con profundidad el texto de cada Convención, sino <span class="resaltado">acercarnos a mayor detalle a la jurisprudencia, a los instrumentos y a las fuentes</span> que tocan estos temas, así como acceder a citas que nos da recursos y elementos para sustentar nuestros propios casos.'];
                 }
-                else if (this.slug === "infograficos") {
+                else if (this.slug === "infografico") {
                     this.seccion.titulo = "Infográficos";
-                    this.tipo = "Infográficos ";
+                    this.tipo = "Infográfico";
+
+                    this.seccion.descripcion = ['Los elementos y temas esenciales de derecho que cada una de las Convenciones sobre Justicia para las mujeres, puestos en forma sucinta para su <span class="resaltado">apropiación y difusión</span>. Esta serie de infografías nos permite acceder de manera pedagógica al contenido más relevante de <span class="versalitas">cedaw</span> y <span class="versalitas">bdp</span>.'];
                 }
                 this.entradaService.getEntradas().subscribe(observerEntrada);
             }

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://convencionesapi.mensajito.mx'
+  apiUrl: 'http://convencionesapi.mensajito.mx',
+  urlContenido: 'http://convenciones.mensajito.mx'
 };
 
 /*

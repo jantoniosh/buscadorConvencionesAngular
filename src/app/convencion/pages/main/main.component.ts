@@ -86,7 +86,7 @@ export class MainComponent implements OnInit {
                     this.secciones[0].entradas.push(entradas[Math.floor(Math.random() * entradas.length)]);
                 }
                 entradas.map(entrada => {
-                    if (entrada.tipo.includes("Infográficos")) {
+                    if (entrada.tipo.includes("Infográfico")) {
                         this.secciones[1].entradas.push(entrada);
                     }
                 });

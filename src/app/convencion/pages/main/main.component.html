@@ -1,7 +1,7 @@
 <div class="block-top-content home">
     <div class="text-content-top">
         <h1 class="title" style="color: #ff5f3f;">Justicia para las mujeres</h1>
-        <h1 class="title">Convenciones comentadas<br />Jurisprudencia internacional sensible al género</h1>
+        <h2 class="subtitle">Jurisprudencia internacional sensible al género</h2>
         <!-- <h2 class="subtitle">Belém do Pará</h2>
         <h2 class="subtitle">CEDAW</h2> -->
     </div>
@@ -21,7 +21,9 @@
                                 [alt]=descargarAlt></a>
                     </li>
                     <li>
-                        <a href=""><img [src]=compartirSrc [alt]=compartirAlt></a>
+                        <a [routerLink]="['/redessociales']"
+                            [state]="{ state: { ruta: 'assets/files/bdp/belemdopara.pdf' } }"><img [src]=compartirSrc
+                                [alt]=compartirAlt></a>
                     </li>
                 </ul>
             </div>
@@ -37,11 +39,12 @@
                         <a href="assets/files/cedaw/cedaw.pdf" target="_blank"><img [src]=verSrc [alt]=verAlt></a>
                     </li>
                     <li>
-                        <a href="assets/files/cedaw/cedaw.pdf" download><img [src]=descargarSrc
-                                [alt]=descargarAlt></a>
+                        <a href="assets/files/cedaw/cedaw.pdf" download><img [src]=descargarSrc [alt]=descargarAlt></a>
                     </li>
                     <li>
-                        <a href=""><img [src]=compartirSrc [alt]=compartirAlt></a>
+                        <a [routerLink]="['/redessociales']"
+                            [state]="{ state: { ruta: 'assets/files/bdp/cedaw.pdf' } }"><img [src]=compartirSrc
+                                [alt]=compartirAlt></a>
                     </li>
                 </ul>
             </div>
@@ -52,16 +55,20 @@
     <p>
         <em>Justicia para las mujeres</em> es una herramienta desarrollada por la Dirección de Derechos Humanos Igualdad
         de Género
-        y Asuntos Internacionales del CJF, cuyo propósito es que el Poder Judicial de la Federación, organizaciones de
+        y Asuntos Internacionales del <span class="versalitas">cjf</span>, cuyo propósito es que el Poder Judicial de la
+        Federación, organizaciones de
         la sociedad civil, personas activistas, litigantes y academia, en su conjunto, se apropien de los contenidos, la
         interpretación y los alcances de la Convención sobre la Eliminación de todas las formas de Discriminación contra
-        la Mujer, CEDAW (1979), y la Convención Interamericana para Prevenir, Sancionar y Erradicar la Violencia contra la
+        la Mujer, <span class="versalitas">cedaw</span> (1979), y la Convención Interamericana para Prevenir, Sancionar
+        y Erradicar la Violencia contra
+        la
         Mujer, Belém do Pará (1994), dos instrumentos internacionales sobre la discriminación y la violencia que viven
         las mujeres.
     </p>
     <p>
         Desde esta perspectiva, se reconoce el carácter endémico de la discriminación y violencia que viven las
-        mujeres que habitan en México, <em>Justicia para las mujeres</em> es un proyecto formativo, narrativo y de divulgación,
+        mujeres que habitan en México, <em>Justicia para las mujeres</em> es un proyecto formativo, narrativo y de
+        divulgación,
         que apunta a una transformación cultural desde el interior de las instancias encargadas de garantizar el acceso
         a la justicia a las mujeres en su diversidad.
     </p>
@@ -80,9 +87,11 @@
         los derechos humanos, particularmente las instancias internacionales que se encargan de la interpretación y
         revisión de la aplicación de las dos convenciones en cuestión, pero también se consideraron órganos surgidos a
         partir de otros tratados internacionales de derechos humanos, que guardan relación con los derechos que se
-        consagran en la CEDAW y en Belém do Pará. Entre los documentos citados encontramos recomendaciones, sentencias y
-        observaciones de la Comisión Interamericana de Derechos Humanos (CIDH), la Corte Interamericana de Derechos
-        Humanos (CoIDH), y el Comité CEDAW.
+        consagran en la <span class="versalitas">cedaw</span> y en Belém do Pará. Entre los documentos citados
+        encontramos recomendaciones, sentencias y
+        observaciones de la Comisión Interamericana de Derechos Humanos (<span class="versalitas">cidh</span>), la Corte
+        Interamericana de Derechos
+        Humanos (<span class="versalitas">coidh</span>), y el Comité <span class="versalitas">cedaw</span>.
     </p>
 </div>
 <app-mostrar-materiales *ngFor="let seccion of secciones;let i=index" [seccion]=seccion>
