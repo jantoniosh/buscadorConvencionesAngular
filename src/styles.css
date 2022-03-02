@@ -640,6 +640,7 @@ ul.first-menu li:hover ul li a {
     font-size: 1em;
     font-weight: 400;
     padding-top: 14%;
+    text-align: justify;
 }
 
 .block-info-page.home {
@@ -655,7 +656,6 @@ ul.first-menu li:hover ul li a {
 
 .block-info-page.home p {
     color: #fff;
-    text-align: justify;
 }
 .block-info-page.home.versalitas {
     font-variant: small-caps;
@@ -1020,6 +1020,7 @@ p.descripcion {
     width: 100%;
     max-width: 1020px;
     margin: 0 auto;
+    text-align: justify;
 }
 
 .block-info-page.etiquetas a {

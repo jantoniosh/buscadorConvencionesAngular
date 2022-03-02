@@ -52,7 +52,7 @@ export class MostrarMaterialesComponent {
     }
 
     getRutaConvencion(convencion: string) {
-        if (convencion == "Belém do Pará") {
+        if (convencion == "BDP") {
             return "/belem-do-para";
         }
         else if (convencion == "CEDAW") {

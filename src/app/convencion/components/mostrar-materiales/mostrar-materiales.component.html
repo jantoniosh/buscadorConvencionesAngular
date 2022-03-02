@@ -45,8 +45,16 @@
             </div>
             <div class="info-cover">
                 <h2><a [routerLink]=entrada.url routerLinkActive="active">{{i+1}} {{entrada.titulo}}</a></h2>
-                <h3 *ngIf="seccion.detalle">Convención: <a [routerLink]="getRutaConvencion(entrada.convencion)"
-                        routerLinkActive="active">{{entrada.convencion}}</a></h3>
+                <h3 *ngIf="seccion.detalle">Convención:
+                    <ng-container *ngIf="entrada.convencion != 'CEDAW, BDP'; else elseTemplate">
+                        <a [routerLink]="getRutaConvencion(entrada.convencion)"
+                            routerLinkActive="active">{{entrada.convencion}}</a>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <a routerLink="/cedaw" routerLinkActive="active">CEDAW</a>, <a routerLink="/belem-do-para"
+                            routerLinkActive="active">BDP</a>
+                    </ng-template>
+                </h3>
                 <h3 *ngIf="seccion.detalle">Tipo: <a [routerLink]="getRutaCategoria(entrada.tipo)"
                         routerLinkActive="active">{{entrada.tipo}}</a></h3>
             </div>
