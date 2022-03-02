@@ -9,15 +9,42 @@
 </div>
 <div id="menu-list-header">
     <ul class="first-menu">
-        <li *ngFor="let link of links" [routerLink]=link.liga routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">
-            <div *ngIf="link.texto != 'Podcasts'; else podcast">
-                {{link.texto}}
-            </div>
-            <ng-template #podcast>
-                <!-- <div [outerHTML]="theHtmlString"></div> -->
+        <li routerLink="/">
+            <a routerLink="/">Inicio</a>
+        </li>
+        <li>
+            <a routerLink="/belem">Belém do Pará</a>
+            <ul>
+                <li *ngFor="let entrada of entradasBelem">
+                    <a [routerLink]=entrada.url>{{entrada.titulo}}</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a routerLink="/cedaw">Cedaw</a>
+            <ul>
+                <li *ngFor="let entrada of entradasCedaw">
+                    <a [routerLink]=entrada.url>{{entrada.titulo}}</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a routerLink="/categoria/podcast">
                 <fa-icon [icon]="sonido"></fa-icon> Casos
-            </ng-template>
+            </a>
+            <ul>
+                <li *ngFor="let entrada of entradasPodcast">
+                    <a [routerLink]=entrada.url>{{entrada.titulo}}</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a routerLink="/categoria/infografico">Fichero</a>
+            <ul>
+                <li *ngFor="let entrada of entradasFichero">
+                    <a [routerLink]=entrada.url>{{entrada.titulo}}</a>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>

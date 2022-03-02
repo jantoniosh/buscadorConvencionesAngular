@@ -21,9 +21,20 @@
                                 [alt]=descargarAlt></a>
                     </li>
                     <li>
-                        <a [routerLink]="['/redessociales']"
-                            [state]="{ state: { ruta: 'assets/files/bdp/belemdopara.pdf' } }"><img [src]=compartirSrc
-                                [alt]=compartirAlt></a>
+                        <a class="sharelinks">
+                            <img [src]=compartirSrc [alt]=compartirAlt>
+                            <div class="botonesRedes">
+                                <button shareButton="facebook" [url]=rutaBDP class="redondo">
+                                    <fa-icon [icon]="faFacebook"></fa-icon>
+                                </button>
+                                <button shareButton="twitter" [url]=rutaBDP class="redondo">
+                                    <fa-icon [icon]="faTwitter"></fa-icon>
+                                </button>
+                                <button shareButton="linkedin" [url]=rutaBDP class="redondo">
+                                    <fa-icon [icon]="faLinkedin"></fa-icon>
+                                </button>
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -42,9 +53,20 @@
                         <a href="assets/files/cedaw/cedaw.pdf" download><img [src]=descargarSrc [alt]=descargarAlt></a>
                     </li>
                     <li>
-                        <a [routerLink]="['/redessociales']"
-                            [state]="{ state: { ruta: 'assets/files/bdp/cedaw.pdf' } }"><img [src]=compartirSrc
-                                [alt]=compartirAlt></a>
+                        <a class="sharelinks">
+                            <img [src]=compartirSrc [alt]=compartirAlt>
+                            <div class="botonesRedes">
+                                <button shareButton="facebook" [url]=rutaCEDAW class="redondo">
+                                    <fa-icon [icon]="faFacebook"></fa-icon>
+                                </button>
+                                <button shareButton="twitter" [url]=rutaCEDAW class="redondo">
+                                    <fa-icon [icon]="faTwitter"></fa-icon>
+                                </button>
+                                <button shareButton="linkedin" [url]=rutaCEDAW class="redondo">
+                                    <fa-icon [icon]="faLinkedin"></fa-icon>
+                                </button>
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </div>

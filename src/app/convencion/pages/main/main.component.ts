@@ -2,13 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { Entrada } from '../../interfaces/entrada.interface';
 import { Seccion } from '../../interfaces/seccion.interface';
 import { EntradaService } from '../../services/convencion.service';
-import { Etiquetas } from '../../interfaces/etiquetas.interface';
+import { environment } from 'src/environments/environment';
+import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
     selector: 'app-main',
     templateUrl: './main.component.html'
 })
 export class MainComponent implements OnInit {
+
+    private url: string = environment.urlContenido;
+    faFacebook = faFacebook;
+    faTwitter = faTwitter;
+    faLinkedin = faLinkedin;
+    rutaCEDAW: string = "";
+    rutaBDP: string = "";
 
     portadaBelemSrc: string = "assets/images/portadauno.png";
     portadaBelemAlt: string = "portada uno";
@@ -74,7 +82,8 @@ export class MainComponent implements OnInit {
     constructor(private entradaService: EntradaService) { }
 
     ngOnInit(): void {
-
+        this.rutaCEDAW = `${this.url}/assets/files/cedaw/cedaw.pdf`;
+        this.rutaBDP = `${this.url}/assets/files/dbp/belemdopara.pdf`;
         const observerEntrada = {
             next: (entradas: Entrada[]) => {
                 this.secciones.map(seccion => {

@@ -224,22 +224,13 @@ span.resaltado {
     font-weight: bold;
 }
 
-.botonesRedes {
-    width: 60%;
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
-}
-
 .redondo {
-    /* display: block; */
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border-width: 0px;
-    padding: 0px;
-    font-size: 32px;
-    color: white;
+    appearance: none;
+    border: none;
+    background-color: transparent !important;
+    color: #fff;
+    font-size: 20px;
+    padding: 6px;
 }
 
 .sb-twitter {
@@ -452,7 +443,7 @@ ul.first-menu li {
     margin-top: 10px;
 }
 
-ul.first-menu li {
+ul.first-menu a {
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -464,9 +455,35 @@ ul.first-menu li {
     cursor: pointer;
 }
 
-ul.first-menu li:hover {
+ul.first-menu a:hover {
     opacity: 0.6;
     filter: grayscale(50%);
+}
+
+ul.first-menu li ul {
+    padding-left: 10px;
+    font-size: .9em;
+    display: none;
+    margin-bottom: 21px;
+}
+
+ul.first-menu li:hover ul {
+    display: block;
+}
+
+ul.first-menu li ul li {
+    text-transform: initial;
+}
+
+ul.first-menu li:hover ul li a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 1;
+    text-transform: initial;
+    width: 80%;
+    font-weight: 500;
 }
 
 .block-top-content {
@@ -769,6 +786,31 @@ a.ver-mas {
     color: #fff;
     font-weight: 600;
     text-transform: uppercase;
+    font-size: 16px;
+}
+
+a.sharelinks {
+    position: relative;
+}
+
+a.sharelinks .botonesRedes {
+    position: absolute;
+    bottom: -36px;
+    background-color: #000;
+    display: flex;
+    border-radius: 20px;
+    padding: 6px;
+    display: none;
+    z-index: 100;
+}
+
+a.sharelinks:hover .botonesRedes {
+    display: flex;
+}
+
+.botonesRedes button:hover {
+    opacity: 0.6;
+    filter: grayscale(50%);
 }
 
 .single-info {
@@ -856,8 +898,8 @@ body.buscadoractive .opensearch {
 
 div#menu-container {
     position: absolute;
-    width: 100%;
-    max-width: 350px;
+    width: 50px;
+    max-width: 100%;
     top: 0px;
     left: 0;
     padding: 20px 14px;
@@ -880,17 +922,18 @@ div#menu-container {
     background-color: #24135f;
     overflow: hidden;
     padding: 70px 0 0 22px;
-    box-sizing: border-box;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    transition: all .2s ease-in-out;
     z-index: 101;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 body.menuactive #menu-list-header {
     left: 0;
+}
+
+body.menuactive #menu-container {
+    width: 350px;
 }
 
 .block-info-page.creditos {
@@ -964,10 +1007,8 @@ h2 {
     padding-top: 120px;
     width: 100%;
     background: url(assets/images/fondotags.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
+    flex-direction: column;
 }
 
 .block-info-page.etiquetas p {
@@ -1065,8 +1106,13 @@ h2 {
     padding-right: 8px;
 }
 
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0.4375em 0;
+    border-top: 0;
+}
+
 button.enviar {
-    height: 66px;
+    height: 55px;
     display: inline-block;
     border: 0;
     background-color: #ff5f3f;
@@ -1088,10 +1134,6 @@ button.enviar {
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-}
-
-.contenedorEtiquetas {
-    /* padding-bottom: 12px; */
 }
 
 .inputTema {
@@ -1119,7 +1161,7 @@ button.enviar {
 }
 
 .verMasBtn a.ver-mas {
-    width: 140px;
+    width: 150px;
     text-align: center;
     cursor: pointer;
 }
@@ -1136,13 +1178,13 @@ button.enviar {
 
 .closesearch {
     width: 60px;
-    height: 66px;
+    height: 55px;
     background-color: #ff5f3f;
 }
 
 .opensearch {
     width: 60px;
-    height: 66px;
+    height: 55px;
     background-color: #ff5f3f;
 }
 
@@ -1200,7 +1242,7 @@ button.enviar {
     }
 
     button.enviar {
-        height: 56px;
+        height: 55px;
         display: inline-block;
         border: 0;
         background-color: #ff5f3f;
@@ -1245,10 +1287,9 @@ button.enviar {
     }
 
     body.buscadoractive .opensearch {
-        top: initial;
         display: block;
-        position: absolute;
-        bottom: -88px;
+        position: fixed;
+        top: 80px;
         left: 0px;
         width: 50px;
         height: 50px;
@@ -1257,12 +1298,34 @@ button.enviar {
     .column-footer {
         margin-bottom: 36px;
     }
+
+    a.headertitle h2 {
+        font-size: 1.4em;
+    }
 }
 
 @media only screen and (max-width: 420px) {
     .column-footer {
         width: 100% !important;
         max-width: initial;
+    }
+
+    .block-info-page.creditos {
+        flex-direction: column;
+    }
+
+    .block-info-page.creditos .column-page {
+        width: 100%;
+    }
+
+    a.headertitle {
+        color: white;
+        padding: 0px 0px 0px 70px;
+        width: 200px;
+    }
+
+    a.headertitle h2 {
+        font-size: 1em;
     }
 }
 

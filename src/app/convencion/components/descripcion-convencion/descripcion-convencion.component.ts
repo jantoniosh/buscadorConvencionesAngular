@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { faFacebook, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-descripcion-convencion',
@@ -6,12 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DescripcionConvencionComponent {
 
+  private url: string = environment.urlContenido;
   descargarSrc: string = "assets/images/descargar.png";
   descargarAlt: string = "descargar";
   compartirSrc: string = "assets/images/compartir.png";
   compartirAlt: string = "compartir";
   verSrc: string = "assets/images/ver.png";
   verAlt: string = "compartir";
+
+  faFacebook = faFacebook;
+  faTwitter = faTwitter;
+  faLinkedin = faLinkedin;
 
   @Input() clase:string = '';
   @Input() titulo: string = "";
@@ -48,4 +55,8 @@ export class DescripcionConvencionComponent {
     }
     return "";
   }
+
+  getRutaRedes(archivo: string) {
+    return `${this.url}/${archivo}`;
+}
 }

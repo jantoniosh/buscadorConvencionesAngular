@@ -9,11 +9,10 @@
     </h2>
     <div *ngIf="seccion.descripcion">
         <p *ngFor="let texto of seccion.descripcion" class="descripcion" [innerHTML]="texto">
-            <!-- {{texto}} -->
         </p>
     </div>
     <div class="block-covers">
-        <div *ngFor="let entrada of seccion.entradas | slice:0:seccion.noElementos" data-aos="fade-up"
+        <div *ngFor="let entrada of seccion.entradas | slice:0:seccion.noElementos; let i = index" data-aos="fade-up"
             data-aos-duration="1000" class="cover">
             <div class="image-cover">
                 <a [routerLink]=entrada.url routerLinkActive="active"><img [src]=entrada.thumbnail></a>
@@ -27,14 +26,25 @@
                         <a [href]=entrada.archivo download><img [src]=descargarSrc></a>
                     </li>
                     <li>
-                        <a [routerLink]="['/redessociales']"
-                            [state]="{ state: { ruta: entrada.archivo } }"><img [src]=compartirSrc
-                                [alt]=compartirAlt></a>
+                        <a class="sharelinks">
+                            <img [src]=compartirSrc [alt]=compartirAlt>
+                            <div class="botonesRedes">
+                                <button shareButton="facebook" [url]="getRutaRedes(entrada.archivo)" class="redondo">
+                                    <fa-icon [icon]="faFacebook"></fa-icon>
+                                </button>
+                                <button shareButton="twitter" [url]="getRutaRedes(entrada.archivo)" class="redondo">
+                                    <fa-icon [icon]="faTwitter"></fa-icon>
+                                </button>
+                                <button shareButton="linkedin" [url]="getRutaRedes(entrada.archivo)" class="redondo">
+                                    <fa-icon [icon]="faLinkedin"></fa-icon>
+                                </button>
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </div>
             <div class="info-cover">
-                <h2><a [routerLink]=entrada.url routerLinkActive="active">{{entrada.titulo}}</a></h2>
+                <h2><a [routerLink]=entrada.url routerLinkActive="active">{{i+1}} {{entrada.titulo}}</a></h2>
                 <h3 *ngIf="seccion.detalle">Convención: <a [routerLink]="getRutaConvencion(entrada.convencion)"
                         routerLinkActive="active">{{entrada.convencion}}</a></h3>
                 <h3 *ngIf="seccion.detalle">Tipo: <a [routerLink]="getRutaCategoria(entrada.tipo)"

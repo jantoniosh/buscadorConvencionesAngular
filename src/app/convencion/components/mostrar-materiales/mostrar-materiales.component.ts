@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { faFacebook, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import { Seccion } from '../../interfaces/seccion.interface';
+import { environment } from '../../../../environments/environment.prod';
 
 @Component({
     selector: 'app-mostrar-materiales',
@@ -8,6 +10,7 @@ import { Seccion } from '../../interfaces/seccion.interface';
 })
 export class MostrarMaterialesComponent {
 
+    private url: string = environment.urlContenido;
     coverImg: string = "assets/images/materialuno.jpg";
     descargarSrc: string = "assets/images/descargar.png";
     descargarAlt: string = "descargar";
@@ -20,6 +23,9 @@ export class MostrarMaterialesComponent {
     termino: string = "";
 
     sonido = faVolumeUp;
+    faFacebook = faFacebook;
+    faTwitter = faTwitter;
+    faLinkedin = faLinkedin;
 
     @Input() seccion: Seccion = {
         titulo: '',
@@ -32,7 +38,6 @@ export class MostrarMaterialesComponent {
     }
 
     constructor() { }
-
     getClassOf() {
         if (this.seccion.color === "Verde") {
             return "block-content multiple materiales home";
@@ -61,13 +66,17 @@ export class MostrarMaterialesComponent {
         if (cat == "podcast") {
             return "/categoria/podcast";
         }
-        else if (cat == "ficha") {
-            return "/categoria/ficha";
+        else if (cat == "artículo") {
+            return "/categoria/articulo";
         }
-        else if (cat == "infografía") {
-            return "/categoria/infografia";
+        else if (cat == "infogr+fico") {
+            return "/categoria/infografico";
         }
         return "";
+    }
+
+    getRutaRedes(archivo: string) {
+        return `${this.url}/${archivo}`;
     }
 
     aumentar() {
