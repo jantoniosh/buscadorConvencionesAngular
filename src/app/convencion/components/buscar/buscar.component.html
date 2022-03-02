@@ -15,16 +15,16 @@
         <li>
             <a routerLink="/belem">Belém do Pará</a>
             <ul>
-                <li *ngFor="let entrada of entradasBelem">
-                    <a [routerLink]=entrada.url>{{entrada.titulo}}</a>
+                <li *ngFor="let entrada of entradasBelem; let i = index">
+                    <a [routerLink]=entrada.url>Artículo {{i+1}}</a>
                 </li>
             </ul>
         </li>
         <li>
             <a routerLink="/cedaw">Cedaw</a>
             <ul>
-                <li *ngFor="let entrada of entradasCedaw">
-                    <a [routerLink]=entrada.url>{{entrada.titulo}}</a>
+                <li *ngFor="let entrada of entradasCedaw; let i = index">
+                    <a [routerLink]=entrada.url>Artículo {{i+1}}</a>
                 </li>
             </ul>
         </li>

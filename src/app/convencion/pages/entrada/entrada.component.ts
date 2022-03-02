@@ -46,7 +46,6 @@ export class EntradaComponent implements OnInit {
                     this.entrada = entrada[0];
                     this.descripcion = [];
                     this.descripcion.push(this.entrada.cita);
-                    console.log(this.entrada.etiquetas);
                     this.etiquetas = this.entrada.etiquetas.split("|").map(etiqueta => {
                         return etiqueta.replace(/\s/g, '').replace('#', '');
                     });

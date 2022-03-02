@@ -44,9 +44,8 @@ export class BuscadorComponent implements OnInit {
 
     ngOnInit(): void {
         this.mostrarBuscador();
-        // Petición titulos
+
         this.peticionTitulos();
-        // Petición de Etiquetas
         const observerEtiquetas = {
             next: (etiquetas: Etiquetas[]) => {
                 this.allEtiquetas = [];
