@@ -28,8 +28,7 @@
                     </mat-option>
                 </mat-autocomplete>
             </mat-form-field>
-            <!-- Busqueda/Filtro por Etiquetas -->
-            <mat-form-field class="inputEtiquetas">
+            <!-- <mat-form-field class="inputEtiquetas">
                 <mat-label>Etiquetas</mat-label>
                 <mat-chip-list #chipEtiqueta aria-label="Selecciona Etiquetas">
                     <input placeholder="Nueva Etiqueta..." #etiquetaInput [formControl]="etiquetaControl"
@@ -43,7 +42,6 @@
                     </mat-option>
                 </mat-autocomplete>
             </mat-form-field>
-            <!-- Busqueda/Filtro por Fuentes (Organismo / Tipo de Disposición) -->
             <mat-form-field class="inputFuentes">
                 <mat-label>Fuentes (Organismo / Tipo de Disposición)</mat-label>
                 <mat-chip-list #chipFuente aria-label="Selecciona Fuentes">
@@ -56,11 +54,11 @@
                         {{fuente}}
                     </mat-option>
                 </mat-autocomplete>
-            </mat-form-field>
+            </mat-form-field> -->
             <button (click)="enviar()" class="enviar">enviar</button>
         </form>
     </div>
-    <div class="contenedorEtiquetas">
+    <!-- <div class="contenedorEtiquetas">
         <mat-chip *ngFor="let etiqueta of etiquetas" (removed)="removeEtiqueta(etiqueta)">
             {{etiqueta}}
             <button matChipRemove>
@@ -73,5 +71,5 @@
                 <mat-icon>cancel</mat-icon>
             </button>
         </mat-chip>
-    </div>
+    </div> -->
 </div>

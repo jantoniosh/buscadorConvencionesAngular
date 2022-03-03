@@ -47,11 +47,11 @@ export class DescripcionConvencionComponent {
     if (categoria == "Podcast") {
       return "/categoria/podcast";
     }
+    else if (categoria == "Artículo") {
+      return "/categoria/articulo";
+    }
     else if (categoria == "Ficha") {
       return "/categoria/ficha";
-    }
-    else if (categoria == "Infografía") {
-      return "/categoria/infografia";
     }
     return "";
   }

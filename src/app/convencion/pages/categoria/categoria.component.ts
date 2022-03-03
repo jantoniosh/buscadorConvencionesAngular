@@ -57,9 +57,9 @@ export class CategoriaComponent implements OnInit {
                     this.tipo = "Artículo";
                     this.seccion.descripcion = ['Cada uno de los artículos de las convenciones <span class="versalitas">cedaw</span> y <span class="versalitas">bdp</span> han sido ampliados y comentados bajo la metodología del desempaque de derechos, lo que nos permite no sólo analizar con profundidad el texto de cada Convención, sino <span class="resaltado">acercarnos a mayor detalle a la jurisprudencia, a los instrumentos y a las fuentes</span> que tocan estos temas, así como acceder a citas que nos da recursos y elementos para sustentar nuestros propios casos.'];
                 }
-                else if (this.slug === "infografico") {
-                    this.seccion.titulo = "Infográficos";
-                    this.tipo = "Infográfico";
+                else if (this.slug === "ficha") {
+                    this.seccion.titulo = "Fichas";
+                    this.tipo = "Ficha";
 
                     this.seccion.descripcion = ['Los elementos y temas esenciales de derecho que cada una de las Convenciones sobre Justicia para las mujeres, puestos en forma sucinta para su <span class="resaltado">apropiación y difusión</span>. Esta serie de infografías nos permite acceder de manera pedagógica al contenido más relevante de <span class="versalitas">cedaw</span> y <span class="versalitas">bdp</span>.'];
                 }

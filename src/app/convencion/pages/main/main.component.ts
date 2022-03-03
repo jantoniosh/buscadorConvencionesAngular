@@ -4,6 +4,7 @@ import { Seccion } from '../../interfaces/seccion.interface';
 import { EntradaService } from '../../services/convencion.service';
 import { environment } from 'src/environments/environment';
 import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Fuentes } from '../../interfaces/fuentes.interface';
 
 @Component({
     selector: 'app-main',
@@ -56,20 +57,22 @@ export class MainComponent implements OnInit {
         'Violencia'
     ];
 
+    fuentes: Fuentes[] = [];
+
     secciones: Seccion[] = [
         {
             titulo: 'Conoce más',
             detalle: true,
             color: 'Azul',
             noElementos: 4,
-            boton: false,
+            boton: true,
             entradas: [],
             descripcion: ['En este apartado proponemos contenidos para abundar, desde diferentes ángulos, en el conocimiento de las Convenciones CEDAW y Belém do Pará: audios, carteles, infografías.',
                 'Si deseas profundizar en los recursos que derivan de la investigación en torno a la jurisprudencia internacional sensible al género, te invitamos a visitar esta sección y contribuir a la <em>Justicia para las mujeres</em>.'
             ]
         },
         {
-            titulo: 'Infográficos',
+            titulo: 'Fichas',
             detalle: true,
             color: 'Verde',
             noElementos: 4,
@@ -90,12 +93,9 @@ export class MainComponent implements OnInit {
                     seccion.entradas = [];
                 });
                 this.secciones[0].entradas = [];
-                this.randomN = [];
-                for (let i = 0; i < 4; i++) {
-                    this.secciones[0].entradas.push(entradas[Math.floor(Math.random() * entradas.length)]);
-                }
+                this.secciones[0].entradas = this.fisherYatesShuffle(entradas);
                 entradas.map(entrada => {
-                    if (entrada.tipo.includes("Infográfico")) {
+                    if (entrada.tipo.includes("Ficha")) {
                         this.secciones[1].entradas.push(entrada);
                     }
                 });
@@ -107,13 +107,37 @@ export class MainComponent implements OnInit {
             }
         }
         this.entradaService.getEntradas().subscribe(observerEntrada);
+
+        const observerFuentes = {
+            next: (fuentes: Fuentes[]) => {
+                this.fuentes = [];
+                this.fuentes = fuentes;
+            },
+            error: (err: Error) => {
+                this.fuentes = [];
+            }
+        }
+        this.entradaService.getFuentes().subscribe(observerFuentes);
     }
 
-    getLigaEtiqueta(etiqueta: string) {
+    getLigaEtiqueta(etiqueta: string): string {
         return `/etiqueta/${etiqueta}`
+    }
+
+    getLigaFuente(fuente: string): string {
+        return `/fuente/${fuente}`
     }
 
     randombetween(min: number, max: number): number {
         return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    fisherYatesShuffle(arr: Entrada[]): Entrada[] {
+        let arrayAux = arr;
+        for (let i = arrayAux.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [arrayAux[i], arrayAux[j]] = [arrayAux[j], arrayAux[i]];
+        }
+        return arrayAux
     }
 }

@@ -30,7 +30,7 @@
         </li>
         <li>
             <a routerLink="/categoria/podcast">
-                <fa-icon [icon]="sonido"></fa-icon> Casos
+                <img [src]=urlBocina class="iconmenu"> Casos
             </a>
             <ul>
                 <li *ngFor="let entrada of entradasPodcast">
@@ -39,7 +39,9 @@
             </ul>
         </li>
         <li>
-            <a routerLink="/categoria/infografico">Fichero</a>
+            <a routerLink="/categoria/ficha">
+                <img [src]=urlFicha class="iconmenu"> Fichero
+            </a>
             <ul>
                 <li *ngFor="let entrada of entradasFichero">
                     <a [routerLink]=entrada.url>{{entrada.titulo}}</a>

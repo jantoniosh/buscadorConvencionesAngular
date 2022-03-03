@@ -15,7 +15,7 @@ export class EtiquetaComponent implements OnInit {
         detalle: true,
         color: 'Verde',
         noElementos: 4,
-        boton: false,
+        boton: true,
         entradas: [],
         descripcion: []
     };

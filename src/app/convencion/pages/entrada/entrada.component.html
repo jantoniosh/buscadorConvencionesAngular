@@ -3,14 +3,18 @@
     [categoria]=entrada.tipo [archivo]=entrada.archivo>
 </app-descripcion-convencion>
 <div class="block-info-page etiquetas">
-    <p>
-        Para la búsqueda y la sistematización de los contenidos de las convenciones, se propusieron etiquetas o hashtags
-        que resaltan el tema tratado por el artículo o apartado, y guían en la búsqueda de estas temáticas o poblaciones
-        afectadas a lo largo del sitio y sus recursos. Por ejemplo #ViolenciaSexual o #MujeresIndígenas.
-    </p>
+    <h3>Etiquetas</h3>
     <div class="etiquetas">
-        <a *ngFor="let etiqueta of etiquetas" [href]='getLigaEtiqueta(etiqueta)'>
+        <a *ngFor="let etiqueta of etiquetas" [routerLink]='getLigaEtiqueta(etiqueta)'>
             <span>#</span>{{etiqueta}}
         </a>
     </div>
+    <div class="space"></div>
+    <h3>Fuentes</h3>
+    <div class="etiquetas">
+        <a *ngFor="let fuente of fuentes" [routerLink]='getLigaFuente(fuente)'>
+            <span>#</span>{{fuente}}
+        </a>
+    </div>
+    <div class="space"></div>
 </div>

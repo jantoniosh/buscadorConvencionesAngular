@@ -27,7 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { EtiquetaComponent } from './pages/etiqueta/etiqueta.component';
 import { BusquedaComponent } from './pages/busqueda/busqueda.component';
-import { RedesSocialesComponent } from './pages/redes-sociales/redes-sociales.component';;
+import { FuentesComponent } from './pages/fuentes/fuentes.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,7 @@ import { RedesSocialesComponent } from './pages/redes-sociales/redes-sociales.co
     BuscadorComponent,
     EtiquetaComponent,
     BusquedaComponent,
-    RedesSocialesComponent,
+    FuentesComponent
   ],
   imports: [
     CommonModule,

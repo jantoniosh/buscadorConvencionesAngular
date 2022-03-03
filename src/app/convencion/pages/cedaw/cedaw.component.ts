@@ -23,7 +23,7 @@ export class CedawComponent implements OnInit {
 
     secciones: Seccion[] = [
         {
-            titulo: 'Fichas',
+            titulo: 'Artículos',
             detalle: false,
             color: 'Verde',
             noElementos: 4,
@@ -41,7 +41,7 @@ export class CedawComponent implements OnInit {
             descripcion: []
         },
         {
-            titulo: 'Infografías',
+            titulo: 'Fichas',
             detalle: false,
             color: 'Azul',
             noElementos: 4,
@@ -61,13 +61,13 @@ export class CedawComponent implements OnInit {
                 });
                 entradas.map(entrada => {
                     if (entrada.convencion.includes("CEDAW")) {
-                        if ("Artículo".indexOf(entrada.tipo) === 0) {
+                        if ("Artículo".indexOf(entrada.tipo) >= 0) {
                             this.secciones[0].entradas.push(entrada);
                         }
-                        else if ("Podcast".indexOf(entrada.tipo) === 0) {
+                        else if ("Podcast".indexOf(entrada.tipo) >= 0) {
                             this.secciones[1].entradas.push(entrada);
                         }
-                        else if (entrada.tipo.includes("Infográfico")) {
+                        else if ("Ficha".indexOf(entrada.tipo) >= 0) {
                             this.secciones[2].entradas.push(entrada);
                         }
                     }

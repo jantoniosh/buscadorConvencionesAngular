@@ -99,7 +99,8 @@
     <p>Para la búsqueda y la sistematización de los contenidos de las convenciones, se propusieron etiquetas o hashtags
         que resaltan el tema tratado por el artículo o apartado, y guían en la búsqueda de estas temáticas o poblaciones
         afectadas a lo largo del sitio y sus recursos. Por ejemplo #ViolenciaSexual o #MujeresIndígenas.</p>
-    <div class="etiquetas" style="margin: 0 auto;">
+    <h3>Etiquetas</h3>
+    <div class="etiquetas" style="margin: 12px auto;">
         <a *ngFor="let etiqueta of etiquetas" [routerLink]='getLigaEtiqueta(etiqueta)'>
             <span>#</span>{{etiqueta}}
         </a>
@@ -115,6 +116,12 @@
         Interamericana de Derechos
         Humanos (<span class="versalitas">corteidh</span>), y el Comité <span class="versalitas">cedaw</span>.
     </p>
+    <h3>Fuentes</h3>
+    <div class="etiquetas" style="margin: 12px auto;">
+        <a *ngFor="let fuente of fuentes" [routerLink]='getLigaFuente(fuente.fuente)'>
+            <span>#</span>{{fuente.fuente}}
+        </a>
+    </div>
 </div>
 <app-mostrar-materiales *ngFor="let seccion of secciones;let i=index" [seccion]=seccion>
 </app-mostrar-materiales>

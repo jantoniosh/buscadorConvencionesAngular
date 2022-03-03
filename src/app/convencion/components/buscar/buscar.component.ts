@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
-import { LinksMenu } from '../../interfaces/links-menu';
 import { Entrada } from '../../interfaces/entrada.interface';
 import { EntradaService } from '../../services/convencion.service';
 
@@ -16,6 +15,8 @@ export class BuscarComponent implements OnInit {
     entradasCedaw: Entrada[] = [];
     entradasPodcast: Entrada[] = [];
     entradasFichero: Entrada[] = [];
+    urlBocina: string = "assets/images/bocina.svg";
+    urlFicha: string = "assets/images/ficha.svg";
 
     constructor(private entradaService: EntradaService) { }
 
@@ -38,7 +39,7 @@ export class BuscarComponent implements OnInit {
                     else if ("Podcast".indexOf(entrada.tipo) === 0) {
                         this.entradasPodcast.push(entrada);
                     }
-                    else if ("Infográfico".indexOf(entrada.tipo) === 0) {
+                    else if ("Ficha".indexOf(entrada.tipo) === 0) {
                         this.entradasFichero.push(entrada);
                     }
                 });

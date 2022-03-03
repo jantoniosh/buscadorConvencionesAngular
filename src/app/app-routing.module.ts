@@ -8,7 +8,7 @@ import { MainComponent } from './convencion/pages/main/main.component';
 import { CreditosComponent } from './convencion/pages/creditos/creditos.component';
 import { EtiquetaComponent } from './convencion/pages/etiqueta/etiqueta.component';
 import { BusquedaComponent } from './convencion/pages/busqueda/busqueda.component';
-import { RedesSocialesComponent } from './convencion/pages/redes-sociales/redes-sociales.component';
+import { FuentesComponent } from './convencion/pages/fuentes/fuentes.component';
 
 const routes: Routes = [
     {
@@ -37,7 +37,7 @@ const routes: Routes = [
         component: EntradaComponent
     },
     {
-        path: 'infografico/:slug',
+        path: 'ficha/:slug',
         component: EntradaComponent
     },
     {
@@ -53,8 +53,8 @@ const routes: Routes = [
         component: EtiquetaComponent
     },
     {
-        path: 'redessociales',
-        component: RedesSocialesComponent
+        path: 'fuente/:slug',
+        component: FuentesComponent
     }
 ];
 

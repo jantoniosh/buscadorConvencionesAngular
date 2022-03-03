@@ -35,6 +35,7 @@ export class EntradaComponent implements OnInit {
     };
 
     etiquetas: string[] = [];
+    fuentes: string[] = [];
 
     constructor(private entradaService: EntradaService, private router: Router, private route: ActivatedRoute) { }
 
@@ -45,10 +46,22 @@ export class EntradaComponent implements OnInit {
                 next: (entrada: Entrada[]) => {
                     this.entrada = entrada[0];
                     this.descripcion = [];
+                    this.etiquetas = [];
+                    this.fuentes = [];
                     this.descripcion.push(this.entrada.cita);
                     this.etiquetas = this.entrada.etiquetas.split("|").map(etiqueta => {
                         return etiqueta.replace(/\s/g, '').replace('#', '');
                     });
+                    this.etiquetas = this.etiquetas.filter(Boolean);
+                    
+                    this.entrada.organismos.split(",").map(organismo => {
+                        this.fuentes.push(organismo.replace(/\s/g, ''));
+                    });
+                    this.entrada.tipoDisposicion.split(",").map(disposicion => {
+                        this.fuentes.push(disposicion.replace(/\s/g, ''));
+                    });
+                    this.fuentes = this.fuentes.filter(Boolean);
+                    
                 },
                 error: (err: Error) => {
                     this.entrada = {
@@ -80,4 +93,9 @@ export class EntradaComponent implements OnInit {
     getLigaEtiqueta(etiqueta: string) {
         return `/etiqueta/${etiqueta}`
     }
+
+    getLigaFuente(fuente: string): string {
+        return `/fuente/${fuente}`
+    }
+
 }

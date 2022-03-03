@@ -69,8 +69,8 @@ export class MostrarMaterialesComponent {
         else if (cat == "artículo") {
             return "/categoria/articulo";
         }
-        else if (cat == "infogr+fico") {
-            return "/categoria/infografico";
+        else if (cat == "ficha") {
+            return "/categoria/ficha";
         }
         return "";
     }

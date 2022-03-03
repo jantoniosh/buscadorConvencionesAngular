@@ -49,6 +49,11 @@ export class EntradaService {
         return this.http.get<Entrada[]>(url);
     }
 
+    getFuente(fuente: string): Observable<Entrada[]> {
+        const url = `${this.apiUrl}/entrada/GetFuente?fuente=${fuente}`;
+        return this.http.get<Entrada[]>(url);
+    }
+
     getEtiquetas(): Observable<Etiquetas[]> {
         const url = `${this.apiUrl}/etiqueta/GetEtiquetas`;
         return this.http.get<Etiquetas[]>(url);

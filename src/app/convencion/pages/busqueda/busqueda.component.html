@@ -1,1 +1,16 @@
 <app-mostrar-materiales [seccion]=seccion></app-mostrar-materiales>
+<div class="block-info-page etiquetas">
+    <h3>Búsquedas Relacionadas</h3>
+    <h3>Etiquetas</h3>
+    <div class="etiquetas" style="margin: 12px auto;">
+        <a *ngFor="let etiqueta of etiquetas" [routerLink]='getLigaEtiqueta(etiqueta)'>
+            <span>#</span>{{etiqueta}}
+        </a>
+    </div>
+    <h3>Fuentes</h3>
+    <div class="etiquetas" style="margin: 12px auto;">
+        <a *ngFor="let fuente of fuentes" [routerLink]='getLigaFuente(fuente)'>
+            <span>#</span>{{fuente}}
+        </a>
+    </div>
+</div>
