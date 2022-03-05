@@ -61,7 +61,7 @@ export class MainComponent implements OnInit {
 
     secciones: Seccion[] = [
         {
-            titulo: 'Conoce más',
+            titulo: 'Recomendaciones de la semana',
             detalle: true,
             color: 'Azul',
             noElementos: 4,

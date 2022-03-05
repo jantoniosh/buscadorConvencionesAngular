@@ -28,6 +28,7 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 import { EtiquetaComponent } from './pages/etiqueta/etiqueta.component';
 import { BusquedaComponent } from './pages/busqueda/busqueda.component';
 import { FuentesComponent } from './pages/fuentes/fuentes.component';
+import { LightboxComponent } from './pages/lightbox/lightbox.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FuentesComponent } from './pages/fuentes/fuentes.component';
     BuscadorComponent,
     EtiquetaComponent,
     BusquedaComponent,
-    FuentesComponent
+    FuentesComponent,
+    LightboxComponent
   ],
   imports: [
     CommonModule,
@@ -62,7 +64,7 @@ import { FuentesComponent } from './pages/fuentes/fuentes.component';
     MatInputModule,
     MatChipsModule,
     MatIconModule,
-    ShareButtonsModule
+    ShareButtonsModule,
   ],
   exports: [
     HomeComponent

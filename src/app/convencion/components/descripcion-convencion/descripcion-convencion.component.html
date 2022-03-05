@@ -3,16 +3,15 @@
         <div class="text-content-top">
             <h1 class="title-convencion">{{titulo}}</h1>
             <h2>{{subtitulo}}</h2>
-            <div *ngIf="detalle" class="single-info">
-                <h3>Convención:
-                    <ng-container *ngIf="convencion != 'CEDAW, BDP'; else elseTemplate">
-                        <a [routerLink]="getRutaConvencion(convencion)" routerLinkActive="active">{{convencion}}</a>
-                    </ng-container>
-                    <ng-template #elseTemplate>
-                        <a routerLink="/cedaw" routerLinkActive="active">CEDAW</a>, <a routerLink="/belem-do-para" routerLinkActive="active">BDP</a> 
-                    </ng-template>
+            <div *ngIf="categoria == 'Podcast'" class="single-info">
+                <h3 *ngFor="let descripcion of descripciones">
+                    {{descripcion}}
                 </h3>
-                <h3>Tipo: <a [routerLink]="getRutaCategoria(categoria)" routerLinkActive="active">{{categoria}}</a></h3>
+                <div *ngIf="categoria === 'Podcast'" class="player">
+                    <audio controls>
+                        <source [src]=archivo type="audio/mpeg">
+                    </audio>
+                </div>
             </div>
         </div>
         <div class="block-covers">
@@ -23,14 +22,15 @@
                 <div class="links">
                     <ul>
                         <li>
-                            <a [href]=archivo target="_blank"><img [src]=verSrc [alt]=verAlt></a>
+                            <a [href]=archivo target="_blank">
+                                <img [src]="getLogoVista()"></a>
                         </li>
                         <li>
-                            <a [href]=archivo download><img [src]=descargarSrc [alt]=descargarAlt></a>
+                            <a [href]=archivo download><img [src]=descargarSrc></a>
                         </li>
                         <li>
                             <a class="sharelinks">
-                                <img [src]=compartirSrc [alt]=compartirAlt>
+                                <img [src]=compartirSrc />
                                 <div class="botonesRedes">
                                     <button shareButton="facebook" [url]="getRutaRedes(archivo)" class="redondo">
                                         <fa-icon [icon]="faFacebook"></fa-icon>
@@ -50,7 +50,7 @@
         </div>
     </div>
 </div>
-<div class="block-info-page">
+<div *ngIf="categoria != 'Podcast'" class="block-info-page">
     <p *ngFor="let descripcion of descripciones">
         {{descripcion}}
     </p>

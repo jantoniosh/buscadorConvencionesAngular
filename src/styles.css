@@ -856,6 +856,7 @@ a.sharelinks:hover .botonesRedes {
 .single-info {
     margin-top: 20px;
     font-size: 0.8em;
+    text-align: justify;
 }
 
 .single-info a {
@@ -1091,6 +1092,12 @@ p.descripcion {
     margin-right: 16px;
     color: #000;
     font-weight: 600;
+}
+
+a.texto-linkeable {
+    text-decoration: underline;
+    font-weight: normal;
+    margin: 0px;
 }
 
 .block-top-content.convencion .content-convencion .cover {

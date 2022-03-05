@@ -1,34 +1,21 @@
-<div [ngClass]="getClassOf()">
-    <h2 class="subtitle">
-        <div *ngIf="seccion.titulo != 'Podcasts'; else podcast">
-            {{seccion.titulo}}
-        </div>
-        <ng-template #podcast>
-            <fa-icon [icon]="sonido"></fa-icon> Casos
-        </ng-template>
-    </h2>
-    <div *ngIf="seccion.descripcion">
-        <p *ngFor="let texto of seccion.descripcion" class="descripcion" [innerHTML]="texto">
-        </p>
-    </div>
+<div class="block-content multiple materiales home">
+    <h2 class="subtitle">Fichas</h2>
     <div class="block-covers">
-        <div *ngFor="let entrada of seccion.entradas | slice:0:seccion.noElementos; let i = index" data-aos="fade-up"
-            data-aos-duration="1000" class="cover">
+        <div *ngFor="let entrada of entradas; let i=index" data-aos="fade-up" data-aos-duration="1000" class="cover">
             <div class="image-cover">
-                <a [routerLink]=entrada.url routerLinkActive="active"><img [src]=entrada.thumbnail></a>
+                <a><img [src]=_album[i].thumb (click)="open(i)"></a>
             </div>
             <div class="links">
                 <ul>
                     <li>
-                        <a [href]=entrada.archivo target="_blank">
-                            <img [src]="getLogoVista(entrada.tipo)"></a>
+                        <a [href]=entrada.archivo target="_blank"><img [src]=verSrc [alt]=verAlt></a>
                     </li>
                     <li>
                         <a [href]=entrada.archivo download><img [src]=descargarSrc></a>
                     </li>
                     <li>
                         <a class="sharelinks">
-                            <img [src]=compartirSrc >
+                            <img [src]=compartirSrc [alt]=compartirAlt>
                             <div class="botonesRedes">
                                 <button shareButton="facebook" [url]="getRutaRedes(entrada.archivo)" class="redondo">
                                     <fa-icon [icon]="faFacebook"></fa-icon>
@@ -46,14 +33,14 @@
             </div>
             <div class="info-cover">
                 <h2><a [routerLink]=entrada.url routerLinkActive="active">
-                    <ng-container *ngIf="entrada.tipo === 'Artículo'; else elseTemplate">
-                        {{entrada.nArticulo}}. {{entrada.titulo}}
-                    </ng-container>
-                    <ng-template #elseTemplate>
-                        {{entrada.titulo}}
-                    </ng-template>
-                </a></h2>
-                <h3 *ngIf="seccion.detalle">Convención:
+                        <ng-container *ngIf="entrada.tipo === 'Artículo'; else elseTemplate">
+                            {{entrada.nArticulo}}. {{entrada.titulo}}
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            {{entrada.titulo}}
+                        </ng-template>
+                    </a></h2>
+                <h3>Convención:
                     <ng-container *ngIf="entrada.convencion != 'CEDAW, BDP'; else elseTemplate">
                         <a [routerLink]="getRutaConvencion(entrada.convencion)"
                             routerLinkActive="active">{{entrada.convencion}}</a>
@@ -63,12 +50,9 @@
                             routerLinkActive="active">BDP</a>
                     </ng-template>
                 </h3>
-                <h3 *ngIf="seccion.detalle">Tipo: <a [routerLink]="getRutaCategoria(entrada.tipo)"
+                <h3>Tipo: <a [routerLink]="getRutaCategoria(entrada.tipo)"
                         routerLinkActive="active">{{entrada.tipo}}</a></h3>
             </div>
-        </div>
-        <div class="verMasBtn" *ngIf="seccion.noElementos < this.seccion.entradas.length">
-            <a class="ver-mas" *ngIf="seccion.boton" (click)="aumentar()">Ver más</a>
         </div>
     </div>
 </div>

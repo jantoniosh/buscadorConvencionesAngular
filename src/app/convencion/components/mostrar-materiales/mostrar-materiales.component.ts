@@ -11,13 +11,10 @@ import { environment } from '../../../../environments/environment.prod';
 export class MostrarMaterialesComponent {
 
     private url: string = environment.urlContenido;
-    coverImg: string = "assets/images/materialuno.jpg";
     descargarSrc: string = "assets/images/descargar.png";
-    descargarAlt: string = "descargar";
     compartirSrc: string = "assets/images/compartir.png";
-    compartirAlt: string = "compartir";
     verSrc: string = "assets/images/ver.png";
-    verAlt: string = "compartir";
+    escucharSrc: string = "assets/images/escuchar.png";
 
     hayError: boolean = false;
     termino: string = "";
@@ -82,4 +79,14 @@ export class MostrarMaterialesComponent {
     aumentar() {
         this.seccion.noElementos += 4;
     }
+
+    getLogoVista(categoria: string) {
+        if (categoria == "Podcast") {
+            return this.escucharSrc;
+        }
+        else {
+            return this.verSrc
+        }
+    }
 }
+

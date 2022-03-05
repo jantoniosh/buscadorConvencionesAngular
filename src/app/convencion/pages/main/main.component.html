@@ -96,27 +96,34 @@
     </p>
 </div>
 <div class="block-info-page etiquetas">
+    <h3>Metodología</h3>
+    <p>Para el análisis y sistematización de los contenidos, se tomaron, como referente y guía, elementos
+        propuestos por algunos Relatores Especiales y Comités de Naciones Unidas en materia de
+        derechos humanos, que en su conjunto han sido llamados como el <a class="texto-linkeable"
+            href="https://relacso.flacso.edu.mx/volumen-02-2013/numero-03/metodologia-desempaque-analisis"
+            target="_blank">“Método de
+            #DesempaqueDeDerechos”</a>.</p>
+    <h3>Etiquetas</h3>
     <p>Para la búsqueda y la sistematización de los contenidos de las convenciones, se propusieron etiquetas o hashtags
         que resaltan el tema tratado por el artículo o apartado, y guían en la búsqueda de estas temáticas o poblaciones
         afectadas a lo largo del sitio y sus recursos. Por ejemplo #ViolenciaSexual o #MujeresIndígenas.</p>
-    <h3>Etiquetas</h3>
+
     <div class="etiquetas" style="margin: 12px auto;">
         <a *ngFor="let etiqueta of etiquetas" [routerLink]='getLigaEtiqueta(etiqueta)'>
             <span>#</span>{{etiqueta}}
         </a>
     </div>
-    <p style="margin-top: 30px;">
-        También se tomaron como fuentes los órganos del sistema universal y del sistema interamericano de protección de
-        los derechos humanos, particularmente las instancias internacionales que se encargan de la interpretación y
-        revisión de la aplicación de las dos convenciones en cuestión, pero también se consideraron órganos surgidos a
-        partir de otros tratados internacionales de derechos humanos, que guardan relación con los derechos que se
-        consagran en la <span class="versalitas">cedaw</span> y en Belém do Pará. Entre los documentos citados
-        encontramos recomendaciones, sentencias y
-        observaciones de la Comisión Interamericana de Derechos Humanos (<span class="versalitas">cidh</span>), la Corte
-        Interamericana de Derechos
-        Humanos (<span class="versalitas">corteidh</span>), y el Comité <span class="versalitas">cedaw</span>.
-    </p>
     <h3>Fuentes</h3>
+    <p style="margin-top: 30px;">Se tomaron como fuentes los órganos del sistema universal y del sistema interamericano
+        de protección de los derechos humanos, particularmente las instancias internacionales que se encargan de la
+        interpretación y revisión de la aplicación de las dos convenciones en cuestión, se consideraron también órganos
+        surgidos a partir de otros tratados internacionales de derechos humanos, que guardan relación con los derechos
+        que se consagran en la <span class="versalitas">cedaw</span> y en <span class="versalitas">belém do pará</span>.
+        Entre los documentos citados encontramos recomendaciones,
+        sentencias y observaciones de la Comisión Interamericana de Derechos Humanos (<span
+            class="versalitas">cidh</span>), la Corte Interamericana de
+        Derechos Humanos (<span class="versalitas">coidh</span>), y el Comité <span class="versalitas">cedaw</span>.
+    </p>
     <div class="etiquetas" style="margin: 12px auto;">
         <a *ngFor="let fuente of fuentes" [routerLink]='getLigaFuente(fuente.fuente)'>
             <span>#</span>{{fuente.fuente}}
