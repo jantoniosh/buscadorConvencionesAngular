@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { faFacebook, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { environment } from 'src/environments/environment';
 
@@ -13,6 +14,7 @@ export class DescripcionConvencionComponent {
     compartirSrc: string = "assets/images/compartir.png";
     verSrc: string = "assets/images/ver.png";
     escucharSrc: string = "assets/images/escuchar.png";
+    ruta:string = '';
 
     faFacebook = faFacebook;
     faTwitter = faTwitter;
@@ -29,7 +31,11 @@ export class DescripcionConvencionComponent {
     @Input() detalle: boolean = false;
     @Input() archivo: string = "";
 
-    constructor() { }
+
+    constructor(private router: Router) {
+        this.ruta = router.url;
+    }
+    
 
     getRutaConvencion(convencion: string) {
         if (convencion == "BDP") {

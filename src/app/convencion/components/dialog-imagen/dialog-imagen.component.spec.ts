@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LightboxComponent } from './lightbox.component';
+import { DialogImagenComponent } from './dialog-imagen.component';
 
-describe('LightboxComponent', () => {
-  let component: LightboxComponent;
-  let fixture: ComponentFixture<LightboxComponent>;
+describe('DialogImagenComponent', () => {
+  let component: DialogImagenComponent;
+  let fixture: ComponentFixture<DialogImagenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LightboxComponent ]
+      declarations: [ DialogImagenComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LightboxComponent);
+    fixture = TestBed.createComponent(DialogImagenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

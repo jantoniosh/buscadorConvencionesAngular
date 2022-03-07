@@ -2,8 +2,6 @@
     <div class="text-content-top">
         <h1 class="title" style="color: #ff5f3f;">Justicia para las mujeres</h1>
         <h2 class="subtitle">Jurisprudencia internacional sensible al género</h2>
-        <!-- <h2 class="subtitle">Belém do Pará</h2>
-        <h2 class="subtitle">CEDAW</h2> -->
     </div>
     <div class="block-covers">
         <div class="cover" data-aos="fade-up" data-aos-duration="1000">
@@ -11,65 +9,16 @@
                 <a routerLink="belem-do-para" routerLinkActive="active"><img [src]=portadaBelemSrc
                         [alt]=portadaBelemAlt></a>
             </div>
-            <div class="links">
-                <ul>
-                    <li>
-                        <a href="assets/files/bdp/belemdopara.pdf" target="_blank"><img [src]=verSrc [alt]=verAlt></a>
-                    </li>
-                    <li>
-                        <a href="assets/files/bdp/belemdopara.pdf" download><img [src]=descargarSrc
-                                [alt]=descargarAlt></a>
-                    </li>
-                    <li>
-                        <a class="sharelinks">
-                            <img [src]=compartirSrc [alt]=compartirAlt>
-                            <div class="botonesRedes">
-                                <button shareButton="facebook" [url]=rutaBDP class="redondo">
-                                    <fa-icon [icon]="faFacebook"></fa-icon>
-                                </button>
-                                <button shareButton="twitter" [url]=rutaBDP class="redondo">
-                                    <fa-icon [icon]="faTwitter"></fa-icon>
-                                </button>
-                                <button shareButton="linkedin" [url]=rutaBDP class="redondo">
-                                    <fa-icon [icon]="faLinkedin"></fa-icon>
-                                </button>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <app-verdescargarcompartir archivo="assets/files/bdp/belemdopara.pdf" ruta="belem-do-para" tipo="Ficha">
+            </app-verdescargarcompartir>
         </div>
 
         <div class="cover" data-aos="fade-up" data-aos-duration="1000">
             <div class="image-cover">
                 <a routerLink="cedaw" routerLinkActive="active"><img [src]=portadaCedawSrc [alt]=portadaCedawAlt></a>
             </div>
-            <div class="links">
-                <ul>
-                    <li>
-                        <a href="assets/files/cedaw/cedaw.pdf" target="_blank"><img [src]=verSrc [alt]=verAlt></a>
-                    </li>
-                    <li>
-                        <a href="assets/files/cedaw/cedaw.pdf" download><img [src]=descargarSrc [alt]=descargarAlt></a>
-                    </li>
-                    <li>
-                        <a class="sharelinks">
-                            <img [src]=compartirSrc [alt]=compartirAlt>
-                            <div class="botonesRedes">
-                                <button shareButton="facebook" [url]=rutaCEDAW class="redondo">
-                                    <fa-icon [icon]="faFacebook"></fa-icon>
-                                </button>
-                                <button shareButton="twitter" [url]=rutaCEDAW class="redondo">
-                                    <fa-icon [icon]="faTwitter"></fa-icon>
-                                </button>
-                                <button shareButton="linkedin" [url]=rutaCEDAW class="redondo">
-                                    <fa-icon [icon]="faLinkedin"></fa-icon>
-                                </button>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <app-verdescargarcompartir archivo="assets/files/cedaw/cedaw.pdf" ruta="belem-do-para" tipo="Ficha">
+            </app-verdescargarcompartir>
         </div>
     </div>
 </div>

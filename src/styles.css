@@ -302,6 +302,12 @@ span.resaltado {
     width: auto;
     z-index: 100000;
 }
+
+.mat-dialog-container {
+    width: 50vw !important;
+    height: 95vh !important;
+}
+
 .skip-link {
     left: -9999rem;
     top: 2.5rem;

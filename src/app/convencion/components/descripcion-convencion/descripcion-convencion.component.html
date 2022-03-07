@@ -19,33 +19,8 @@
                 <div data-aos="fade-up" data-aos-duration="1000" class="image-cover">
                     <img [src]=imagenUrl [alt]=imagenUrl>
                 </div>
-                <div class="links">
-                    <ul>
-                        <li>
-                            <a [href]=archivo target="_blank">
-                                <img [src]="getLogoVista()"></a>
-                        </li>
-                        <li>
-                            <a [href]=archivo download><img [src]=descargarSrc></a>
-                        </li>
-                        <li>
-                            <a class="sharelinks">
-                                <img [src]=compartirSrc />
-                                <div class="botonesRedes">
-                                    <button shareButton="facebook" [url]="getRutaRedes(archivo)" class="redondo">
-                                        <fa-icon [icon]="faFacebook"></fa-icon>
-                                    </button>
-                                    <button shareButton="twitter" [url]="getRutaRedes(archivo)" class="redondo">
-                                        <fa-icon [icon]="faTwitter"></fa-icon>
-                                    </button>
-                                    <button shareButton="linkedin" [url]="getRutaRedes(archivo)" class="redondo">
-                                        <fa-icon [icon]="faLinkedin"></fa-icon>
-                                    </button>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <app-verdescargarcompartir [archivo]="archivo" [ruta]="ruta" [tipo]="categoria">
+                </app-verdescargarcompartir>
             </div>
         </div>
     </div>

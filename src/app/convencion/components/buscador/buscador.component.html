@@ -21,55 +21,14 @@
             <!-- Busqueda por Título, Subtitulo, Subsubtitulo -->
             <mat-form-field class="inputTema">
                 <mat-label>Tema</mat-label>
-                <input type="text" matInput [formControl]="tituloControl" [matAutocomplete]="autoTitulo">
+                <input type="text" matInput [formControl]="tituloControl" [matAutocomplete]="autoTitulo" (keydown)="onKeydown($event)">
                 <mat-autocomplete autoActiveFirstOption #autoTitulo="matAutocomplete">
                     <mat-option *ngFor="let titulo of filTitulos | async" [value]="titulo">
                         {{titulo}}
                     </mat-option>
                 </mat-autocomplete>
             </mat-form-field>
-            <!-- <mat-form-field class="inputEtiquetas">
-                <mat-label>Etiquetas</mat-label>
-                <mat-chip-list #chipEtiqueta aria-label="Selecciona Etiquetas">
-                    <input placeholder="Nueva Etiqueta..." #etiquetaInput [formControl]="etiquetaControl"
-                        [matAutocomplete]="autoEtiqueta" [matChipInputFor]="chipEtiqueta"
-                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                        (matChipInputTokenEnd)="addEtiqueta($event)">
-                </mat-chip-list>
-                <mat-autocomplete #autoEtiqueta="matAutocomplete" (optionSelected)="selectedEtiqueta($event)">
-                    <mat-option *ngFor="let etiqueta of filEtiquetas | async" [value]="etiqueta">
-                        {{etiqueta}}
-                    </mat-option>
-                </mat-autocomplete>
-            </mat-form-field>
-            <mat-form-field class="inputFuentes">
-                <mat-label>Fuentes (Organismo / Tipo de Disposición)</mat-label>
-                <mat-chip-list #chipFuente aria-label="Selecciona Fuentes">
-                    <input placeholder="Nueva Fuente..." #fuenteInput [formControl]="fuenteControl"
-                        [matAutocomplete]="autoFuente" [matChipInputFor]="chipFuente"
-                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addFuente($event)">
-                </mat-chip-list>
-                <mat-autocomplete #autoFuente="matAutocomplete" (optionSelected)="selectedFuente($event)">
-                    <mat-option *ngFor="let fuente of filFuentes | async" [value]="fuente">
-                        {{fuente}}
-                    </mat-option>
-                </mat-autocomplete>
-            </mat-form-field> -->
             <button (click)="enviar()" class="enviar">enviar</button>
         </form>
     </div>
-    <!-- <div class="contenedorEtiquetas">
-        <mat-chip *ngFor="let etiqueta of etiquetas" (removed)="removeEtiqueta(etiqueta)">
-            {{etiqueta}}
-            <button matChipRemove>
-                <mat-icon>cancel</mat-icon>
-            </button>
-        </mat-chip>
-        <mat-chip *ngFor="let fuente of fuentes" (removed)="removeFuente(fuente)">
-            {{fuente}}
-            <button matChipRemove>
-                <mat-icon>cancel</mat-icon>
-            </button>
-        </mat-chip>
-    </div> -->
 </div>

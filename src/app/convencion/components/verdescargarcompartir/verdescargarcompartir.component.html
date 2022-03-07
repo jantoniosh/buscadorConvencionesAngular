@@ -1,0 +1,27 @@
+<div class="links">
+    <ul>
+        <li>
+            <a [href]=archivo target="_blank">
+                <img [src]=verescucharSrc></a>
+        </li>
+        <li>
+            <a [href]=archivo download><img [src]=descargarSrc></a>
+        </li>
+        <li>
+            <a class="sharelinks">
+                <img [src]=compartirSrc>
+                <div class="botonesRedes">
+                    <button shareButton="facebook" [url]=rutaCompartir class="redondo">
+                        <fa-icon [icon]="faFacebook"></fa-icon>
+                    </button>
+                    <button shareButton="twitter" [url]=rutaCompartir class="redondo">
+                        <fa-icon [icon]="faTwitter"></fa-icon>
+                    </button>
+                    <button shareButton="linkedin" [url]=rutaCompartir class="redondo">
+                        <fa-icon [icon]="faLinkedin"></fa-icon>
+                    </button>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -15,44 +15,24 @@
         <div *ngFor="let entrada of seccion.entradas | slice:0:seccion.noElementos; let i = index" data-aos="fade-up"
             data-aos-duration="1000" class="cover">
             <div class="image-cover">
-                <a [routerLink]=entrada.url routerLinkActive="active"><img [src]=entrada.thumbnail></a>
+                <ng-container *ngIf="entrada.tipo != 'Ficha'; else imgTemplate">
+                    <a [routerLink]=entrada.url routerLinkActive="active"><img [src]=entrada.thumbnail></a>
+                </ng-container>
+                <ng-template #imgTemplate>
+                    <a (click)="mostrarDialog(entrada.archivo)"><img [src]=entrada.thumbnail></a>
+                </ng-template>
             </div>
-            <div class="links">
-                <ul>
-                    <li>
-                        <a [href]=entrada.archivo target="_blank">
-                            <img [src]="getLogoVista(entrada.tipo)"></a>
-                    </li>
-                    <li>
-                        <a [href]=entrada.archivo download><img [src]=descargarSrc></a>
-                    </li>
-                    <li>
-                        <a class="sharelinks">
-                            <img [src]=compartirSrc >
-                            <div class="botonesRedes">
-                                <button shareButton="facebook" [url]="getRutaRedes(entrada.archivo)" class="redondo">
-                                    <fa-icon [icon]="faFacebook"></fa-icon>
-                                </button>
-                                <button shareButton="twitter" [url]="getRutaRedes(entrada.archivo)" class="redondo">
-                                    <fa-icon [icon]="faTwitter"></fa-icon>
-                                </button>
-                                <button shareButton="linkedin" [url]="getRutaRedes(entrada.archivo)" class="redondo">
-                                    <fa-icon [icon]="faLinkedin"></fa-icon>
-                                </button>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <app-verdescargarcompartir [archivo]="entrada.archivo" [ruta]="entrada.url" [tipo]="entrada.tipo">
+            </app-verdescargarcompartir>
             <div class="info-cover">
                 <h2><a [routerLink]=entrada.url routerLinkActive="active">
-                    <ng-container *ngIf="entrada.tipo === 'Artículo'; else elseTemplate">
-                        {{entrada.nArticulo}}. {{entrada.titulo}}
-                    </ng-container>
-                    <ng-template #elseTemplate>
-                        {{entrada.titulo}}
-                    </ng-template>
-                </a></h2>
+                        <ng-container *ngIf="entrada.tipo === 'Artículo'; else elseTemplate">
+                            {{entrada.nArticulo}}. {{entrada.titulo}}
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            {{entrada.titulo}}
+                        </ng-template>
+                    </a></h2>
                 <h3 *ngIf="seccion.detalle">Convención:
                     <ng-container *ngIf="entrada.convencion != 'CEDAW, BDP'; else elseTemplate">
                         <a [routerLink]="getRutaConvencion(entrada.convencion)"

@@ -3,6 +3,8 @@ import { faFacebook, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-
 import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import { Seccion } from '../../interfaces/seccion.interface';
 import { environment } from '../../../../environments/environment.prod';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogImagenComponent } from '../dialog-imagen/dialog-imagen.component';
 
 @Component({
     selector: 'app-mostrar-materiales',
@@ -34,7 +36,15 @@ export class MostrarMaterialesComponent {
         descripcion: []
     }
 
-    constructor() { }
+    constructor(public dialog: MatDialog) { }
+
+    mostrarDialog(ruta: string): void {
+        this.dialog
+          .open(DialogImagenComponent, {
+            data: ruta
+          })
+      }
+
     getClassOf() {
         if (this.seccion.color === "Verde") {
             return "block-content multiple materiales home";
@@ -72,8 +82,8 @@ export class MostrarMaterialesComponent {
         return "";
     }
 
-    getRutaRedes(archivo: string) {
-        return `${this.url}/${archivo}`;
+    getRutaRedes(ruta: string) {
+        return `${this.url}/${ruta}`;
     }
 
     aumentar() {

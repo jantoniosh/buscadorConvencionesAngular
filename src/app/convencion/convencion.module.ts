@@ -24,11 +24,13 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { EtiquetaComponent } from './pages/etiqueta/etiqueta.component';
 import { BusquedaComponent } from './pages/busqueda/busqueda.component';
 import { FuentesComponent } from './pages/fuentes/fuentes.component';
-import { LightboxComponent } from './pages/lightbox/lightbox.component';
+import { DialogImagenComponent } from './components/dialog-imagen/dialog-imagen.component';
+import { VerdescargarcompartirComponent } from './components/verdescargarcompartir/verdescargarcompartir.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { LightboxComponent } from './pages/lightbox/lightbox.component';
     EtiquetaComponent,
     BusquedaComponent,
     FuentesComponent,
-    LightboxComponent
+    DialogImagenComponent,
+    VerdescargarcompartirComponent,
   ],
   imports: [
     CommonModule,
@@ -65,6 +68,7 @@ import { LightboxComponent } from './pages/lightbox/lightbox.component';
     MatChipsModule,
     MatIconModule,
     ShareButtonsModule,
+    MatDialogModule
   ],
   exports: [
     HomeComponent

@@ -9,7 +9,6 @@ import { CreditosComponent } from './convencion/pages/creditos/creditos.componen
 import { EtiquetaComponent } from './convencion/pages/etiqueta/etiqueta.component';
 import { BusquedaComponent } from './convencion/pages/busqueda/busqueda.component';
 import { FuentesComponent } from './convencion/pages/fuentes/fuentes.component';
-import { LightboxComponent } from './convencion/pages/lightbox/lightbox.component';
 
 const routes: Routes = [
     {
@@ -56,10 +55,6 @@ const routes: Routes = [
     {
         path: 'fuente/:slug',
         component: FuentesComponent
-    },
-    {
-        path: 'lightbox',
-        component: LightboxComponent
     }
 ];
 
