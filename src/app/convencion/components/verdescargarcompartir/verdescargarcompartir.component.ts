@@ -31,6 +31,9 @@ export class VerdescargarcompartirComponent implements OnInit {
 
     ngOnInit(): void {
         this.rutaCompartir = `${this.url}/${this.ruta}`;
+    }
+
+    ngOnChanges(): void {
         this.tipo === "Podcast" ? this.verescucharSrc = this.escucharSrc : this.verescucharSrc = this.verSrc; 
     }
 

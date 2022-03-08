@@ -3,10 +3,10 @@
         <div class="text-content-top">
             <h1 class="title-convencion">{{titulo}}</h1>
             <h2>{{subtitulo}}</h2>
-            <div *ngIf="categoria == 'Podcast'" class="single-info">
-                <h3 *ngFor="let descripcion of descripciones">
+            <div class="single-info">
+                <p *ngFor="let descripcion of descripciones">
                     {{descripcion}}
-                </h3>
+                </p>
                 <div *ngIf="categoria === 'Podcast'" class="player">
                     <audio controls>
                         <source [src]=archivo type="audio/mpeg">
@@ -17,21 +17,21 @@
         <div class="block-covers">
             <div class="cover" data-aos="fade-up" data-aos-duration="1000">
                 <div data-aos="fade-up" data-aos-duration="1000" class="image-cover">
-                    <img [src]=imagenUrl [alt]=imagenUrl>
+                    <ng-container *ngIf="categoria != 'Ficha'; else imgTemplate">
+                        <ng-container *ngIf="categoria == 'Artículo'; else elseImage">
+                            <img [src]=getFile(imagenUrl)>
+                        </ng-container>
+                        <ng-template #elseImage>
+                            <img [src]=imagenUrl>
+                        </ng-template>
+                    </ng-container>
+                    <ng-template #imgTemplate>
+                        <a (click)="mostrarDialog(imagenUrl)"><img [src]=imagenUrl></a>
+                    </ng-template>
                 </div>
-                <app-verdescargarcompartir [archivo]="archivo" [ruta]="ruta" [tipo]="categoria">
+                <app-verdescargarcompartir [archivo]=archivo [ruta]=ruta [tipo]=categoria>
                 </app-verdescargarcompartir>
             </div>
         </div>
-    </div>
-</div>
-<div *ngIf="categoria != 'Podcast'" class="block-info-page">
-    <p *ngFor="let descripcion of descripciones">
-        {{descripcion}}
-    </p>
-    <div *ngIf="categoria === 'Podcast'" class="player">
-        <audio controls>
-            <source [src]=archivo type="audio/mpeg">
-        </audio>
     </div>
 </div>

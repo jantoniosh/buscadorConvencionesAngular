@@ -1,13 +1,19 @@
 <div [ngClass]="getClassOf()">
     <h2 class="subtitle">
-        <div *ngIf="seccion.titulo != 'Podcasts'; else podcast">
+        <div *ngIf="seccion.titulo == 'Podcasts'">
+            <img [src]=urlBocina class="iconmenu"> Casos
+        </div>
+        <div *ngIf="seccion.titulo == 'Fichas'">
+            <img [src]=urlFicha class="iconmenu"> Fichas
+        </div>
+        <div *ngIf="seccion.titulo != 'Podcasts' && seccion.titulo != 'Fichas'">
             {{seccion.titulo}}
         </div>
         <ng-template #podcast>
-            <fa-icon [icon]="sonido"></fa-icon> Casos
+            <img [src]=urlBocina class="iconmenu"> Casos
         </ng-template>
     </h2>
-    <div *ngIf="seccion.descripcion">
+    <div class="descripcion" *ngIf="seccion.descripcion" style="margin-bottom: 30px">
         <p *ngFor="let texto of seccion.descripcion" class="descripcion" [innerHTML]="texto">
         </p>
     </div>
@@ -16,7 +22,14 @@
             data-aos-duration="1000" class="cover">
             <div class="image-cover">
                 <ng-container *ngIf="entrada.tipo != 'Ficha'; else imgTemplate">
-                    <a [routerLink]=entrada.url routerLinkActive="active"><img [src]=entrada.thumbnail></a>
+                    <a [routerLink]=entrada.url routerLinkActive="active">
+                        <ng-container *ngIf="entrada.tipo == 'Artículo'; else elseThumb">
+                            <img [src]=getThumb(entrada.thumbnail)>
+                        </ng-container>
+                        <ng-template #elseThumb>
+                            <img [src]=entrada.thumbnail>
+                        </ng-template>
+                    </a>
                 </ng-container>
                 <ng-template #imgTemplate>
                     <a (click)="mostrarDialog(entrada.archivo)"><img [src]=entrada.thumbnail></a>

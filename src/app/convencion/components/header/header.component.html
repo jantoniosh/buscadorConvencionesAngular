@@ -1,9 +1,12 @@
 <header id="header" role="banner">
-    <div id="site-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-        <a href="https://www.cjf.gob.mx/" target="_blank" class="logo_header"><img class="logo" [src]=getLogo() /></a>
+    <div class="header_main">
+        <div id="site-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+            <a href="https://www.cjf.gob.mx/" target="_blank" class="logo_header"><img class="logo"
+                    [src]=getLogo() /></a>
+        </div>
+        <a routerLink="/" class="headertitle">
+            <h2>Convenciones Comentadas</h2>
+        </a>
     </div>
-    <a routerLink="/" class="headertitle">
-        <h2>Convenciones Comentadas</h2>
-    </a>
     <app-sidebarmenu></app-sidebarmenu>
 </header>

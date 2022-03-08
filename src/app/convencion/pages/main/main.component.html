@@ -50,20 +50,20 @@
         propuestos por algunos Relatores Especiales y Comités de Naciones Unidas en materia de
         derechos humanos, que en su conjunto han sido llamados como el <a class="texto-linkeable"
             href="https://relacso.flacso.edu.mx/volumen-02-2013/numero-03/metodologia-desempaque-analisis"
-            target="_blank">“Método de
-            #DesempaqueDeDerechos”</a>.</p>
-    <h3>Etiquetas</h3>
+            target="_blank">“método de
+            desempaque de derechos”</a>.</p>
+    <h3 style="margin-top: 16px;">Etiquetas</h3>
     <p>Para la búsqueda y la sistematización de los contenidos de las convenciones, se propusieron etiquetas o hashtags
         que resaltan el tema tratado por el artículo o apartado, y guían en la búsqueda de estas temáticas o poblaciones
         afectadas a lo largo del sitio y sus recursos. Por ejemplo #ViolenciaSexual o #MujeresIndígenas.</p>
 
-    <div class="etiquetas" style="margin: 12px auto;">
+    <div class="contenedor" style="margin: 12px auto;">
         <a *ngFor="let etiqueta of etiquetas" [routerLink]='getLigaEtiqueta(etiqueta)'>
-            <span>#</span>{{etiqueta}}
+            <span class="hashtag">#</span>{{etiqueta}}
         </a>
     </div>
-    <h3>Fuentes</h3>
-    <p style="margin-top: 30px;">Se tomaron como fuentes los órganos del sistema universal y del sistema interamericano
+    <h3 style="margin-top: 16px;">Fuentes</h3>
+    <p style="margin-top: 16px;">Se tomaron como fuentes los órganos del sistema universal y del sistema interamericano
         de protección de los derechos humanos, particularmente las instancias internacionales que se encargan de la
         interpretación y revisión de la aplicación de las dos convenciones en cuestión, se consideraron también órganos
         surgidos a partir de otros tratados internacionales de derechos humanos, que guardan relación con los derechos
@@ -71,12 +71,15 @@
         Entre los documentos citados encontramos recomendaciones,
         sentencias y observaciones de la Comisión Interamericana de Derechos Humanos (<span
             class="versalitas">cidh</span>), la Corte Interamericana de
-        Derechos Humanos (<span class="versalitas">coidh</span>), y el Comité <span class="versalitas">cedaw</span>.
+        Derechos Humanos (<span class="versalitas">corteidh</span>), y el Comité <span class="versalitas">cedaw</span>.
     </p>
-    <div class="etiquetas" style="margin: 12px auto;">
-        <a *ngFor="let fuente of fuentes" [routerLink]='getLigaFuente(fuente.fuente)'>
-            <span>#</span>{{fuente.fuente}}
-        </a>
+    <h4>Fuentes Primarias</h4>
+    <div class="contenedor fuentesblock" style="margin: 12px auto;">
+        <a *ngFor="let fuente of fuentes" [innerHTML]="fuente"></a>
+    </div>
+    <h4>Fuentes Secundarias</h4>
+    <div class="contenedor fuentesblock" style="margin: 12px auto;">
+        <a *ngFor="let fuente of fuentesSecundarias" [innerHTML]="fuente"></a>
     </div>
 </div>
 <app-mostrar-materiales *ngFor="let seccion of secciones;let i=index" [seccion]=seccion>

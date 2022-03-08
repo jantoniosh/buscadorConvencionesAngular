@@ -18,6 +18,9 @@ export class MostrarMaterialesComponent {
     verSrc: string = "assets/images/ver.png";
     escucharSrc: string = "assets/images/escuchar.png";
 
+    urlBocina: string = "assets/images/bocina.svg";
+    urlFicha: string = "assets/images/ficha.svg";
+
     hayError: boolean = false;
     termino: string = "";
 
@@ -40,10 +43,10 @@ export class MostrarMaterialesComponent {
 
     mostrarDialog(ruta: string): void {
         this.dialog
-          .open(DialogImagenComponent, {
-            data: ruta
-          })
-      }
+            .open(DialogImagenComponent, {
+                data: ruta
+            })
+    }
 
     getClassOf() {
         if (this.seccion.color === "Verde") {
@@ -97,6 +100,10 @@ export class MostrarMaterialesComponent {
         else {
             return this.verSrc
         }
+    }
+
+    getThumb(ruta: string) {
+        return ruta.replace('.jpg', 'thumb.jpg');
     }
 }
 

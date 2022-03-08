@@ -3,32 +3,35 @@
         <div class="closesearch">
             <button
                 style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: transparent; border: none; color: #fff; padding: 0px; margin: 0px; font-size: 30px;"
-                (click)="mostrarBuscador()"
-                >
+                (click)="mostrarBuscador()">
                 <fa-icon [icon]="faTimes"></fa-icon>
             </button>
         </div>
         <div class="opensearch">
             <button
                 style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: transparent; border: none; color: #fff; padding: 0px; margin: 0px; font-size: 30px;"
-                (click)="mostrarBuscador()"
-                >
+                (click)="mostrarBuscador()">
                 <fa-icon [icon]="faSearch"></fa-icon>
             </button>
         </div>
-        <h3>Búsqueda</h3>
-        <form>
-            <!-- Busqueda por Título, Subtitulo, Subsubtitulo -->
-            <mat-form-field class="inputTema">
-                <mat-label>Tema</mat-label>
-                <input type="text" matInput [formControl]="tituloControl" [matAutocomplete]="autoTitulo" (keydown)="onKeydown($event)">
-                <mat-autocomplete autoActiveFirstOption #autoTitulo="matAutocomplete">
-                    <mat-option *ngFor="let titulo of filTitulos | async" [value]="titulo">
-                        {{titulo}}
-                    </mat-option>
-                </mat-autocomplete>
-            </mat-form-field>
-            <button (click)="enviar()" class="enviar">enviar</button>
-        </form>
+        <div class="searchblock">
+            <h3>Búsqueda</h3>
+            <form>
+                <!-- Busqueda por Título, Subtitulo, Subsubtitulo -->
+                <mat-form-field class="inputTema">
+                    <mat-label>Tema</mat-label>
+                    <input type="text" matInput [formControl]="tituloControl" [matAutocomplete]="autoTitulo"
+                        (keydown)="onKeydown($event)">
+                    <mat-autocomplete autoActiveFirstOption #autoTitulo="matAutocomplete">
+                        <mat-option *ngFor="let titulo of filTitulos | async" [value]="titulo">
+                            {{titulo}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+                <button (click)="enviar()" class="enviar">
+                    <fa-icon [icon]="faSearch"></fa-icon>
+                </button>
+            </form>
+        </div>
     </div>
 </div>

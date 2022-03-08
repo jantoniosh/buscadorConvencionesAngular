@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { faFacebook, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { environment } from 'src/environments/environment';
+import { DialogImagenComponent } from '../dialog-imagen/dialog-imagen.component';
 
 @Component({
     selector: 'app-descripcion-convencion',
@@ -14,7 +16,7 @@ export class DescripcionConvencionComponent {
     compartirSrc: string = "assets/images/compartir.png";
     verSrc: string = "assets/images/ver.png";
     escucharSrc: string = "assets/images/escuchar.png";
-    ruta:string = '';
+    ruta: string = '';
 
     faFacebook = faFacebook;
     faTwitter = faTwitter;
@@ -32,10 +34,16 @@ export class DescripcionConvencionComponent {
     @Input() archivo: string = "";
 
 
-    constructor(private router: Router) {
+    constructor(private router: Router, public dialog: MatDialog) {
         this.ruta = router.url;
     }
-    
+
+    mostrarDialog(ruta: string): void {
+        this.dialog
+            .open(DialogImagenComponent, {
+                data: ruta
+            })
+    }
 
     getRutaConvencion(convencion: string) {
         if (convencion == "BDP") {
@@ -60,16 +68,20 @@ export class DescripcionConvencionComponent {
         return "";
     }
 
-    getRutaRedes(archivo: string) {
+    getRutaRedes(archivo: string): string {
         return `${this.url}/${archivo}`;
     }
 
-    getLogoVista() {
+    getLogoVista(): string {
         if (this.categoria == "Podcast") {
             return this.escucharSrc;
         }
         else {
             return this.verSrc
         }
+    }
+
+    getFile(ruta: string): string {
+        return ruta.replace('thumb', 'images');
     }
 }

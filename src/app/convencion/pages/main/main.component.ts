@@ -4,7 +4,6 @@ import { Seccion } from '../../interfaces/seccion.interface';
 import { EntradaService } from '../../services/convencion.service';
 import { environment } from 'src/environments/environment';
 import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { Fuentes } from '../../interfaces/fuentes.interface';
 
 @Component({
     selector: 'app-main',
@@ -21,7 +20,7 @@ export class MainComponent implements OnInit {
 
     portadaBelemSrc: string = "assets/images/portadauno.png";
     portadaBelemAlt: string = "portada uno";
-    portadaCedawSrc: string = "assets/images/portadados.png";
+    portadaCedawSrc: string = "assets/images/cedawPortada.jpg";
     portadaCedawAlt: string = "portada dos";
     descargarSrc: string = "assets/images/descargar.png";
     descargarAlt: string = "descargar";
@@ -57,7 +56,25 @@ export class MainComponent implements OnInit {
         'Violencia'
     ];
 
-    fuentes: Fuentes[] = [];
+    fuentes: string[] = [
+        '· Recomendaciones generales emitidas por el Comité <span class="versalitas">cedaw</span>',
+        '· Resoluciones emitidas por la <span class="versalitas">corteidh</span> con fundamento en la Convención de Belém do pará',
+        '· Opiniones Consultivas emitidas por la <span class="versalitas">corteidh</span> vinculadas a la aplicación de la Convención de Belém do pará',
+        '· Sentencias y resoluciones de Fondo de la <span class="versalitas">corteidh</span> vinculadas a la aplicación de la Convención de Belém do pará',
+        '· Recomendaciones emitidas por la <span class="versalitas">cidh</span> a México con base en la aplicación de la Convención de Belém do pará'
+    ];
+
+    fuentesSecundarias: string[] = [
+        '· Observaciones finales sobre los informes periódicos presentados por México ante el Comité <span class="versalitas">cedaw</span> (<span class="versalitas">cocedaw</span>)',
+        '· Decisiones emitidas por el <span class="versalitas">cocedaw</span> en casos individuales, con base en el Protocolo',
+        '· Facultativo de la <span class="versalitas">cedaw</span>y en las recomendacionesemitidas por el Consejo de Derechos Humanos, mediante el Examen Periódico Universal (<span class="versalitas">epu</span>)',
+        '· Informes especiales sobre la situación de los derechos humanos de las mujeres publicados por la <span class="versalitas">cidh</span>',
+        '· Otros informes temáticos publicados por la <span class="versalitas">cidh</span> relacionados con los derechos humanos de las mujeres',
+        '· Observaciones generales de diversos comités de la <span class="versalitas">onu</span> que hayan incluido disposiciones de la <span class="versalitas">cedaw</span>',
+        '· Grupo de trabajo de mujeres y niñas de la <span class="versalitas">onu</span>',
+        '· Comité de expertas del <span class="versalitas">mesecvi</span>'
+    ];
+
 
     secciones: Seccion[] = [
         {
@@ -67,14 +84,23 @@ export class MainComponent implements OnInit {
             noElementos: 4,
             boton: true,
             entradas: [],
-            descripcion: ['En este apartado proponemos contenidos para abundar, desde diferentes ángulos, en el conocimiento de las Convenciones CEDAW y Belém do Pará: audios, carteles, infografías.',
+            descripcion: ['En este apartado proponemos contenidos para abundar, desde diferentes ángulos, en el conocimiento de las Convenciones CEDAW y Belém do pará: audios, carteles, infografías.',
                 'Si deseas profundizar en los recursos que derivan de la investigación en torno a la jurisprudencia internacional sensible al género, te invitamos a visitar esta sección y contribuir a la <em>Justicia para las mujeres</em>.'
             ]
         },
         {
-            titulo: 'Fichas',
+            titulo: 'Fichas Temáticas',
             detalle: true,
             color: 'Verde',
+            noElementos: 4,
+            boton: true,
+            entradas: [],
+            descripcion: []
+        },
+        {
+            titulo: 'Podcasts',
+            detalle: true,
+            color: 'Morado',
             noElementos: 4,
             boton: true,
             entradas: [],
@@ -98,6 +124,9 @@ export class MainComponent implements OnInit {
                     if (entrada.tipo.includes("Ficha")) {
                         this.secciones[1].entradas.push(entrada);
                     }
+                    if (entrada.tipo.includes("Podcast")) {
+                        this.secciones[2].entradas.push(entrada);
+                    }
                 });
             },
             error: (err: Error) => {
@@ -108,16 +137,16 @@ export class MainComponent implements OnInit {
         }
         this.entradaService.getEntradas().subscribe(observerEntrada);
 
-        const observerFuentes = {
-            next: (fuentes: Fuentes[]) => {
-                this.fuentes = [];
-                this.fuentes = fuentes;
-            },
-            error: (err: Error) => {
-                this.fuentes = [];
-            }
-        }
-        this.entradaService.getFuentes().subscribe(observerFuentes);
+        // const observerFuentes = {
+        //     next: (fuentes: Fuentes[]) => {
+        //         this.fuentes = [];
+        //         this.fuentes = fuentes;
+        //     },
+        //     error: (err: Error) => {
+        //         this.fuentes = [];
+        //     }
+        // }
+        // this.entradaService.getFuentes().subscribe(observerFuentes);
     }
 
     getLigaEtiqueta(etiqueta: string): string {

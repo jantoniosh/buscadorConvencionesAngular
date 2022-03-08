@@ -238,10 +238,6 @@ em {
     font-style: italic;
 }
 
-.versalitas {
-    font-variant: small-caps;
-}
-
 span.resaltado {
     font-weight: bold;
 }
@@ -409,6 +405,24 @@ a.logo_header:hover {
     opacity: 1;
 }
 
+a.logo_header {
+    margin-top: 6px;
+    display: block;
+}
+
+.logo {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 150px;
+}
+
+.fuentesblock {
+    margin: 12px auto;
+    display: flex;
+    flex-direction: column;
+    font-weight: normal;
+}
+
 h1 {
     font-family: "Akzidenz-Grotesk BQ";
     font-size: 2.5em;
@@ -436,7 +450,6 @@ header#header {
     background-color: #24135f;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -586,6 +599,7 @@ ul.first-menu li:hover ul li a {
 
 .text-content-top,
 .block-info-page p,
+.block-info-page h3,
 .block-content h2.subtitle {
     width: 100%;
     max-width: 1020px;
@@ -686,7 +700,14 @@ ul.first-menu li:hover ul li a {
     padding: 12% 10% 76px;
     font-size: 1em;
     font-weight: 400;
-    text-align: justify;
+    text-align: left;
+}
+
+.block-info-page h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 100%;
+    max-width: 1020px;
 }
 
 .block-info-page.home {
@@ -702,6 +723,9 @@ ul.first-menu li:hover ul li a {
 
 .block-info-page.home p {
     color: #fff;
+    text-align: justify;
+    -moz-text-align-last: justify;
+    text-align-last: left;
 }
 .block-info-page.home.versalitas {
     font-variant: small-caps;
@@ -750,14 +774,21 @@ ul.first-menu li:hover ul li a {
     top: 0;
     left: 0;
     object-fit: cover;
+    object-position: top center;
+}
+
+input#mat-input-0 {
+    border: 2px solid #a7a7a7;
+    padding: 5px;
+    border-radius: 30px 0 0 30px;
 }
 
 .materiales .info-cover h2 a {
     color: #fff;
-    font-size: .7em;
+    font-size: 0.7em;
     margin-bottom: 20px;
     display: block;
-    text-align: center;
+    text-align: left;
 }
 
 .materiales.home .info-cover h2 a {
@@ -767,7 +798,7 @@ ul.first-menu li:hover ul li a {
 .info-cover h3 {
     font-size: 0.95em;
     margin: 0 0 4px;
-    text-align: center;
+    text-align: left;
     font-weight: 100;
     font-family: "Open Sans", sans-serif;
 }
@@ -863,6 +894,8 @@ a.sharelinks:hover .botonesRedes {
     margin-top: 20px;
     font-size: 0.8em;
     text-align: justify;
+    -moz-text-align-last: justify; /* For Firefox prior 58.0 */
+    text-align-last: left;
 }
 
 .single-info a {
@@ -1067,15 +1100,17 @@ h2 {
 }
 
 .block-info-page.etiquetas p {
-    text-align: left;
-    margin-bottom: 60px;
+    text-align: justify;
+    -moz-text-align-last: justify;
+    text-align-last: left;
+    margin-top: 20px;
 }
 
 p.descripcion {
     width: 100%;
     max-width: 1020px;
     margin: 0 auto;
-    text-align: justify;
+    text-align: left;
 }
 
 .block-info-page.etiquetas a {
@@ -1083,13 +1118,19 @@ p.descripcion {
     font-size: 1.1em;
 }
 
-.block-info-page.etiquetas a span {
+.versalitas {
+    font-feature-settings: "smcp";
+    font-variant: small-caps;
+    font-size: 1.2em;
+}
+
+.hashtag {
     color: #fc5640;
 }
 
 .etiquetas {
     display: inline-flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -1104,6 +1145,10 @@ a.texto-linkeable {
     text-decoration: underline;
     font-weight: normal;
     margin: 0px;
+}
+
+.fuentesblock a {
+    font-weight: normal;
 }
 
 .block-top-content.convencion .content-convencion .cover {
@@ -1127,12 +1172,24 @@ h2 {
 }
 
 .buscador h3 {
-    margin-top: -10px;
     font-size: 1.4em;
 }
 
 .buscadorFormulario {
-    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.buscador form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 0 20px;
+    box-sizing: border-box;
+    align-items: center;
 }
 
 .opensearch {
@@ -1147,6 +1204,7 @@ h2 {
     width: 20%;
     padding-left: 16px;
     text-align: center;
+    margin-left: 15.2%;
 }
 
 .buscadorFormulario form {
@@ -1158,6 +1216,8 @@ h2 {
     flex-wrap: wrap;
     padding: 0 0 0 20px;
     box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
 }
 
 .mat-form-field {
@@ -1169,16 +1229,27 @@ h2 {
     border-top: 0;
 }
 
+label#mat-form-field-label-1 {
+    display: none;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1020px;
+}
+
 button.enviar {
-    height: 55px;
+    height: 32px;
+    width: 30px;
     display: inline-block;
     border: 0;
-    background-color: #ff5f3f;
+    background-color: #000000;
     color: #fff;
-    padding-top: 6px;
+    padding-top: 3px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
+    border-radius: 0 30px 30px 0;
 }
 
 .buscadorFormulario {
@@ -1192,6 +1263,20 @@ button.enviar {
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+}
+
+.mat-form-field-underline.ng-tns-c57-0.ng-star-inserted {
+    display: none;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+
+input#mat-input-0 {
+    border: 2px solid #a7a7a7;
+    padding: 5px 0 5px 5px !important;
+    border-radius: 30px 0 0 30px;
 }
 
 .inputTema {
@@ -1235,21 +1320,40 @@ button.enviar {
 }
 
 .closesearch {
-    width: 60px;
-    height: 55px;
+    width: 50px;
+    height: 45px;
     background-color: #ff5f3f;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .opensearch {
-    width: 60px;
-    height: 55px;
+    width: 50px;
+    height: 45px;
     background-color: #ff5f3f;
+}
+
+.searchblock {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1024px;
+    align-items: center;
 }
 
 .player.ng-star-inserted {
     display: block;
     margin: 30px auto;
     text-align: center;
+}
+
+.header_main {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1024px;
+    align-items: center;
 }
 
 @media only screen and (max-width: 980px) {
@@ -1264,7 +1368,6 @@ button.enviar {
     }
 
     .buscadorFormulario form {
-        flex-direction: column;
         flex-wrap: nowrap;
     }
 
@@ -1285,7 +1388,8 @@ button.enviar {
     }
 
     div#site-title {
-        width: 120px;
+        margin-left: initial;
+        margin-right: initial;
     }
 
     .buscadorFormulario h3 {
@@ -1300,10 +1404,10 @@ button.enviar {
     }
 
     button.enviar {
-        height: 55px;
+        height: 35px;
         display: inline-block;
         border: 0;
-        background-color: #ff5f3f;
+        background-color: #000000;
         color: #fff;
         padding-top: 6px;
         text-transform: uppercase;
@@ -1346,11 +1450,9 @@ button.enviar {
 
     body.buscadoractive .opensearch {
         display: block;
-        position: fixed;
-        top: 80px;
+        position: absolute;
+        top: 64px;
         left: 0px;
-        width: 50px;
-        height: 50px;
     }
 
     .column-footer {
@@ -1377,9 +1479,9 @@ button.enviar {
     }
 
     a.headertitle {
-        color: white;
-        padding: 0px 0px 0px 70px;
-        width: 200px;
+        color: #fff;
+        padding: 0 28px;
+        margin-left: 14%;
     }
 
     a.headertitle h2 {
