@@ -17,7 +17,6 @@
         <div class="searchblock">
             <h3>Búsqueda</h3>
             <form>
-                <!-- Busqueda por Título, Subtitulo, Subsubtitulo -->
                 <mat-form-field class="inputTema">
                     <mat-label>Tema</mat-label>
                     <input type="text" matInput [formControl]="tituloControl" [matAutocomplete]="autoTitulo"
@@ -27,10 +26,21 @@
                             {{titulo}}
                         </mat-option>
                     </mat-autocomplete>
+                    <span class="tooltiptext">
+                        <p>Este buscador predictivo, permite obtener resultados respecto de temas relacionados con los
+                            derechos de las mujeres sistematizados en los diversos recursos del sitio, permite navegar
+                            entre
+                            las etiquetas y fuentes usadas en el análisis que encontrarás en las diversas fichas, a
+                            través
+                            de las cuales ubica los materiales y textos útiles para una argumentación con perspectiva de
+                            género.</p>
+                    </span>
                 </mat-form-field>
-                <button (click)="enviar()" class="enviar">
-                    <fa-icon [icon]="faSearch"></fa-icon>
-                </button>
+                <div class="botonInfo">
+                    <button (click)="enviar()" class="enviar">
+                        <fa-icon [icon]="faSearch"></fa-icon>
+                    </button>
+                </div>
             </form>
         </div>
     </div>

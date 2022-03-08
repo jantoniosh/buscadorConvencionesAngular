@@ -48,7 +48,8 @@
     <h3>Metodología</h3>
     <p>Para el análisis y sistematización de los contenidos, se tomaron, como referente y guía, elementos
         propuestos por algunos Relatores Especiales y Comités de Naciones Unidas en materia de
-        derechos humanos, que en su conjunto han sido llamados como el <a class="texto-linkeable"
+        derechos humanos, que en su conjunto han sido llamados como el <a class="fuenteslista"
+            style="text-decoration: underline;"
             href="https://relacso.flacso.edu.mx/volumen-02-2013/numero-03/metodologia-desempaque-analisis"
             target="_blank">“método de
             desempaque de derechos”</a>.</p>
@@ -75,11 +76,11 @@
     </p>
     <h4>Fuentes Primarias</h4>
     <div class="contenedor fuentesblock" style="margin: 12px auto;">
-        <a *ngFor="let fuente of fuentes" [innerHTML]="fuente"></a>
+        <a class="fuenteslista" *ngFor="let fuente of fuentes" [innerHTML]="fuente"></a>
     </div>
     <h4>Fuentes Secundarias</h4>
     <div class="contenedor fuentesblock" style="margin: 12px auto;">
-        <a *ngFor="let fuente of fuentesSecundarias" [innerHTML]="fuente"></a>
+        <a class="fuenteslista" *ngFor="let fuente of fuentesSecundarias" [innerHTML]="fuente"></a>
     </div>
 </div>
 <app-mostrar-materiales *ngFor="let seccion of secciones;let i=index" [seccion]=seccion>

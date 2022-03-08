@@ -334,7 +334,7 @@ span.resaltado {
 }
 
 @font-face {
-    font-family: "Akzidenz-Grotesk BQ";
+    font-family: "Akzidenz-Grotesk";
     src: url("assets/fonts/AkzidenzGroteskBQ-LightOsF.eot");
     src: url("assets/fonts/AkzidenzGroteskBQ-LightOsF.eot?#iefix") format("embedded-opentype"),
         url("assets/fonts/AkzidenzGroteskBQ-LightOsF.woff2") format("woff2"),
@@ -361,7 +361,7 @@ html {
 }
 
 body {
-    font-family: "Akzidenz-Grotesk", Open Sans, sans-serif;
+    font-family: "Akzidenz-Grotesk", OpenSans, sans-serif;
     line-height: 1.2;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
     text-rendering: optimizeLegibility !important;
@@ -382,6 +382,7 @@ p {
     margin: 0;
     line-height: 1.4;
     margin-bottom: 16px !important;
+    font-size: 18px;
 }
 
 strong {
@@ -800,7 +801,7 @@ input#mat-input-0 {
     margin: 0 0 4px;
     text-align: left;
     font-weight: 100;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Akzidenz-Grotesk";
 }
 
 .info-cover h3 a {
@@ -1141,14 +1142,21 @@ p.descripcion {
     font-weight: 600;
 }
 
+.fuenteslista {
+    font-family: "Akzidenz-Grotesk" !important;
+    font-size: 18px !important;
+    font-weight: normal !important;
+}
+
 a.texto-linkeable {
     text-decoration: underline;
     font-weight: normal;
     margin: 0px;
 }
 
-.fuentesblock a {
-    font-weight: normal;
+.block-info-page.fuentesblock a {
+    font-family: "Akzidenz-Grotesk";
+    font-size: 1.1em;
 }
 
 .block-top-content.convencion .content-convencion .cover {
@@ -1283,6 +1291,10 @@ input#mat-input-0 {
     width: 40%;
 }
 
+.searchblock:hover .tooltiptext {
+    visibility: visible;
+}
+
 .inputEtiquetas {
     width: 20%;
 }
@@ -1354,6 +1366,19 @@ input#mat-input-0 {
     margin: 0 auto;
     max-width: 1024px;
     align-items: center;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 210px;
+    background-color: black;
+    color: #fff;
+    text-align: justify;
+    border-radius: 6px;
+    padding: 10px 10px;
+    position: absolute;
+    top: 60px;
+    z-index: 1000;
 }
 
 @media only screen and (max-width: 980px) {

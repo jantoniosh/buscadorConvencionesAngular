@@ -1,6 +1,7 @@
 <app-mostrar-materiales [seccion]=seccion></app-mostrar-materiales>
 <div class="block-info-page etiquetas">
     <h3>Búsquedas Relacionadas</h3>
+    <div class="space"></div>
     <h3>Etiquetas</h3>
     <div class="contenedor" style="margin: 12px auto;">
         <a *ngFor="let etiqueta of etiquetas" [routerLink]='getLigaEtiqueta(etiqueta)'>
