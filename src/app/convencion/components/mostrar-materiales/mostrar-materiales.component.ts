@@ -42,9 +42,10 @@ export class MostrarMaterialesComponent {
     constructor(public dialog: MatDialog) { }
 
     mostrarDialog(ruta: string): void {
+        let rutaCorregida = ruta.replace('infograficos/', 'infograficos/images/');
         this.dialog
             .open(DialogImagenComponent, {
-                data: ruta
+                data: rutaCorregida
             })
     }
 
@@ -104,6 +105,12 @@ export class MostrarMaterialesComponent {
 
     getThumb(ruta: string) {
         return ruta.replace('.jpg', 'thumb.jpg');
+    }
+
+    getThumbFicha(ruta: string) {
+        let rutaCorregida = ruta.replace('infograficos/', 'infograficos/thumb/');
+        rutaCorregida = rutaCorregida.replace('.jpg', 'thumb.jpg'); 
+        return rutaCorregida;
     }
 }
 

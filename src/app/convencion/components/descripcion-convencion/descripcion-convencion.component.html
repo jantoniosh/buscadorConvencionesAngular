@@ -18,15 +18,10 @@
             <div class="cover" data-aos="fade-up" data-aos-duration="1000">
                 <div data-aos="fade-up" data-aos-duration="1000" class="image-cover">
                     <ng-container *ngIf="categoria != 'Ficha'; else imgTemplate">
-                        <ng-container *ngIf="categoria == 'Artículo'; else elseImage">
-                            <img [src]=getFile(imagenUrl)>
-                        </ng-container>
-                        <ng-template #elseImage>
-                            <img [src]=imagenUrl>
-                        </ng-template>
+                            <img [src]=rutaThumb>
                     </ng-container>
                     <ng-template #imgTemplate>
-                        <a (click)="mostrarDialog(imagenUrl)"><img [src]=imagenUrl></a>
+                        <a (click)="mostrarDialog(imagenUrl)"><img [src]=getThumbFicha(imagenUrl)></a>
                     </ng-template>
                 </div>
                 <app-verdescargarcompartir [archivo]=archivo [ruta]=ruta [tipo]=categoria>

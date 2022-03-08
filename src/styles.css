@@ -705,7 +705,7 @@ ul.first-menu li:hover ul li a {
 }
 
 .block-info-page h4 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 600;
     width: 100%;
     max-width: 1020px;
@@ -837,6 +837,7 @@ footer#footer {
 .column-footer ul li a {
     color: #fff;
     display: block;
+    font-size: 1em;
 }
 
 .column-footer ul li {
@@ -1370,15 +1371,19 @@ input#mat-input-0 {
 
 .tooltiptext {
     visibility: hidden;
-    width: 210px;
+    width: 330px;
     background-color: black;
     color: #fff;
     text-align: justify;
     border-radius: 6px;
-    padding: 10px 10px;
+    padding: 20px 20px;
     position: absolute;
     top: 60px;
     z-index: 1000;
+}
+
+.tooltiptext p {
+    font-size: 15px;
 }
 
 @media only screen and (max-width: 980px) {

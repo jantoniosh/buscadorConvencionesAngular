@@ -17,6 +17,7 @@ export class DescripcionConvencionComponent {
     verSrc: string = "assets/images/ver.png";
     escucharSrc: string = "assets/images/escuchar.png";
     ruta: string = '';
+    rutaThumb: string = '';
 
     faFacebook = faFacebook;
     faTwitter = faTwitter;
@@ -39,9 +40,10 @@ export class DescripcionConvencionComponent {
     }
 
     mostrarDialog(ruta: string): void {
+        let rutaCorregida = ruta.replace('infograficos/', 'infograficos/images/');
         this.dialog
             .open(DialogImagenComponent, {
-                data: ruta
+                data: rutaCorregida
             })
     }
 
@@ -81,7 +83,14 @@ export class DescripcionConvencionComponent {
         }
     }
 
-    getFile(ruta: string): string {
-        return ruta.replace('thumb', 'images');
+    ngOnChanges(): void {
+        this.rutaThumb = this.imagenUrl.replace('.jpg', 'thumb.jpg');
+        console.log(this.rutaThumb);
+    }
+
+    getThumbFicha(ruta: string) {
+        let rutaCorregida = ruta.replace('infograficos/', 'infograficos/thumb/');
+        rutaCorregida = rutaCorregida.replace('.jpg', 'thumb.jpg');
+        return rutaCorregida;
     }
 }

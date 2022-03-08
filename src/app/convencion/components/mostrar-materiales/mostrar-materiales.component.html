@@ -23,16 +23,11 @@
             <div class="image-cover">
                 <ng-container *ngIf="entrada.tipo != 'Ficha'; else imgTemplate">
                     <a [routerLink]=entrada.url routerLinkActive="active">
-                        <ng-container *ngIf="entrada.tipo == 'Artículo'; else elseThumb">
-                            <img [src]=getThumb(entrada.thumbnail)>
-                        </ng-container>
-                        <ng-template #elseThumb>
-                            <img [src]=entrada.thumbnail>
-                        </ng-template>
+                        <img [src]=getThumb(entrada.thumbnail)>
                     </a>
                 </ng-container>
                 <ng-template #imgTemplate>
-                    <a (click)="mostrarDialog(entrada.archivo)"><img [src]=entrada.thumbnail></a>
+                    <a (click)="mostrarDialog(entrada.archivo)"><img [src]=getThumbFicha(entrada.thumbnail)></a>
                 </ng-template>
             </div>
             <app-verdescargarcompartir [archivo]="entrada.archivo" [ruta]="entrada.url" [tipo]="entrada.tipo">
