@@ -12,7 +12,7 @@ export class BelemComponent implements OnInit {
     clase: string = "block-top-content belem convencion";
     titulo: string = "Belém do Pará";
     subtitulo: string = "Convención Interamericana para Prevenir, Sancionar y Erradicar la Violencia contra la Mujer";
-    imagenUrl: string = "assets/images/portadauno.png";
+    imagenUrl: string = "assets/files/bdp/thumb/bdpportada.jpg";
     imagenAlt: string = "portada uno";
     descripciones: string[] = [
         `La Convención Interamericana para Prevenir, Sancionar y Erradicar la Violencia en Contra de la Mujer, firmada en Belém do Pará, Brasil, el 9 de junio de 1994, en la Asamblea General de la Organización de los Estados Americanos y entró en vigor el 3 de mayo de 1995 y ha sido ratificada por 32 Estados de la Organización de Estados Americanos (OEA).`,

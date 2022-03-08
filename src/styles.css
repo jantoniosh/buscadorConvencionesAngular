@@ -500,6 +500,13 @@ ul.first-menu {
 
 ul.first-menu li {
     margin-top: 10px;
+    position: relative;
+}
+
+button.open-submenu {
+    position: absolute;
+    top: -3px;
+    right: 24px;
 }
 
 ul.first-menu a {
@@ -524,7 +531,7 @@ ul.first-menu a:hover {
 ul.first-menu li ul {
     padding-left: 10px;
     font-size: 0.9em;
-    display: none;
+    /* display: none; */
     margin-bottom: 21px;
 }
 
@@ -536,7 +543,7 @@ ul.first-menu li ul li {
     text-transform: initial;
 }
 
-ul.first-menu li:hover ul li a {
+/* ul.first-menu li:hover ul li a {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -545,7 +552,7 @@ ul.first-menu li:hover ul li a {
     text-transform: initial;
     width: 80%;
     font-weight: 500;
-}
+} */
 
 .block-top-content {
     width: 100%;
@@ -701,7 +708,8 @@ ul.first-menu li:hover ul li a {
     padding: 12% 10% 76px;
     font-size: 1em;
     font-weight: 400;
-    text-align: left;
+    text-align: justify;
+    text-align-last: left;
 }
 
 .block-info-page h4 {
@@ -725,7 +733,6 @@ ul.first-menu li:hover ul li a {
 .block-info-page.home p {
     color: #fff;
     text-align: justify;
-    -moz-text-align-last: justify;
     text-align-last: left;
 }
 .block-info-page.home.versalitas {
@@ -779,8 +786,10 @@ ul.first-menu li:hover ul li a {
 }
 
 input#mat-input-0 {
-    border: 2px solid #a7a7a7;
-    padding: 5px;
+    border-width: 2px 0px 2px 2px;
+    border-style: solid;
+    border-color: #a7a7a7;
+    padding: 5px 0 5px 5px !important;
     border-radius: 30px 0 0 30px;
 }
 
@@ -789,7 +798,8 @@ input#mat-input-0 {
     font-size: 0.7em;
     margin-bottom: 20px;
     display: block;
-    text-align: left;
+    text-align: justify;
+    text-align-last: left;
 }
 
 .materiales.home .info-cover h2 a {
@@ -896,7 +906,6 @@ a.sharelinks:hover .botonesRedes {
     margin-top: 20px;
     font-size: 0.8em;
     text-align: justify;
-    -moz-text-align-last: justify; /* For Firefox prior 58.0 */
     text-align-last: left;
 }
 
@@ -974,7 +983,7 @@ body.buscadoractive .buscadorFormulario {
 body.buscadoractive .opensearch {
     display: block;
     position: absolute;
-    top: 70px;
+    top: 64px;
     left: 0px;
 }
 
@@ -1103,7 +1112,6 @@ h2 {
 
 .block-info-page.etiquetas p {
     text-align: justify;
-    -moz-text-align-last: justify;
     text-align-last: left;
     margin-top: 20px;
 }
@@ -1112,7 +1120,8 @@ p.descripcion {
     width: 100%;
     max-width: 1020px;
     margin: 0 auto;
-    text-align: left;
+    text-align: justify;
+    text-align-last: left;
 }
 
 .block-info-page.etiquetas a {
@@ -1184,15 +1193,6 @@ h2 {
     font-size: 1.4em;
 }
 
-.buscadorFormulario {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    flex-direction: row;
-    position: relative;
-    transition: all 0.5s ease-in-out;
-}
-
 .buscador form {
     display: flex;
     flex-wrap: wrap;
@@ -1210,10 +1210,8 @@ h2 {
 }
 
 .buscadorFormulario h3 {
-    width: 20%;
     padding-left: 16px;
     text-align: center;
-    margin-left: 15.2%;
 }
 
 .buscadorFormulario form {
@@ -1252,7 +1250,7 @@ button.enviar {
     width: 30px;
     display: inline-block;
     border: 0;
-    background-color: #000000;
+    background-color: #ff5f3f;
     color: #fff;
     padding-top: 3px;
     text-transform: uppercase;
@@ -1274,22 +1272,16 @@ button.enviar {
     transition: all 0.5s ease-in-out;
 }
 
-.mat-form-field-underline.ng-tns-c57-0.ng-star-inserted {
-    display: none;
+.mat-form-field-underline {
+    display: none !important;
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-wrapper {
     padding-bottom: 0;
 }
 
-input#mat-input-0 {
-    border: 2px solid #a7a7a7;
-    padding: 5px 0 5px 5px !important;
-    border-radius: 30px 0 0 30px;
-}
-
 .inputTema {
-    width: 40%;
+    width: 90%;
 }
 
 .searchblock:hover .tooltiptext {
@@ -1387,22 +1379,9 @@ input#mat-input-0 {
 }
 
 @media only screen and (max-width: 980px) {
-    .buscadorFormulario h3 {
-        width: 100%;
-        margin-top: 0px;
-    }
-
-    .buscadorFormulario {
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-
-    .buscadorFormulario form {
-        flex-wrap: nowrap;
-    }
 
     .inputTema {
-        width: 100%;
+        width: 80%;
     }
 
     .inputEtiquetas {
@@ -1424,25 +1403,11 @@ input#mat-input-0 {
 
     .buscadorFormulario h3 {
         width: 100%;
-        margin-top: 10px;
-        padding-left: 0px;
         font-size: 1em;
     }
 
     body.buscadoractive .buscadorFormulario {
         margin-top: -100%;
-    }
-
-    button.enviar {
-        height: 35px;
-        display: inline-block;
-        border: 0;
-        background-color: #000000;
-        color: #fff;
-        padding-top: 6px;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 2px;
     }
 
     .block-top-content.home .cover {
@@ -1471,18 +1436,11 @@ input#mat-input-0 {
     }
 
     .closesearch {
-        position: absolute;
+        /* position: absolute;
         top: 0;
         left: 0;
         width: 50px;
-        height: 50px;
-    }
-
-    body.buscadoractive .opensearch {
-        display: block;
-        position: absolute;
-        top: 64px;
-        left: 0px;
+        height: 50px; */
     }
 
     .column-footer {
@@ -1491,6 +1449,12 @@ input#mat-input-0 {
 
     a.headertitle h2 {
         font-size: 1.4em;
+    }
+
+    .tooltiptext {
+        left: 0 !important;
+        position: fixed;
+        top: 140px;
     }
 }
 

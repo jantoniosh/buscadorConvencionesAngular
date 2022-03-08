@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
-import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit } from '@angular/core';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { Entrada } from '../../interfaces/entrada.interface';
 import { EntradaService } from '../../services/convencion.service';
 
@@ -10,13 +10,17 @@ import { EntradaService } from '../../services/convencion.service';
 export class BuscarComponent implements OnInit {
 
     menu: boolean = false;
-    sonido = faVolumeUp;
+    angleDown = faAngleDown;
     entradasBelem: Entrada[] = [];
     entradasCedaw: Entrada[] = [];
     entradasPodcast: Entrada[] = [];
     entradasFichero: Entrada[] = [];
     urlBocina: string = "assets/images/bocina.svg";
     urlFicha: string = "assets/images/ficha.svg";
+    belemMenu: boolean = false;
+    cedawMenu: boolean = false;
+    casosMenu: boolean = false;
+    ficheroMenu: boolean = false;
 
     constructor(private entradaService: EntradaService) { }
 
@@ -54,7 +58,7 @@ export class BuscarComponent implements OnInit {
         this.entradaService.getEntradas().subscribe(observerEntrada);
     }
 
-    mostrarMenu() {
+    mostrarMenu(): void {
         this.menu = !this.menu;
         const bodyElement = document.body;
         if (bodyElement) {
@@ -65,5 +69,21 @@ export class BuscarComponent implements OnInit {
                 bodyElement.classList.remove("menuactive");
             }
         }
+    }
+
+    showBelem(): void {
+        this.belemMenu = !this.belemMenu;
+    }
+
+    showCedaw(): void {
+        this.cedawMenu = !this.cedawMenu;
+    }
+
+    showCasos(): void {
+        this.casosMenu = !this.casosMenu;
+    }
+
+    showFichero(): void {
+        this.ficheroMenu = !this.ficheroMenu;
     }
 }

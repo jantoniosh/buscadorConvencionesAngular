@@ -11,7 +11,7 @@ export class CedawComponent implements OnInit {
     clase: string = "block-top-content cedaw convencion";
     titulo: string = "CEDAW";
     subtitulo: string = "Convención Interamericana para Prevenir, Sancionar y Erradicar la Violencia contra la Mujer";
-    imagenUrl: string = "assets/images/cedawPortada.jpg";
+    imagenUrl: string = "assets/files/cedaw/thumb/cedawportada.jpg";
     imagenAlt: string = "portada dos";
     descripciones: string[] = [`La Convención sobre la Eliminación de todas las formas de Discriminación contra la Mujer es la carta internacional por los derechos de las mujeres, adoptada por unanimidad en la Asamblea General de las Naciones Unidas el 18 de diciembre de 1979.`,
         `Entró en vigor en 1981 y ha sido ratificada por 188 países, por lo que se trata del segundo instrumento internacional más ratificado, después de la Convención sobre los Derechos de la Niñez, por los Estados pertenecientes a la Organización de las Naciones Unidas.`,

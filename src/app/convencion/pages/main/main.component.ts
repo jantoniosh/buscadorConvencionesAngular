@@ -18,9 +18,9 @@ export class MainComponent implements OnInit {
     rutaCEDAW: string = "";
     rutaBDP: string = "";
 
-    portadaBelemSrc: string = "assets/images/portadauno.png";
+    portadaBelemSrc: string = "assets/files/bdp/thumb/bdpportadathumb.jpg";
     portadaBelemAlt: string = "portada uno";
-    portadaCedawSrc: string = "assets/images/cedawPortada.jpg";
+    portadaCedawSrc: string = "assets/files/cedaw/thumb/cedawportadathumb.jpg";
     portadaCedawAlt: string = "portada dos";
     descargarSrc: string = "assets/images/descargar.png";
     descargarAlt: string = "descargar";

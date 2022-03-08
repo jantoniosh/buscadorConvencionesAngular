@@ -13,8 +13,11 @@
             <a routerLink="/">Inicio</a>
         </li>
         <li>
-            <a routerLink="/belem">Belém do Pará</a>
-            <ul>
+            <a routerLink="/belem-do-para">Belém do Pará</a>
+            <button class="open-submenu" (click)="showBelem()">
+                <fa-icon [icon]=angleDown></fa-icon>
+            </button>
+            <ul *ngIf="belemMenu">
                 <li *ngFor="let entrada of entradasBelem; let i = index">
                     <a [routerLink]=entrada.url>Artículo {{i+1}}</a>
                 </li>
@@ -22,7 +25,10 @@
         </li>
         <li>
             <a routerLink="/cedaw">Cedaw</a>
-            <ul>
+            <button class="open-submenu" (click)="showCedaw()">
+                <fa-icon [icon]=angleDown></fa-icon>
+            </button>
+            <ul *ngIf="cedawMenu">
                 <li *ngFor="let entrada of entradasCedaw; let i = index">
                     <a [routerLink]=entrada.url>Artículo {{i+1}}</a>
                 </li>
@@ -32,7 +38,10 @@
             <a routerLink="/categoria/podcast">
                 <img [src]=urlBocina class="iconmenu"> Casos
             </a>
-            <ul>
+            <button class="open-submenu" (click)="showCasos()">
+                <fa-icon [icon]=angleDown></fa-icon>
+            </button>
+            <ul *ngIf="casosMenu"> 
                 <li *ngFor="let entrada of entradasPodcast">
                     <a [routerLink]=entrada.url>{{entrada.titulo}}</a>
                 </li>
@@ -42,7 +51,10 @@
             <a routerLink="/categoria/ficha">
                 <img [src]=urlFicha class="iconmenu"> Fichero
             </a>
-            <ul>
+            <button class="open-submenu" (click)="showFichero()">
+                <fa-icon [icon]=angleDown></fa-icon>
+            </button>
+            <ul *ngIf="ficheroMenu">
                 <li *ngFor="let entrada of entradasFichero">
                     <a [routerLink]=entrada.url>{{entrada.titulo}}</a>
                 </li>
