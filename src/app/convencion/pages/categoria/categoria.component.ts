@@ -46,7 +46,7 @@ export class CategoriaComponent implements OnInit {
                 }
             }
             if (this.slug !== null) {
-                this.onActivate();
+                this.hideBarra();
                 if (this.slug === "podcast") {
                     this.seccion.titulo = "Podcasts";
                     this.tipo = "Podcast";
@@ -68,15 +68,15 @@ export class CategoriaComponent implements OnInit {
         });
     }
 
-    hideBarra() {
+    hideBarra(): void {
         window.scroll(0, 0);
         const bodyElement = document.body;
         bodyElement.classList.remove('menuactive');
     }
 
-    onActivate() {
-        window.scroll(0, 0);
-        const bodyElement = document.body;
-        bodyElement.classList.remove('menuactive');
-    }
+    // onActivate() {
+    //     window.scroll(0, 0);
+    //     const bodyElement = document.body;
+    //     bodyElement.classList.remove('menuactive');
+    // }
 }

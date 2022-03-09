@@ -507,6 +507,11 @@ button.open-submenu {
     position: absolute;
     top: -3px;
     right: 24px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    appearance: none;
 }
 
 ul.first-menu a {
@@ -1402,12 +1407,7 @@ button.enviar {
     }
 
     .buscadorFormulario h3 {
-        width: 100%;
         font-size: 1em;
-    }
-
-    body.buscadoractive .buscadorFormulario {
-        margin-top: -100%;
     }
 
     .block-top-content.home .cover {

@@ -42,6 +42,7 @@ export class EntradaComponent implements OnInit {
     ngOnInit(): void {
         this.route.params.subscribe(() => {
             this.ruta = this.router.url;
+            this.hideBarra();
             const observerEntrada = {
                 next: (entrada: Entrada[]) => {
                     this.entrada = entrada[0];
@@ -98,4 +99,9 @@ export class EntradaComponent implements OnInit {
         return `/fuente/${fuente}`
     }
 
+    hideBarra(): void {
+        window.scroll(0, 0);
+        const bodyElement = document.body;
+        bodyElement.classList.remove('menuactive');
+    }
 }

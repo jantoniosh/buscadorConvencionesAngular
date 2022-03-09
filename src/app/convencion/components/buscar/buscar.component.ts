@@ -59,31 +59,41 @@ export class BuscarComponent implements OnInit {
     }
 
     mostrarMenu(): void {
-        this.menu = !this.menu;
         const bodyElement = document.body;
         if (bodyElement) {
-            if (this.menu) {
-                bodyElement.classList.add("menuactive");
-            }
-            else {
-                bodyElement.classList.remove("menuactive");
-            }
+            bodyElement.classList.toggle("menuactive");
         }
+        this.belemMenu = false;
+        this.cedawMenu = false;
+        this.casosMenu = false;
+        this.ficheroMenu = false;
     }
 
     showBelem(): void {
         this.belemMenu = !this.belemMenu;
+        this.cedawMenu = false;
+        this.casosMenu = false;
+        this.ficheroMenu = false;
     }
 
     showCedaw(): void {
+        this.belemMenu = false;
         this.cedawMenu = !this.cedawMenu;
+        this.casosMenu = false;
+        this.ficheroMenu = false;
     }
 
     showCasos(): void {
+        this.belemMenu = false;
+        this.cedawMenu = false;
         this.casosMenu = !this.casosMenu;
+        this.ficheroMenu = false;
     }
 
     showFichero(): void {
+        this.belemMenu = false;
+        this.cedawMenu = false;
+        this.casosMenu = false;
         this.ficheroMenu = !this.ficheroMenu;
     }
 }
