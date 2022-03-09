@@ -1456,6 +1456,11 @@ button.enviar {
         position: fixed;
         top: 140px;
     }
+
+    .materiales .info-cover h2 a {
+        text-align: left;
+        text-align-last: left;
+    }
 }
 
 @media only screen and (max-width: 420px) {
