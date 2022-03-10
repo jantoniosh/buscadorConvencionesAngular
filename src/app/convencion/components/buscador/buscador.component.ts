@@ -1,15 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ENTER, COMMA } from '@angular/cdk/keycodes';
 import { FormControl } from '@angular/forms';
 import { Observable, debounceTime, startWith, map } from 'rxjs';
 import { EntradaService } from '../../services/convencion.service';
-import { Etiquetas } from '../../interfaces/etiquetas.interface';
-import { MatChipInputEvent } from '@angular/material/chips';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { Titulos } from '../../interfaces/titulos.interface';
-import { Router } from '@angular/router';
-import { Fuentes } from '../../interfaces/fuentes.interface';
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Event, NavigationEnd, Router } from '@angular/router';
+import { faQuestionCircle, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-buscador',
@@ -19,6 +15,7 @@ export class BuscadorComponent implements OnInit {
 
     faTimes = faTimes;
     faSearch = faSearch;
+    faQuestion = faQuestionCircle
 
     separatorKeysCodes: number[] = [ENTER, COMMA];
 
@@ -26,8 +23,8 @@ export class BuscadorComponent implements OnInit {
     tituloControl = new FormControl();
     filTitulos: Observable<string[]> | any;
 
-
     buscador: boolean = true;
+    tooltip: boolean = false;
 
     constructor(private entradaService: EntradaService, private router: Router) { }
 
@@ -41,16 +38,25 @@ export class BuscadorComponent implements OnInit {
             startWith(''),
             map(val => this._filterTitulo(val))
         );
+
+        this.router.events.subscribe((event: Event) => {
+            if (event instanceof NavigationEnd) {
+                console.log(event.url);
+                if (event.url.includes("/busqueda?") == false) {
+                    this.tituloControl.setValue('');
+                }
+            }
+        });
     }
 
     onKeydown(event: KeyboardEvent) {
         if (event.key === "Enter") {
-            console.log(event);
+            this.enviar();
         }
     }
 
     enviar(): void {
-        const tema: string | any = this.tituloControl.value;
+        let tema: string | any = this.tituloControl.value;
         if (tema !== null) {
             this.router.navigate(['/busqueda'], { queryParams: { tema: tema } });
         }
@@ -80,7 +86,7 @@ export class BuscadorComponent implements OnInit {
         return this.titulos.filter(titulo => titulo.toLocaleLowerCase().indexOf(formatVal) >= 0);
     }
 
-    mostrarBuscador() {
+    mostrarBuscador(): void {
         this.buscador = !this.buscador;
         const bodyElement = document.body;
         if (bodyElement) {
@@ -93,4 +99,7 @@ export class BuscadorComponent implements OnInit {
         }
     }
 
+    showTooltip(): void {
+        this.tooltip = !this.tooltip;
+    }
 }

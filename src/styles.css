@@ -1289,9 +1289,9 @@ button.enviar {
     width: 90%;
 }
 
-.searchblock:hover .tooltiptext {
+/* .searchblock:hover .tooltiptext {
     visibility: visible;
-}
+} */
 
 .inputEtiquetas {
     width: 20%;
@@ -1367,7 +1367,6 @@ button.enviar {
 }
 
 .tooltiptext {
-    visibility: hidden;
     width: 330px;
     background-color: black;
     color: #fff;
@@ -1379,14 +1378,21 @@ button.enviar {
     z-index: 1000;
 }
 
+button.tooltipsearch {
+    appearance: none;
+    border: none;
+    color: #24135f;
+    background-color: transparent;
+    font-size: 20px;
+}
+
 .tooltiptext p {
     font-size: 15px;
 }
 
 @media only screen and (max-width: 980px) {
-
     .inputTema {
-        width: 80%;
+        width: 70%;
     }
 
     .inputEtiquetas {
@@ -1433,14 +1439,6 @@ button.enviar {
         width: 100% !important;
         max-width: initial;
         font-size: 1.8em;
-    }
-
-    .closesearch {
-        /* position: absolute;
-        top: 0;
-        left: 0;
-        width: 50px;
-        height: 50px; */
     }
 
     .column-footer {

@@ -32,12 +32,10 @@ export class CategoriaComponent implements OnInit {
                 next: (entradas: Entrada[]) => {
                     this.seccion.entradas = [];
                     entradas.map(entrada => {
-                        console.log(entrada.tipo, this.tipo, this.tipo.indexOf(entrada.tipo));
                         if (this.tipo.indexOf(entrada.tipo) === 0) {
                             this.seccion.entradas.push(entrada);
                         }
                     });
-                    console.log(this.seccion.entradas);
                     this.hideBarra();
                 },
                 error: (err: Error) => {
@@ -73,10 +71,4 @@ export class CategoriaComponent implements OnInit {
         const bodyElement = document.body;
         bodyElement.classList.remove('menuactive');
     }
-
-    // onActivate() {
-    //     window.scroll(0, 0);
-    //     const bodyElement = document.body;
-    //     bodyElement.classList.remove('menuactive');
-    // }
 }

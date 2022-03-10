@@ -21,12 +21,12 @@
                     <mat-label>Tema</mat-label>
                     <input type="text" matInput [formControl]="tituloControl" [matAutocomplete]="autoTitulo"
                         (keydown)="onKeydown($event)">
-                    <mat-autocomplete autoActiveFirstOption #autoTitulo="matAutocomplete">
+                    <mat-autocomplete #autoTitulo="matAutocomplete">
                         <mat-option *ngFor="let titulo of filTitulos | async" [value]="titulo">
                             {{titulo}}
                         </mat-option>
                     </mat-autocomplete>
-                    <span class="tooltiptext">
+                    <span *ngIf="tooltip" class="tooltiptext">
                         <p>Este buscador predictivo, permite obtener resultados respecto de temas relacionados con los
                             derechos de las mujeres sistematizados en los diversos recursos del sitio, permite navegar
                             entre
@@ -39,6 +39,9 @@
                 <div class="botonInfo">
                     <button (click)="enviar()" class="enviar">
                         <fa-icon [icon]="faSearch"></fa-icon>
+                    </button>
+                    <button (click)="showTooltip()" class="tooltipsearch">
+                        <fa-icon [icon]="faQuestion"></fa-icon>
                     </button>
                 </div>
             </form>
