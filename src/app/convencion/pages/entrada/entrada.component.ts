@@ -50,8 +50,8 @@ export class EntradaComponent implements OnInit {
                     this.etiquetas = [];
                     this.fuentes = [];
                     this.descripcion.push(this.entrada.cita);
-                    this.etiquetas = this.entrada.etiquetas.split("|").map(etiqueta => {
-                        return etiqueta.replace(/\s/g, '').replace('#', '');
+                    this.etiquetas = this.entrada.etiquetas.split("#").map(etiqueta => {
+                        return etiqueta.replace(/\s/g, '').replace('|', '');
                     });
                     this.etiquetas = this.etiquetas.filter(Boolean);
                     

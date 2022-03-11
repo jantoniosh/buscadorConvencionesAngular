@@ -1132,6 +1132,7 @@ p.descripcion {
 .block-info-page.etiquetas a {
     font-family: "Akzidenz-Grotesk BQ";
     font-size: 1.1em;
+    word-break: break-all;
 }
 
 .versalitas {
@@ -1264,6 +1265,10 @@ button.enviar {
     border-radius: 0 30px 30px 0;
 }
 
+button.enviar:hover, button.tooltipsearch:hover {
+    cursor: pointer;
+}
+
 .buscadorFormulario {
     display: flex;
     align-items: center;
@@ -1301,9 +1306,6 @@ button.enviar {
     width: 20%;
 }
 
-.enviar {
-    width: 20%;
-}
 
 .verMasBtn {
     width: 100%;
@@ -1459,9 +1461,18 @@ button.tooltipsearch {
         text-align: left;
         text-align-last: left;
     }
+
+    .searchblock {
+        width: 90%;
+        padding-left: 30px;
+    }
 }
 
 @media only screen and (max-width: 420px) {
+    .inputTema {
+        width: 70%;
+    }
+
     .column-footer {
         width: 100% !important;
         max-width: initial;
@@ -1483,6 +1494,10 @@ button.tooltipsearch {
 
     a.headertitle h2 {
         font-size: 1em;
+    }
+
+    .single-info {
+        width: 92%;
     }
 }
 
